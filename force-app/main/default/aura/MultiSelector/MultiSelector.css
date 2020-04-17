@@ -1,0 +1,14 @@
+.THIS .custom_pos_2 {
+    /*top: 50%; 
+    margin-top: -30px;*/
+}
+.THIS .custom_pos_1
+{
+    /*top: 35%; 
+    margin-top: -25px;*/
+}
+.THIS .min_height{
+    min-height:120px !important;
+    overflow: auto;
+    max-height: 250px !important;
+}

@@ -1,0 +1,114 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="LoginApexClass">
+    <aura:attribute name="number_of_rows" type="Integer" default="10" access="global"/>
+    <aura:attribute name="LoginHistory" type="wrapperLoginHistory" />    
+    <aura:dependency resource="markup://force:navigateToURL" type="EVENT"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <header class="slds-global-header--container">
+        <div class="slds-p-around--medium">
+            <div class="slds-grid slds-grid--pull-padded">
+                <div class="slds-size_1-of-2 slds-medium-size_4-of-6 slds-large-size_5-of-12">
+                    <div class="slds-box slds-box--x-small slds-text-align--center slds-m-around--x-small slds-float--left">
+                        User Login History
+                    </div>
+                </div>
+                <div class="slds-size_1-of-2 slds-medium-size_2-of-6 slds-large-size_7-of-12">
+                    <div class="slds-box slds-box--x-small slds-text-align--center slds-m-around--xx-small slds-float--right">
+                        Filter
+                        <lightning:buttonMenu iconSize="small" onselect="{!c.filter}" class="slds-p-left--large slds-wrap">
+                            <lightning:menuItem label="Success" value="Success" class="slds-wrap"/>
+                            <lightning:menuItem label="Failure" value="Failure" class="slds-wrap"/>
+                            <lightning:menuItem label="All" value="All" class="slds-wrap"/>               
+                        </lightning:buttonMenu>                       
+                    </div>
+                </div>
+            </div>           
+        </div>  
+        
+        <lightning:card >
+            
+            <aura:set attribute="title"></aura:set>
+            <div class="slds-p-around--medium">
+                <table class="slds-table  slds-table--cell-buffer slds-wrap slds-table_fixed-layout slds-table_striped">
+                    <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col">
+                                <div class="slds-truncate slds-wrap" title="Status">Status</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate slds-wrap" title="User Name">User Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate slds-wrap" title="Login Date/Time">Login Date/Time</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate slds-wrap" title="Status Meassage">Status Meassage</div>
+                            </th>                        
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        
+                        <aura:iteration items="{!v.LoginHistory.logList}" var="LH" >
+                            <tr class="slds-p-vertical--xx-large">         
+                                <th data-label="Status">
+                                    <div class="slds-truncate" title="Status">
+                                        <div class="slds-form-element">
+                                            <div class="slds-form-element__control"> 
+                                                <aura:if isTrue="{!LH.Status=='Success'}" >
+                                                    <lightning:buttonIcon iconName="utility:priority" class="checkicn" variant="border-inverse" size="small" /> 
+                                                    <aura:set attribute="else">
+                                                        <lightning:buttonIcon iconName="utility:priority" class="clearicn" variant="border-inverse" size="small" /> 
+                                                    </aura:set>
+                                                </aura:if>
+                                            </div>
+                                        </div>               
+                                    </div>
+                                </th>
+                                
+                                <td data-label="User Name">
+                                    
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control" >
+                                            <aura:iteration items="{!v.LoginHistory.userInfo}" var="user" >
+                                                <aura:if isTrue="{!LH.UserId==user.Id}" >
+                                                    <div class="slds-truncate" title="{!user.Name}">
+                                                    <a href="{!'/one/one.app#/sObject/'+user.Id+'/view'}">
+                                                        <div id="changeIt"  class="slds-avatar slds-avatar--small slds-avatar--circle"><img src="{! user.SmallPhotoUrl }" title="my profile" />
+                                                        </div>
+                                                        {!user.Name}
+                                                    </a> 
+                                                        </div>
+                                                </aura:if>
+                                            </aura:iteration>
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                                <td data-label="LoginTime" aura:id="idm" onclick="{!c.handleClick}" value="{!LH.UserId}">
+                                    <div class="slds-truncate" title="{!LH.LoginTime}">
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control" >
+                                            {!LH.LoginTime}
+                                        </div>
+                                    </div>
+                                    </div>
+                                </td>
+                                <td data-label="Status Meassage">
+                                    <div class="slds-truncate" title="{!LH.Status}">                                    
+                                        <div class="slds-form-element">
+                                            <div class="slds-form-element__control">                            
+                                                {!LH.Status}                                           
+                                            </div>
+                                        </div>                                               
+                                    </div>
+                                </td>   
+                            </tr>
+                        </aura:iteration>                     
+                    </tbody>
+                </table>
+            </div>
+            
+            
+        </lightning:card>
+    </header> 
+</aura:component>

@@ -1,0 +1,8 @@
+@media (min-width: 30em){
+	.THIS.customSpace>.slds-item {
+    	padding: .5px !important;
+	}
+    
+}
+
+.THIS .customSpace>.progress {margin-top: 9px;}

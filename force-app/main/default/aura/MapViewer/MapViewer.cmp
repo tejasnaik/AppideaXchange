@@ -1,0 +1,29 @@
+<aura:component access="global" >
+	
+    <aura:attribute name="latitude" type="Decimal" />
+    <aura:attribute name="longitude" type="Decimal" />
+    <aura:attribute name="zoomControl" type="Boolean" default="true" />
+    <aura:attribute name="description" type="String" default="Please provide place name here."  />
+    
+    <!-- ImportInfo-->
+    <!-- your.mapbox.public.access.token -->
+    <aura:attribute name="accessToken" type="String" default="pk.eyJ1IjoicnVzdGFtLW0iLCJhIjoiY2lycW42ZmhrMDBjMmkya3d4a2NxbGcwbCJ9.-WpgsyczH8bLpMDU9D_Dkw" />
+    <!--your.mapbox.project.id-->
+	<aura:attribute name="userId" type="String" default="rustam-m.13g1jen8" />
+    
+    <ltng:require styles="/resource/MapResources/leaflet/leaflet.css"
+            scripts="/resource/MapResources/leaflet/leaflet.js"
+            afterScriptsLoaded="{!c.externalScriptsLoaded}"/>
+    
+    <aura:handler name="scriptsLoadComplete" event="c:ScriptLoaded" action="{!c.doInit}"/>
+    <aura:registerEvent name="scriptsLoadComplete" type="c:ScriptLoaded"/>
+    
+    
+    <article  class="slds-card">
+	   <div class="">
+    	    <div class="slds-box slds-theme--default">
+	    		<div class="map" aura:id="mapId" id="mapId"></div>
+       		</div>
+    	</div>
+   </article>     
+</aura:component>

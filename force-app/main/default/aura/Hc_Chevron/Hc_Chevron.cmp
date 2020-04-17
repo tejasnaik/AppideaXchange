@@ -1,0 +1,29 @@
+<aura:component access="global">
+    <!-- Define attributes here - Start -->
+    <aura:attribute access="global" name="cList" type="Object"/>
+    <!-- Define attributes here - End-->
+    
+    <!-- Define Event Handlers here - Start -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInt}"/>
+    <!-- Define Event Handlers here - End -->
+    
+    <div class="slds-align_absolute-center">
+        <div class="slds-wizard slds-m-around_small" role="navigation" style="padding-top:20px;width: 60%;">
+            <ol class="slds-wizard__list">
+                <aura:iteration items="{!v.cList.stages}" var="stageIs" indexVar="index">
+                    <li class="{!if(v.cList.currentStageIndex &lt; index,'slds-wizard__item',
+                               'slds-wizard__item slds-is-active')}" >
+                        <a href="javascript:void(0);" class="slds-wizard__link">
+                            <span class="slds-wizard__marker"/>
+                            <span class="slds-assistive-text">{!stageIs}</span>
+                            <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="{!stageIs}">{!stageIs}</span>
+                        </a>
+                    </li>
+                </aura:iteration>
+            </ol>
+            <span class="slds-wizard__progress" style="margin-top:20px;z-index: 0;">
+                <span class="slds-wizard__progress-bar" style="{!'width:'+v.cList.currentStageIndex/(v.cList.stages.length-1)*100+'%;'}"></span>
+            </span>
+        </div>
+    </div>
+</aura:component>

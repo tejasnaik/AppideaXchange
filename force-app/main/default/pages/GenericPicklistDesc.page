@@ -1,0 +1,14 @@
+<!--
+ * Page Name: GenericPicklistDesc
+ * Description: Get picklist values.
+ * Developed by: Rajendra Singh Nagar (640829)
+ * Author: Cognizant Technology Solutions
+-->
+<!-- This will not return current picklist value on record -->
+<apex:page controller="GenericPickListDescController"
+    contentType="application/xml" showHeader="false" sidebar="false"
+    standardStylesheets="false">
+    <apex:form >
+        <apex:inputField value="{!sobj[pickListFieldName]}" />
+    </apex:form>
+</apex:page>

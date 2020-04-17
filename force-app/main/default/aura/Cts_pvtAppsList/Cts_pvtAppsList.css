@@ -1,0 +1,28 @@
+.THIS .slds-image__crop:hover{
+    
+}
+.THIS .slds-image__crop img{
+    top:36% !important;
+    height : 45% !important;
+}
+
+.THIS .slds-image:hover .hoverclass {
+    display:block;
+}
+
+.THIS .hoverclass{
+    padding:25%;
+    border-radius:8px;
+    background: rgba(50,50,50,.8);
+    position: absolute;
+    display: block;
+    width: 100%;
+    height:100%;
+    z-index: 2000;
+    display:none;
+}
+
+.THIS .typeClass {
+    padding: 2px;  
+    margin-right: 2px;
+}

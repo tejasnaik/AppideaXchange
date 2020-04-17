@@ -1,0 +1,48 @@
+.THIS {
+}
+
+.THIS .dropdW {
+    width: 100px;
+}
+
+.THIS .ErrText{
+    border-color:#c23934;
+}
+
+.THIS .BorRad{
+    border-radius:0px;
+}
+
+.THIS .Bor{
+    border:0px;
+}
+
+.THIS .ModelSize{
+    height:350px;
+}
+
+.THIS .hdrHeight{
+    height:15px;
+}
+
+.THIS .Bor{
+    border:0px;
+}
+
+.THIS .ModelSize{
+    height:350px;
+}
+
+.THIS .hdrHeight{
+    height:15px;
+}
+
+.THIS .vert{
+    position:absolute;
+    width:2px;
+    height:25px;
+    background-color:#95aec5;
+    margin-left:15px;
+    margin-top:2px;
+    
+}

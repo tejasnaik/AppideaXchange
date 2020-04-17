@@ -1,0 +1,12 @@
+@isTest
+global class MockHttpResponseGenerator implements HttpCalloutMock {
+   global HTTPResponse respond(HTTPRequest request) {
+         HttpResponse response = new HttpResponse();
+        response.setHeader('Authorization', 'Bearer ' + ReusableChartApex.getSessionIdFromVFPage());
+        response.setHeader('Content-Type', 'application/json');
+        response.setBody('{\'attributes\':{\'describeUrl\':\'/services/data/v29.0/analytics/reports/00O7F000008BYINUA4/describe\',\'instancesUrl\':\'/services/data/v29.0/analytics/reports/00O7F000008BYINUA4/instances\',\'reportId\':\'00O7F000008BYINUA4\',\'reportName\':\'testSummaryReportOrgs\',\'type\':\'Report\'},\'allData\':true,\'factMap\':{\'T!T\':{\'aggregates\':[{\'label\':\'6\',\'value\':6}],\'rows\':[{\'dataCells\':[{\'label\':\'Alekh new\',\'value\':\'a007F00000I9mzUQAR\'},{\'label\':\'75%\',\'value\':75}]},{\'dataCells\':[{\'label\':\'navneet org\',\'value\':\'a007F00000I93SjQAJ\'},{\'label\':\'17%\',\'value\':17}]},{\'dataCells\':[{\'label\':\'Production\',\'value\':\'a007F00000DuhDTQAZ\'},{\'label\':\'-\',\'value\':null}]},{\'dataCells\':[{\'label\':\'Sandbox\',\'value\':\'a007F00000DuhDJQAZ\'},{\'label\':\'-\',\'value\':null}]},{\'dataCells\':[{\'label\':\'saurabh org\',\'value\':\'a007F00000I9mz0QAB\'},{\'label\':\'-\',\'value\':null}]},{\'dataCells\':[{\'label\':\'shilpa org\',\'value\':\'a007F00000I94KcQAJ\'},{\'label\':\'78%\',\'value\':78}]}]}},\'groupingsAcross\':{\'groupings\':[]},\'groupingsDown\':{\'groupings\':[]},\'hasDetailRows\':true,\'reportExtendedMetadata\':{\'aggregateColumnInfo\':{\'RowCount\':{\'acrossGroupingContext\':null,\'dataType\':\'int\',\'downGroupingContext\':null,\'label\':\'Record Count\'}},\'detailColumnInfo\':{\'CUST_NAME\':{\'dataType\':\'string\',\'label\':\'Salesforce org: Salesforce org Name\'},\'codecover__Salesforce_org__c.codecover__Total_Coverage__c\':{\'dataType\':\'percent\',\'label\':\'Total Coverage\'}},\'groupingColumnInfo\':{}},\'reportMetadata\':{\'aggregates\':[\'RowCount\'],\'currency\':null,\'detailColumns\':[\'CUST_NAME\',\'codecover__Salesforce_org__c.codecover__Total_Coverage__c\'],\'developerName\':\'testSummaryReportOrgs\',\'groupingsAcross\':[],\'groupingsDown\':[],\'id\':\'00O7F000008BYINUA4\',\'name\':\'testSummaryReportOrgs\',\'reportBooleanFilter\':null,\'reportFilters\':[],\'reportFormat\':\'TABULAR\',\'reportType\':{\'label\':\'Salesforce orgs\',\'type\':\'CustomEntity$codecover__Salesforce_org__c\'}}}');
+        response.setStatusCode(302);
+        return response;
+    }
+    
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="7.884px"
+	 height="10.064px" viewBox="0 0 7.884 10.064" enable-background="new 0 0 7.884 10.064" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  height="10.064" width="7.884" x="293" y="414.936" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g>
+	<path fill="#FFFFFF" d="M3.633,6.338C3.63,6.258,3.629,6.195,3.629,6.154c0-0.238,0.034-0.445,0.102-0.619
+		c0.05-0.131,0.129-0.264,0.241-0.396C4.053,5.041,4.2,4.9,4.411,4.713C4.623,4.527,4.76,4.379,4.823,4.268
+		c0.063-0.112,0.095-0.232,0.095-0.365c0-0.239-0.092-0.448-0.277-0.629S4.228,3.003,3.959,3.003c-0.261,0-0.477,0.083-0.651,0.246
+		C3.134,3.413,3.02,3.669,2.966,4.018L2.34,3.941C2.397,3.477,2.564,3.12,2.843,2.874C3.122,2.626,3.49,2.503,3.949,2.503
+		c0.485,0,0.872,0.132,1.161,0.397s0.434,0.586,0.434,0.962c0,0.218-0.051,0.418-0.153,0.601C5.289,4.647,5.09,4.87,4.793,5.133
+		c-0.199,0.176-0.328,0.306-0.39,0.389c-0.062,0.084-0.107,0.18-0.136,0.289C4.239,5.918,4.221,6.094,4.217,6.338H3.633L3.633,6.338
+		z M3.521,7.561V6.867h0.695v0.693H3.521L3.521,7.561z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M5.437,0H0v10.064h7.884V2.446L5.437,0L5.437,0z M5.535,0.572
+		l1.775,1.775L5.535,0.572L5.535,0.572z M0.336,9.729V0.336H5.2l2.348,2.348v7.045H0.336L0.336,9.729z"/>
+</g>
+</svg>

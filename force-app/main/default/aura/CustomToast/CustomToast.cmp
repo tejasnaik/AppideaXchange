@@ -1,0 +1,28 @@
+<aura:component >
+    <!-- for the toast message to be displayed -->
+    <aura:attribute name="toastmsg" type="String" default=""/>
+    <!-- for the mode i.e. dismissible,pester or sticky -->
+    <aura:attribute name="mode" type="String" default=""/>
+    <!-- for the icon to be displayed inside the toast -->
+    <aura:attribute name="toastIcon" type="String" default=""/>
+    <!-- for the toast type i.e. success,warning,error or info -->
+    <aura:attribute name="toastType" type="String" default=""/>
+    <!-- for the css to be applied according to the toast type -->
+    <aura:attribute name="toastcss" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    
+    <div class="slds-notify_container slds-is-relative" id="toastCmp">
+        <div  class="{!v.toastcss}" role="alert">
+            <lightning:icon iconName="{!'utility:'+v.toastIcon}" variant="inverse" size="small" class="slds-m-right_small slds-no-flex" title="{!v.toastIcon}"/>
+            <div class="slds-notify__content" style="width:100%">                
+                <h2 class="slds-text-heading_small ">{!v.toastmsg}</h2>
+            </div>
+            <aura:if isTrue="{!v.mode!='pester'}" >
+                <span onclick="{!c.closeIcon}" >   
+                    <lightning:icon iconName="utility:close" variant="inverse" size="small" class="slds-m-left_small slds-no-flex slds-align-right" title="Close"/>  
+                </span>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

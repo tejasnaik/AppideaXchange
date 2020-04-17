@@ -1,0 +1,47 @@
+.THIS {
+    font-family: "Salesforce Sans", Arial, sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+.THIS .map-modal .slds-button.slds-modal__close {
+    font-size: 2rem;
+    color: #000;
+}
+
+.THIS .slds-modal__header {
+    padding: 0;
+}
+
+.THIS .sign-button {
+       background-color: #E91E63;
+    border-radius: 0;
+    border-bottom: 3px solid #ac043d;
+    color: #fff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.93rem;
+}
+
+.THIS .clear-button {
+    background-color: #188cc2;
+    border-bottom: 3px solid #056d9d;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #fff;
+    border-radius: 0;
+    font-size: 0.93rem;
+}
+
+.THIS .sign-button:hover, .THIS .sign-button:active, .THIS .sign-button:focus {
+    background-color: #ac043d;
+    color: #fff; }
+
+.THIS .clear-button:hover, .THIS .clear-button:active, .THIS .clear-button:focus {
+    background-color: #056d9d;
+    color: #fff; }
+
+.THIS .slds-modal__container {
+    width1: 320px !important;
+    margin: 0 auto !important;
+}

@@ -1,0 +1,238 @@
+<apex:page showHeader="false">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"/>
+    <script type="text/javascript" src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"/>
+    <html>
+        <head>
+            <!-- This stylesheet contains specific styles for displaying the map on this page. Replace it with your own styles as described in the documentation:
+                https://developers.google.com/maps/documentation/javascript/tutorial 
+            -->
+            <link rel="stylesheet" href="//developers.google.com/maps/documentation/javascript/demos/demos.css"/>
+        </head>
+        <body>
+            
+            <div id="map"></div>
+            <script type="text/javascript">
+                    //Receive message from LC
+                    window.addEventListener("message", function(event) { 
+                       
+                        if(typeof(event.data.loadGoogleMap) != 'undefined'){
+                            mapDataAddress = Array();
+                            data = event.data;
+                            mapData = data.mapData;                            
+                            dropdownValue=data.dropdownValue;
+                            //  alert('@#####################' + dropdownValue);
+                            var geocoder = new google.maps.Geocoder();
+                            function geocodeAddress(add,Id,Name,timeout) {
+                               
+                                window.setTimeout(function() {
+                                    geocoder.geocode( { 'address':add}, function(results, status) {
+                                        
+                                        console.log('@@@@ status @@@' + status);
+                                        if (status == google.maps.GeocoderStatus.OK)
+                                        {   var location = results[0].geometry.location; 
+                                         lat = location.lat();
+                                         lng = location.lng();
+                                         //alert('lat-->'+lat+'---->'+lng);
+                                        
+                                         if(location!=''||location!=undefined){
+                                             mapDataAddress.push({"lat":lat, "lng":lng, "markerText":add, "title":add,"Id":Id,"Name":Name});
+                                         }
+                                        }
+                                        if(add==null ||add==''|| add==undefined){
+                                            mapDataAddress.push({"lat":lat, "lng":lng, "markerText":add, "title":add,"Id":Id,"Name":Name});
+                                        }
+                                        
+                                        if(mapData.length === mapDataAddress.length){
+                                            initMap();
+                                        }
+                                    });
+                                }, timeout*200);
+                            }
+                            for(var i=0; i<mapData.length; i++){
+                                
+                                var add = mapData[i].objRecords.BillingStreet +', '+ mapData[i].objRecords.BillingCity +' '+ mapData[i].objRecords.BillingCountry;
+                                var Id = mapData[i].objRecords.Id;
+                                var Name = mapData[i].objRecords.Name;
+                                currentCityCountry = mapData[i].objRecords.BillingCity + ', ' +mapData[i].objRecords.BillingCountry; 
+                                geocodeAddress(add,Id,Name,mapData.length);
+                            }
+
+                        }
+                    }, false);
+    
+    var lexOrigin = 'https://{!$CurrentPage.parameters.lcHost}';
+    //Data for Google map
+    var data;
+    var lat;
+    var lng;
+    var mapData;
+    var myLatlng;
+    var mycurrentLatlng;
+    var mylatitude;
+    var mylongitude;
+    var search_area;
+    var dropdownValue;
+    var mapDataAddress = Array();
+    var currentCityCountry;
+    var currentCityPosition;
+    var script = document.createElement("script");
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    function showPosition(position) {
+        mylatitude =position.coords.latitude;
+        mylongitude= position.coords.longitude;
+        
+        var gKey = '{!$Label.GOOGLE_API_KEY}';
+        
+        script.src = "https://maps.googleapis.com/maps/api/js?key="+gKey+"&callback=initMap";
+    }
+    document.getElementsByTagName("head")[0].appendChild(script);
+    //Send message to LC
+    function sendToLC(message) {
+        if(typeof(lexOrigin) != 'undefined'){
+            parent.postMessage(message, lexOrigin);
+        }
+    }
+    
+    sendToLC({'state':'LOADED', 'vfHost': "{!LEFT($CurrentPage.URL,FIND('/',$CurrentPage.URL,9))}"});
+    
+    //Callback when Google Map is loaded
+    function initMap() {
+        
+        //Add marker for each point along with text
+        var markers = [];
+        var in_area = []; 
+        var map;
+        var notIn_area = []; 
+        var markersArray = [];
+        function addMarker(feature) {
+            var marker = new google.maps.Marker({
+                position: feature.position,
+                map: map,
+                title:feature.title,
+                url:feature.url 
+                
+            });
+            markers.push(marker);
+            
+            //var markerCluster = new MarkerClusterer(map, markers,{zoom : 15},{imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+           	/*var mcOptions = {gridSize: 50, maxZoom: 15};
+            var mc = new MarkerClusterer(map, [], mcOptions);
+			markerCluster.addMarker(markers, true);*/
+            
+           	var infoWindow = new google.maps.InfoWindow({
+                content: '<a onclick="newwin()" href="'+'/'+feature.url+'" target="_blank">' + feature.markerText + '</a>'
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+                //window.open('/'+this.url, '_blank');
+            });
+            
+            marker.addListener('click', function() {
+               
+                infoWindow.open(map, marker);
+                //addCircle(event.latLng); 
+            });
+            
+         }
+        //var markerCluster = new MarkerClusterer(map, markers);
+        //markerCluster.addMarker(markers, true);
+        //Create new map
+        var j=mapDataAddress.length;
+        map = new google.maps.Map(document.getElementById("map"), JSON.parse(data.mapOptions));
+        map.setCenter({lat:mylatitude, lng:mylongitude});
+        
+        /** if(mapDataAddress.length >5 )
+        		map.setZoom(2);
+        	else if(mapDataAddress.length == 0)
+                map.setZoom(3);
+       		else
+                map.setZoom(11); **/
+        mycurrentLatlng = new google.maps.LatLng(mylatitude, mylongitude);
+        if(mapDataAddress.length==0){
+            addMarker({position: mycurrentLatlng,markerText:'My Location'});
+        }	
+        
+        var geocoder =  new google.maps.Geocoder();
+       
+        geocoder.geocode( { 'address': currentCityCountry}, function(results, status) {
+            
+            if (status == google.maps.GeocoderStatus.OK) {
+                 currentCityPosition = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+            }
+        });
+       
+        
+        var cityCircle = new google.maps.Circle({    
+            strokeColor: '#65ff00',    
+            strokeOpacity: 0.8,    
+            strokeWeight: 2,    
+            fillColor: '#65ff00',    
+            fillOpacity: 0.35,    
+            map: map,    
+            center: currentCityPosition,    
+            radius: (dropdownValue),  
+            draggable:false  
+        }); 
+        for(var i=0; i<j; i++){
+            var url=mapDataAddress[i].Id; 
+            myLatlng = new google.maps.LatLng(mapDataAddress[i].lat, mapDataAddress[i].lng);
+            addMarker({position: myLatlng, 
+                       markerText:mapDataAddress[i].Name,
+                       title:mapDataAddress[i].title,
+                       url:url});
+            map.setCenter({lat:mapDataAddress[i].lat, lng:mapDataAddress[i].lng});
+        }
+        
+       
+        if(dropdownValue != undefined && dropdownValue != '' && dropdownValue != 'NaN'){
+            for(var i=0; i<markers.length; i++){
+                containsLocation(markers[i]);
+            }
+        }
+        function containsLocation(marker) {
+            //var abc=marker.position;
+            var abc=marker.getPosition();
+            setTimeout(function() {
+                
+                /** if(currentCityCountry != 'undefined') {
+                    var geocoder =  new google.maps.Geocoder();
+                    geocoder.geocode( { 'address': currentCityCountry}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        //abc = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+                    } else {
+                        alert("Something went wrong " + status);
+                    }});
+                }**/
+               
+                if (google.maps.geometry.spherical.computeDistanceBetween(abc, cityCircle.getCenter()) <= cityCircle.getRadius()) {
+                    in_area.push(marker);
+                }
+                
+                else {
+                    notIn_area.push(marker);
+                    DeleteMarkers(notIn_area);
+                    console.log('=> is NOT in searchArea'+notIn_area);
+                }
+            }, 1000);
+            
+        }
+        function DeleteMarkers(marker) {
+            //Loop through all the markers and remove
+            for (var i = 0; i < marker.length; i++) {
+                marker[i].setMap(null);
+            }
+            markerss = [];
+        };      
+    }
+   
+    
+    //Let LC know that VF page been loaded along with it's URL
+    //LC will then send the data
+    //This is done because LC has no way to know that VF page in iFrame has been loaded, event listener set and ready for data
+
+            </script>      
+    </body>
+    </html>
+</apex:page>

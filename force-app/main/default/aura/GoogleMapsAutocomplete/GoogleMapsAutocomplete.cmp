@@ -1,0 +1,64 @@
+<aura:component description="GoogleMapsAutocomplete" controller="GoogleMapsController">
+    <aura:attribute name="selectedOption" type="String"/>
+    <aura:attribute name="filteredOptions" type="String[]"/>
+    <aura:attribute name="searchKey" type="String"/>
+    <aura:attribute name="searchKeyState" type="String"/>
+    <aura:attribute name="searchKeyCountry" type="String"/>
+    <aura:attribute name="placeholder" type="String" default="Enter a City"/>
+	<aura:attribute access="public" name="label" type="String" required="true" description="The label to assign to the lookup, eg: Account" />
+    
+    <aura:registerEvent name="setAttribute" type="c:setAttributeEvent"/>
+    
+    <div class="slds-form-element">
+         {!v.label}&nbsp;&nbsp;
+        <div class="slds-form-element__control">
+            <div class="slds-combobox_container slds-has-inline-listbox">
+                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-combobox-lookup"
+                     aria-expanded="false"
+                     aria-haspopup="listbox"
+                     role="combobox"
+                     aura:id="searchLookup">
+                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left"
+                         aura:id="iconDirection">
+                        <ui:inputText updateOn="keyup"
+                                      keyup="{!c.keyPressController}"
+                                      class="slds-input slds-combobox__input"
+                                      value="{!v.searchKey}"
+                                      placeholder="{!v.placeholder}"/>
+                        <aura:if isTrue="{!empty(v.selectedOption)}">
+                            <lightning:icon class="slds-icon_container slds-button slds-input__icon" iconName="utility:search" variant="search" size="x-small"/>
+                            <span class="slds-assistive-text">Description of icon</span>
+                            <aura:set attribute="else">
+                                <lightning:buttonIcon size="x-small" class="slds-icon_container slds-button slds-input__icon" iconName="utility:close" alternativeText="Close" onclick="{!c.clear}"/>
+                                <span class="slds-assistive-text">Remove selected option</span>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+
+                    <div id="listbox-unique-id" role="listbox">
+                        <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid"
+                            role="presentation">
+
+                            <aura:iteration items="{!v.filteredOptions}" var="option">
+                                <li role="presentation"
+                                    class="slds-listbox__item"
+                                    onclick="{!c.selectOption}"
+                                    data-value="{!option.value}"
+                                    data-record="{!option.label}">
+                                    <span id="listbox-option-unique-id-01"
+                                          class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                                          role="option">
+                                        <span class="slds-media__body">
+                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">{!option.label}</span>
+                                        </span>
+                                    </span>
+                                </li>
+                            </aura:iteration>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

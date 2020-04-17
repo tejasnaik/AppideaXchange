@@ -1,0 +1,4 @@
+<design:component >
+	<design:attribute name="selecttechnique" label="Select Technique" datasource="code128,code39" description="Algorithm For Barcode Generation" />
+    <design:attribute name="field" label="Field API Name" description="Enter API name of Field" />
+</design:component>

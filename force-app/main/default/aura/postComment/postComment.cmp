@@ -1,0 +1,88 @@
+<aura:component controller="IdeaXChangeController" access="global">
+    <aura:attribute name="ideaId" type="String" default="" />
+    <aura:attribute name="description" type="String" default="" />
+    <aura:attribute name="comments" type="List" default="[]" />
+    <aura:attribute name="isVisible" type="Boolean" default="false" />
+    <aura:attribute name="errorMessage" type="String" default="" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.ideaId}" action="{!c.doInit}" />
+    <aura:registerEvent name="ideaCreationEvent" type="c:IdeaComponentEvent" />
+    
+    <div class="slds-scrollable">
+        <aura:if isTrue="{!v.isVisible}">
+            <div role="dialog" tabindex="-1" aria-labelledby="IdeaCommentModalHeader" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <h2 id="IdeaCommentModalHeader" class="slds-text-heading--small">Post your comment</h2>
+                    </div>
+                    
+                    <div class="slds-modal__content slds-p-around--medium slds-is-relative">
+                        <lightning:spinner aura:id="Spinner" class="slds-hide" variant="brand" size="large"/>
+                        <aura:if isTrue="{!v.errorMessage}">
+                            <ui:message title="Error:" severity="error">
+                                {!v.errorMessage}
+                            </ui:message>
+                        </aura:if>
+                        
+                        <div class="slds-media slds-comment slds-hint-parent">
+                            <div class="slds-media__figure">
+                                <a class="slds-avatar slds-avatar--circle slds-avatar--medium" href="javascript:void(0);" title="Username">
+                                    <img src="/profilephoto/005/F" alt="Jenna Davis" />
+                                </a>
+                            </div>
+                            <div class="slds-media__body">
+                                <div>
+                                    <label for="CommentTextArea" class="slds-assistive-text">
+                                        <abbr class="slds-required" title="required">*</abbr>Enter comment
+                                    </label>
+                                    <ui:inputTextarea class="slds-textarea" value="{!v.description}" placeholder="Write a comment" rows="2" />
+                                    <div class="slds-publisher__actions slds-grid slds-grid--align-spread">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <aura:iteration items="{!v.comments}" var="comment">
+                            <div class="slds-media">
+                                <div class="slds-media__body">
+                                    <div class="slds-media slds-media--timeline slds-timeline__media--email">
+                                        <span class="slds-avatar slds-avatar--circle slds-avatar--medium">
+                                            <img src="{!comment.CogniAppEx__User__r.SmallPhotoUrl}" alt="{!comment.CogniAppEx__User__r.Name}" />
+                                        </span>
+                                        <div class="slds-media__body slds-m-left--small">
+                                            <ul class="slds-list--horizontal">
+                                                <li class="slds-m-right--small">
+                                                    <span class="slds-text-title">
+                                                        <a href="javascript:void(0);">{!comment.CogniAppEx__User__r.Name}</a>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="slds-text-title">{!comment.CogniAppEx__Days_Difference__c} days ago</span>
+                                                </li>
+                                            </ul>
+                                            
+                                            <p title="{!comment.CogniAppEx__Body__c}">{!comment.CogniAppEx__Body__c}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </aura:iteration>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <div class="slds-container--fluid">
+                            <lightning:button class="slds-float--left" label="Attach Files" iconName="utility:attach" onclick="{!c.openFileUploader}" />
+                            <lightning:button label="Close"  onclick="{!c.onClose}" />
+                            <lightning:button label="Comment" variant="brand" onclick="{!c.onSubmit}" />
+                        </div>
+                    </div>
+                    <c:FileUploader aura:id="FileUploader" parentId="{!v.ideaId}" />
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+        </aura:if>
+    </div>
+    
+</aura:component>

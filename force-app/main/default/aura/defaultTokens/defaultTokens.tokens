@@ -1,0 +1,9 @@
+<!--
+ * Entity Name Name: defaultTokens Token File
+ * Description: Default token file.
+ * Developed by: Rajendra Singh Nagar (640829)
+ * Author: Cognizant Technology Solutions
+-->
+<aura:tokens extends="c:HealthProviderTokens">
+	<!-- Tokens here -->
+</aura:tokens>

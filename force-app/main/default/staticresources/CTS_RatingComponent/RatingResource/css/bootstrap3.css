@@ -1,0 +1,6671 @@
+.mynamespace {
+  /*!
+ * Bootstrap v3.3.4 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+  /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+  /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
+  /*# sourceMappingURL=bootstrap.css.map */
+}
+.ashCustomClass html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+.ashCustomClass body {
+  margin: 0;
+}
+.ashCustomClass article,
+.ashCustomClass aside,
+.ashCustomClass details,
+.ashCustomClass figcaption,
+.ashCustomClass figure,
+.ashCustomClass footer,
+.ashCustomClass header,
+.ashCustomClass hgroup,
+.ashCustomClass main,
+.ashCustomClass menu,
+.ashCustomClass nav,
+.ashCustomClass section,
+.ashCustomClass summary {
+  display: block;
+}
+.ashCustomClass audio,
+.ashCustomClass canvas,
+.ashCustomClass progress,
+.ashCustomClass video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+.ashCustomClass audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+.ashCustomClass [hidden],
+.ashCustomClass template {
+  display: none;
+}
+.ashCustomClass a {
+  background-color: transparent;
+}
+.ashCustomClass a:active,
+.ashCustomClass a:hover {
+  outline: 0;
+}
+.ashCustomClass abbr[title] {
+  border-bottom: 1px dotted;
+}
+.ashCustomClass b,
+.ashCustomClass strong {
+  font-weight: bold;
+}
+.ashCustomClass dfn {
+  font-style: italic;
+}
+.ashCustomClass h1 {
+  margin: .67em 0;
+  font-size: 2em;
+}
+.ashCustomClass mark {
+  color: #000;
+  background: #ff0;
+}
+.ashCustomClass small {
+  font-size: 80%;
+}
+.ashCustomClass sub,
+.ashCustomClass sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+.ashCustomClass sup {
+  top: -0.5em;
+}
+.ashCustomClass sub {
+  bottom: -0.25em;
+}
+.ashCustomClass img {
+  border: 0;
+}
+.ashCustomClass svg:not(:root) {
+  overflow: hidden;
+}
+.ashCustomClass figure {
+  margin: 1em 40px;
+}
+.ashCustomClass hr {
+  height: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.ashCustomClass pre {
+  overflow: auto;
+}
+.ashCustomClass code,
+.ashCustomClass kbd,
+.ashCustomClass pre,
+.ashCustomClass samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+.ashCustomClass button,
+.ashCustomClass input,
+.ashCustomClass optgroup,
+.ashCustomClass select,
+.ashCustomClass textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+.ashCustomClass button {
+  overflow: visible;
+}
+.ashCustomClass button,
+.ashCustomClass select {
+  text-transform: none;
+}
+.ashCustomClass button,
+.ashCustomClass html input[type="button"],
+.ashCustomClass input[type="reset"],
+.ashCustomClass input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+.ashCustomClass button[disabled],
+.ashCustomClass html input[disabled] {
+  cursor: default;
+}
+.ashCustomClass button::-moz-focus-inner,
+.ashCustomClass input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.ashCustomClass input {
+  line-height: normal;
+}
+.ashCustomClass input[type="checkbox"],
+.ashCustomClass input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+.ashCustomClass input[type="number"]::-webkit-inner-spin-button,
+.ashCustomClass input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+.ashCustomClass input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+.ashCustomClass input[type="search"]::-webkit-search-cancel-button,
+.ashCustomClass input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.ashCustomClass fieldset {
+  padding: .35em .625em .75em;
+  margin: 0 2px;
+  border: 1px solid #c0c0c0;
+}
+.ashCustomClass legend {
+  padding: 0;
+  border: 0;
+}
+.ashCustomClass textarea {
+  overflow: auto;
+}
+.ashCustomClass optgroup {
+  font-weight: bold;
+}
+.ashCustomClass table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.ashCustomClass td,
+.ashCustomClass th {
+  padding: 0;
+}
+@media print {
+  .ashCustomClass *,
+  .ashCustomClass *:before,
+  .ashCustomClass *:after {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+  .ashCustomClass a,
+  .ashCustomClass a:visited {
+    text-decoration: underline;
+  }
+  .ashCustomClass a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  .ashCustomClass abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ashCustomClass a[href^="#"]:after,
+  .ashCustomClass a[href^="javascript:"]:after {
+    content: "";
+  }
+  .ashCustomClass pre,
+  .ashCustomClass blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  .ashCustomClass thead {
+    display: table-header-group;
+  }
+  .ashCustomClass tr,
+  .ashCustomClass img {
+    page-break-inside: avoid;
+  }
+  .ashCustomClass img {
+    max-width: 100% !important;
+  }
+  .ashCustomClass p,
+  .ashCustomClass h2,
+  .ashCustomClass h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  .ashCustomClass h2,
+  .ashCustomClass h3 {
+    page-break-after: avoid;
+  }
+  .ashCustomClass select {
+    background: #fff !important;
+  }
+  .ashCustomClass .navbar {
+    display: none;
+  }
+  .ashCustomClass .btn > .caret,
+  .ashCustomClass .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  .ashCustomClass .label {
+    border: 1px solid #000;
+  }
+  .ashCustomClass .table {
+    border-collapse: collapse !important;
+  }
+  .ashCustomClass .table td,
+  .ashCustomClass .table th {
+    background-color: #fff !important;
+  }
+  .ashCustomClass .table-bordered th,
+  .ashCustomClass .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.ashCustomClass .glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ashCustomClass .glyphicon-asterisk:before {
+  content: "\2a";
+}
+.ashCustomClass .glyphicon-plus:before {
+  content: "\2b";
+}
+.ashCustomClass .glyphicon-euro:before,
+.ashCustomClass .glyphicon-eur:before {
+  content: "\20ac";
+}
+.ashCustomClass .glyphicon-minus:before {
+  content: "\2212";
+}
+.ashCustomClass .glyphicon-cloud:before {
+  content: "\2601";
+}
+.ashCustomClass .glyphicon-envelope:before {
+  content: "\2709";
+}
+.ashCustomClass .glyphicon-pencil:before {
+  content: "\270f";
+}
+.ashCustomClass .glyphicon-glass:before {
+  content: "\e001";
+}
+.ashCustomClass .glyphicon-music:before {
+  content: "\e002";
+}
+.ashCustomClass .glyphicon-search:before {
+  content: "\e003";
+}
+.ashCustomClass .glyphicon-heart:before {
+  content: "\e005";
+}
+.ashCustomClass .glyphicon-star:before {
+  content: "\e006";
+}
+.ashCustomClass .glyphicon-star-empty:before {
+  content: "\e007";
+}
+.ashCustomClass .glyphicon-user:before {
+  content: "\e008";
+}
+.ashCustomClass .glyphicon-film:before {
+  content: "\e009";
+}
+.ashCustomClass .glyphicon-th-large:before {
+  content: "\e010";
+}
+.ashCustomClass .glyphicon-th:before {
+  content: "\e011";
+}
+.ashCustomClass .glyphicon-th-list:before {
+  content: "\e012";
+}
+.ashCustomClass .glyphicon-ok:before {
+  content: "\e013";
+}
+.ashCustomClass .glyphicon-remove:before {
+  content: "\e014";
+}
+.ashCustomClass .glyphicon-zoom-in:before {
+  content: "\e015";
+}
+.ashCustomClass .glyphicon-zoom-out:before {
+  content: "\e016";
+}
+.ashCustomClass .glyphicon-off:before {
+  content: "\e017";
+}
+.ashCustomClass .glyphicon-signal:before {
+  content: "\e018";
+}
+.ashCustomClass .glyphicon-cog:before {
+  content: "\e019";
+}
+.ashCustomClass .glyphicon-trash:before {
+  content: "\e020";
+}
+.ashCustomClass .glyphicon-home:before {
+  content: "\e021";
+}
+.ashCustomClass .glyphicon-file:before {
+  content: "\e022";
+}
+.ashCustomClass .glyphicon-time:before {
+  content: "\e023";
+}
+.ashCustomClass .glyphicon-road:before {
+  content: "\e024";
+}
+.ashCustomClass .glyphicon-download-alt:before {
+  content: "\e025";
+}
+.ashCustomClass .glyphicon-download:before {
+  content: "\e026";
+}
+.ashCustomClass .glyphicon-upload:before {
+  content: "\e027";
+}
+.ashCustomClass .glyphicon-inbox:before {
+  content: "\e028";
+}
+.ashCustomClass .glyphicon-play-circle:before {
+  content: "\e029";
+}
+.ashCustomClass .glyphicon-repeat:before {
+  content: "\e030";
+}
+.ashCustomClass .glyphicon-refresh:before {
+  content: "\e031";
+}
+.ashCustomClass .glyphicon-list-alt:before {
+  content: "\e032";
+}
+.ashCustomClass .glyphicon-lock:before {
+  content: "\e033";
+}
+.ashCustomClass .glyphicon-flag:before {
+  content: "\e034";
+}
+.ashCustomClass .glyphicon-headphones:before {
+  content: "\e035";
+}
+.ashCustomClass .glyphicon-volume-off:before {
+  content: "\e036";
+}
+.ashCustomClass .glyphicon-volume-down:before {
+  content: "\e037";
+}
+.ashCustomClass .glyphicon-volume-up:before {
+  content: "\e038";
+}
+.ashCustomClass .glyphicon-qrcode:before {
+  content: "\e039";
+}
+.ashCustomClass .glyphicon-barcode:before {
+  content: "\e040";
+}
+.ashCustomClass .glyphicon-tag:before {
+  content: "\e041";
+}
+.ashCustomClass .glyphicon-tags:before {
+  content: "\e042";
+}
+.ashCustomClass .glyphicon-book:before {
+  content: "\e043";
+}
+.ashCustomClass .glyphicon-bookmark:before {
+  content: "\e044";
+}
+.ashCustomClass .glyphicon-print:before {
+  content: "\e045";
+}
+.ashCustomClass .glyphicon-camera:before {
+  content: "\e046";
+}
+.ashCustomClass .glyphicon-font:before {
+  content: "\e047";
+}
+.ashCustomClass .glyphicon-bold:before {
+  content: "\e048";
+}
+.ashCustomClass .glyphicon-italic:before {
+  content: "\e049";
+}
+.ashCustomClass .glyphicon-text-height:before {
+  content: "\e050";
+}
+.ashCustomClass .glyphicon-text-width:before {
+  content: "\e051";
+}
+.ashCustomClass .glyphicon-align-left:before {
+  content: "\e052";
+}
+.ashCustomClass .glyphicon-align-center:before {
+  content: "\e053";
+}
+.ashCustomClass .glyphicon-align-right:before {
+  content: "\e054";
+}
+.ashCustomClass .glyphicon-align-justify:before {
+  content: "\e055";
+}
+.ashCustomClass .glyphicon-list:before {
+  content: "\e056";
+}
+.ashCustomClass .glyphicon-indent-left:before {
+  content: "\e057";
+}
+.ashCustomClass .glyphicon-indent-right:before {
+  content: "\e058";
+}
+.ashCustomClass .glyphicon-facetime-video:before {
+  content: "\e059";
+}
+.ashCustomClass .glyphicon-picture:before {
+  content: "\e060";
+}
+.ashCustomClass .glyphicon-map-marker:before {
+  content: "\e062";
+}
+.ashCustomClass .glyphicon-adjust:before {
+  content: "\e063";
+}
+.ashCustomClass .glyphicon-tint:before {
+  content: "\e064";
+}
+.ashCustomClass .glyphicon-edit:before {
+  content: "\e065";
+}
+.ashCustomClass .glyphicon-share:before {
+  content: "\e066";
+}
+.ashCustomClass .glyphicon-check:before {
+  content: "\e067";
+}
+.ashCustomClass .glyphicon-move:before {
+  content: "\e068";
+}
+.ashCustomClass .glyphicon-step-backward:before {
+  content: "\e069";
+}
+.ashCustomClass .glyphicon-fast-backward:before {
+  content: "\e070";
+}
+.ashCustomClass .glyphicon-backward:before {
+  content: "\e071";
+}
+.ashCustomClass .glyphicon-play:before {
+  content: "\e072";
+}
+.ashCustomClass .glyphicon-pause:before {
+  content: "\e073";
+}
+.ashCustomClass .glyphicon-stop:before {
+  content: "\e074";
+}
+.ashCustomClass .glyphicon-forward:before {
+  content: "\e075";
+}
+.ashCustomClass .glyphicon-fast-forward:before {
+  content: "\e076";
+}
+.ashCustomClass .glyphicon-step-forward:before {
+  content: "\e077";
+}
+.ashCustomClass .glyphicon-eject:before {
+  content: "\e078";
+}
+.ashCustomClass .glyphicon-chevron-left:before {
+  content: "\e079";
+}
+.ashCustomClass .glyphicon-chevron-right:before {
+  content: "\e080";
+}
+.ashCustomClass .glyphicon-plus-sign:before {
+  content: "\e081";
+}
+.ashCustomClass .glyphicon-minus-sign:before {
+  content: "\e082";
+}
+.ashCustomClass .glyphicon-remove-sign:before {
+  content: "\e083";
+}
+.ashCustomClass .glyphicon-ok-sign:before {
+  content: "\e084";
+}
+.ashCustomClass .glyphicon-question-sign:before {
+  content: "\e085";
+}
+.ashCustomClass .glyphicon-info-sign:before {
+  content: "\e086";
+}
+.ashCustomClass .glyphicon-screenshot:before {
+  content: "\e087";
+}
+.ashCustomClass .glyphicon-remove-circle:before {
+  content: "\e088";
+}
+.ashCustomClass .glyphicon-ok-circle:before {
+  content: "\e089";
+}
+.ashCustomClass .glyphicon-ban-circle:before {
+  content: "\e090";
+}
+.ashCustomClass .glyphicon-arrow-left:before {
+  content: "\e091";
+}
+.ashCustomClass .glyphicon-arrow-right:before {
+  content: "\e092";
+}
+.ashCustomClass .glyphicon-arrow-up:before {
+  content: "\e093";
+}
+.ashCustomClass .glyphicon-arrow-down:before {
+  content: "\e094";
+}
+.ashCustomClass .glyphicon-share-alt:before {
+  content: "\e095";
+}
+.ashCustomClass .glyphicon-resize-full:before {
+  content: "\e096";
+}
+.ashCustomClass .glyphicon-resize-small:before {
+  content: "\e097";
+}
+.ashCustomClass .glyphicon-exclamation-sign:before {
+  content: "\e101";
+}
+.ashCustomClass .glyphicon-gift:before {
+  content: "\e102";
+}
+.ashCustomClass .glyphicon-leaf:before {
+  content: "\e103";
+}
+.ashCustomClass .glyphicon-fire:before {
+  content: "\e104";
+}
+.ashCustomClass .glyphicon-eye-open:before {
+  content: "\e105";
+}
+.ashCustomClass .glyphicon-eye-close:before {
+  content: "\e106";
+}
+.ashCustomClass .glyphicon-warning-sign:before {
+  content: "\e107";
+}
+.ashCustomClass .glyphicon-plane:before {
+  content: "\e108";
+}
+.ashCustomClass .glyphicon-calendar:before {
+  content: "\e109";
+}
+.ashCustomClass .glyphicon-random:before {
+  content: "\e110";
+}
+.ashCustomClass .glyphicon-comment:before {
+  content: "\e111";
+}
+.ashCustomClass .glyphicon-magnet:before {
+  content: "\e112";
+}
+.ashCustomClass .glyphicon-chevron-up:before {
+  content: "\e113";
+}
+.ashCustomClass .glyphicon-chevron-down:before {
+  content: "\e114";
+}
+.ashCustomClass .glyphicon-retweet:before {
+  content: "\e115";
+}
+.ashCustomClass .glyphicon-shopping-cart:before {
+  content: "\e116";
+}
+.ashCustomClass .glyphicon-folder-close:before {
+  content: "\e117";
+}
+.ashCustomClass .glyphicon-folder-open:before {
+  content: "\e118";
+}
+.ashCustomClass .glyphicon-resize-vertical:before {
+  content: "\e119";
+}
+.ashCustomClass .glyphicon-resize-horizontal:before {
+  content: "\e120";
+}
+.ashCustomClass .glyphicon-hdd:before {
+  content: "\e121";
+}
+.ashCustomClass .glyphicon-bullhorn:before {
+  content: "\e122";
+}
+.ashCustomClass .glyphicon-bell:before {
+  content: "\e123";
+}
+.ashCustomClass .glyphicon-certificate:before {
+  content: "\e124";
+}
+.ashCustomClass .glyphicon-thumbs-up:before {
+  content: "\e125";
+}
+.ashCustomClass .glyphicon-thumbs-down:before {
+  content: "\e126";
+}
+.ashCustomClass .glyphicon-hand-right:before {
+  content: "\e127";
+}
+.ashCustomClass .glyphicon-hand-left:before {
+  content: "\e128";
+}
+.ashCustomClass .glyphicon-hand-up:before {
+  content: "\e129";
+}
+.ashCustomClass .glyphicon-hand-down:before {
+  content: "\e130";
+}
+.ashCustomClass .glyphicon-circle-arrow-right:before {
+  content: "\e131";
+}
+.ashCustomClass .glyphicon-circle-arrow-left:before {
+  content: "\e132";
+}
+.ashCustomClass .glyphicon-circle-arrow-up:before {
+  content: "\e133";
+}
+.ashCustomClass .glyphicon-circle-arrow-down:before {
+  content: "\e134";
+}
+.ashCustomClass .glyphicon-globe:before {
+  content: "\e135";
+}
+.ashCustomClass .glyphicon-wrench:before {
+  content: "\e136";
+}
+.ashCustomClass .glyphicon-tasks:before {
+  content: "\e137";
+}
+.ashCustomClass .glyphicon-filter:before {
+  content: "\e138";
+}
+.ashCustomClass .glyphicon-briefcase:before {
+  content: "\e139";
+}
+.ashCustomClass .glyphicon-fullscreen:before {
+  content: "\e140";
+}
+.ashCustomClass .glyphicon-dashboard:before {
+  content: "\e141";
+}
+.ashCustomClass .glyphicon-paperclip:before {
+  content: "\e142";
+}
+.ashCustomClass .glyphicon-heart-empty:before {
+  content: "\e143";
+}
+.ashCustomClass .glyphicon-link:before {
+  content: "\e144";
+}
+.ashCustomClass .glyphicon-phone:before {
+  content: "\e145";
+}
+.ashCustomClass .glyphicon-pushpin:before {
+  content: "\e146";
+}
+.ashCustomClass .glyphicon-usd:before {
+  content: "\e148";
+}
+.ashCustomClass .glyphicon-gbp:before {
+  content: "\e149";
+}
+.ashCustomClass .glyphicon-sort:before {
+  content: "\e150";
+}
+.ashCustomClass .glyphicon-sort-by-alphabet:before {
+  content: "\e151";
+}
+.ashCustomClass .glyphicon-sort-by-alphabet-alt:before {
+  content: "\e152";
+}
+.ashCustomClass .glyphicon-sort-by-order:before {
+  content: "\e153";
+}
+.ashCustomClass .glyphicon-sort-by-order-alt:before {
+  content: "\e154";
+}
+.ashCustomClass .glyphicon-sort-by-attributes:before {
+  content: "\e155";
+}
+.ashCustomClass .glyphicon-sort-by-attributes-alt:before {
+  content: "\e156";
+}
+.ashCustomClass .glyphicon-unchecked:before {
+  content: "\e157";
+}
+.ashCustomClass .glyphicon-expand:before {
+  content: "\e158";
+}
+.ashCustomClass .glyphicon-collapse-down:before {
+  content: "\e159";
+}
+.ashCustomClass .glyphicon-collapse-up:before {
+  content: "\e160";
+}
+.ashCustomClass .glyphicon-log-in:before {
+  content: "\e161";
+}
+.ashCustomClass .glyphicon-flash:before {
+  content: "\e162";
+}
+.ashCustomClass .glyphicon-log-out:before {
+  content: "\e163";
+}
+.ashCustomClass .glyphicon-new-window:before {
+  content: "\e164";
+}
+.ashCustomClass .glyphicon-record:before {
+  content: "\e165";
+}
+.ashCustomClass .glyphicon-save:before {
+  content: "\e166";
+}
+.ashCustomClass .glyphicon-open:before {
+  content: "\e167";
+}
+.ashCustomClass .glyphicon-saved:before {
+  content: "\e168";
+}
+.ashCustomClass .glyphicon-import:before {
+  content: "\e169";
+}
+.ashCustomClass .glyphicon-export:before {
+  content: "\e170";
+}
+.ashCustomClass .glyphicon-send:before {
+  content: "\e171";
+}
+.ashCustomClass .glyphicon-floppy-disk:before {
+  content: "\e172";
+}
+.ashCustomClass .glyphicon-floppy-saved:before {
+  content: "\e173";
+}
+.ashCustomClass .glyphicon-floppy-remove:before {
+  content: "\e174";
+}
+.ashCustomClass .glyphicon-floppy-save:before {
+  content: "\e175";
+}
+.ashCustomClass .glyphicon-floppy-open:before {
+  content: "\e176";
+}
+.ashCustomClass .glyphicon-credit-card:before {
+  content: "\e177";
+}
+.ashCustomClass .glyphicon-transfer:before {
+  content: "\e178";
+}
+.ashCustomClass .glyphicon-cutlery:before {
+  content: "\e179";
+}
+.ashCustomClass .glyphicon-header:before {
+  content: "\e180";
+}
+.ashCustomClass .glyphicon-compressed:before {
+  content: "\e181";
+}
+.ashCustomClass .glyphicon-earphone:before {
+  content: "\e182";
+}
+.ashCustomClass .glyphicon-phone-alt:before {
+  content: "\e183";
+}
+.ashCustomClass .glyphicon-tower:before {
+  content: "\e184";
+}
+.ashCustomClass .glyphicon-stats:before {
+  content: "\e185";
+}
+.ashCustomClass .glyphicon-sd-video:before {
+  content: "\e186";
+}
+.ashCustomClass .glyphicon-hd-video:before {
+  content: "\e187";
+}
+.ashCustomClass .glyphicon-subtitles:before {
+  content: "\e188";
+}
+.ashCustomClass .glyphicon-sound-stereo:before {
+  content: "\e189";
+}
+.ashCustomClass .glyphicon-sound-dolby:before {
+  content: "\e190";
+}
+.ashCustomClass .glyphicon-sound-5-1:before {
+  content: "\e191";
+}
+.ashCustomClass .glyphicon-sound-6-1:before {
+  content: "\e192";
+}
+.ashCustomClass .glyphicon-sound-7-1:before {
+  content: "\e193";
+}
+.ashCustomClass .glyphicon-copyright-mark:before {
+  content: "\e194";
+}
+.ashCustomClass .glyphicon-registration-mark:before {
+  content: "\e195";
+}
+.ashCustomClass .glyphicon-cloud-download:before {
+  content: "\e197";
+}
+.ashCustomClass .glyphicon-cloud-upload:before {
+  content: "\e198";
+}
+.ashCustomClass .glyphicon-tree-conifer:before {
+  content: "\e199";
+}
+.ashCustomClass .glyphicon-tree-deciduous:before {
+  content: "\e200";
+}
+.ashCustomClass .glyphicon-cd:before {
+  content: "\e201";
+}
+.ashCustomClass .glyphicon-save-file:before {
+  content: "\e202";
+}
+.ashCustomClass .glyphicon-open-file:before {
+  content: "\e203";
+}
+.ashCustomClass .glyphicon-level-up:before {
+  content: "\e204";
+}
+.ashCustomClass .glyphicon-copy:before {
+  content: "\e205";
+}
+.ashCustomClass .glyphicon-paste:before {
+  content: "\e206";
+}
+.ashCustomClass .glyphicon-alert:before {
+  content: "\e209";
+}
+.ashCustomClass .glyphicon-equalizer:before {
+  content: "\e210";
+}
+.ashCustomClass .glyphicon-king:before {
+  content: "\e211";
+}
+.ashCustomClass .glyphicon-queen:before {
+  content: "\e212";
+}
+.ashCustomClass .glyphicon-pawn:before {
+  content: "\e213";
+}
+.ashCustomClass .glyphicon-bishop:before {
+  content: "\e214";
+}
+.ashCustomClass .glyphicon-knight:before {
+  content: "\e215";
+}
+.ashCustomClass .glyphicon-baby-formula:before {
+  content: "\e216";
+}
+.ashCustomClass .glyphicon-tent:before {
+  content: "\26fa";
+}
+.ashCustomClass .glyphicon-blackboard:before {
+  content: "\e218";
+}
+.ashCustomClass .glyphicon-bed:before {
+  content: "\e219";
+}
+.ashCustomClass .glyphicon-apple:before {
+  content: "\f8ff";
+}
+.ashCustomClass .glyphicon-erase:before {
+  content: "\e221";
+}
+.ashCustomClass .glyphicon-hourglass:before {
+  content: "\231b";
+}
+.ashCustomClass .glyphicon-lamp:before {
+  content: "\e223";
+}
+.ashCustomClass .glyphicon-duplicate:before {
+  content: "\e224";
+}
+.ashCustomClass .glyphicon-piggy-bank:before {
+  content: "\e225";
+}
+.ashCustomClass .glyphicon-scissors:before {
+  content: "\e226";
+}
+.ashCustomClass .glyphicon-bitcoin:before {
+  content: "\e227";
+}
+.ashCustomClass .glyphicon-btc:before {
+  content: "\e227";
+}
+.ashCustomClass .glyphicon-xbt:before {
+  content: "\e227";
+}
+.ashCustomClass .glyphicon-yen:before {
+  content: "\00a5";
+}
+.ashCustomClass .glyphicon-jpy:before {
+  content: "\00a5";
+}
+.ashCustomClass .glyphicon-ruble:before {
+  content: "\20bd";
+}
+.ashCustomClass .glyphicon-rub:before {
+  content: "\20bd";
+}
+.ashCustomClass .glyphicon-scale:before {
+  content: "\e230";
+}
+.ashCustomClass .glyphicon-ice-lolly:before {
+  content: "\e231";
+}
+.ashCustomClass .glyphicon-ice-lolly-tasted:before {
+  content: "\e232";
+}
+.ashCustomClass .glyphicon-education:before {
+  content: "\e233";
+}
+.ashCustomClass .glyphicon-option-horizontal:before {
+  content: "\e234";
+}
+.ashCustomClass .glyphicon-option-vertical:before {
+  content: "\e235";
+}
+.ashCustomClass .glyphicon-menu-hamburger:before {
+  content: "\e236";
+}
+.ashCustomClass .glyphicon-modal-window:before {
+  content: "\e237";
+}
+.ashCustomClass .glyphicon-oil:before {
+  content: "\e238";
+}
+.ashCustomClass .glyphicon-grain:before {
+  content: "\e239";
+}
+.ashCustomClass .glyphicon-sunglasses:before {
+  content: "\e240";
+}
+.ashCustomClass .glyphicon-text-size:before {
+  content: "\e241";
+}
+.ashCustomClass .glyphicon-text-color:before {
+  content: "\e242";
+}
+.ashCustomClass .glyphicon-text-background:before {
+  content: "\e243";
+}
+.ashCustomClass .glyphicon-object-align-top:before {
+  content: "\e244";
+}
+.ashCustomClass .glyphicon-object-align-bottom:before {
+  content: "\e245";
+}
+.ashCustomClass .glyphicon-object-align-horizontal:before {
+  content: "\e246";
+}
+.ashCustomClass .glyphicon-object-align-left:before {
+  content: "\e247";
+}
+.ashCustomClass .glyphicon-object-align-vertical:before {
+  content: "\e248";
+}
+.ashCustomClass .glyphicon-object-align-right:before {
+  content: "\e249";
+}
+.ashCustomClass .glyphicon-triangle-right:before {
+  content: "\e250";
+}
+.ashCustomClass .glyphicon-triangle-left:before {
+  content: "\e251";
+}
+.ashCustomClass .glyphicon-triangle-bottom:before {
+  content: "\e252";
+}
+.ashCustomClass .glyphicon-triangle-top:before {
+  content: "\e253";
+}
+.ashCustomClass .glyphicon-console:before {
+  content: "\e254";
+}
+.ashCustomClass .glyphicon-superscript:before {
+  content: "\e255";
+}
+.ashCustomClass .glyphicon-subscript:before {
+  content: "\e256";
+}
+.ashCustomClass .glyphicon-menu-left:before {
+  content: "\e257";
+}
+.ashCustomClass .glyphicon-menu-right:before {
+  content: "\e258";
+}
+.ashCustomClass .glyphicon-menu-down:before {
+  content: "\e259";
+}
+.ashCustomClass .glyphicon-menu-up:before {
+  content: "\e260";
+}
+.ashCustomClass * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ashCustomClass *:before,
+.ashCustomClass *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ashCustomClass html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.ashCustomClass body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+.ashCustomClass input,
+.ashCustomClass button,
+.ashCustomClass select,
+.ashCustomClass textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.ashCustomClass a {
+  color: #337ab7;
+  text-decoration: none;
+}
+.ashCustomClass a:hover,
+.ashCustomClass a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+.ashCustomClass a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.ashCustomClass figure {
+  margin: 0;
+}
+.ashCustomClass img {
+  vertical-align: middle;
+}
+.ashCustomClass .img-responsive,
+.ashCustomClass .thumbnail > img,
+.ashCustomClass .thumbnail a > img,
+.ashCustomClass .carousel-inner > .item > img,
+.ashCustomClass .carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.ashCustomClass .img-rounded {
+  border-radius: 6px;
+}
+.ashCustomClass .img-thumbnail {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.ashCustomClass .img-circle {
+  border-radius: 50%;
+}
+.ashCustomClass hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+.ashCustomClass .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.ashCustomClass .sr-only-focusable:active,
+.ashCustomClass .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.ashCustomClass [role="button"] {
+  cursor: pointer;
+}
+.ashCustomClass h1,
+.ashCustomClass h2,
+.ashCustomClass h3,
+.ashCustomClass h4,
+.ashCustomClass h5,
+.ashCustomClass h6,
+.ashCustomClass .h1,
+.ashCustomClass .h2,
+.ashCustomClass .h3,
+.ashCustomClass .h4,
+.ashCustomClass .h5,
+.ashCustomClass .h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+.ashCustomClass h1 small,
+.ashCustomClass h2 small,
+.ashCustomClass h3 small,
+.ashCustomClass h4 small,
+.ashCustomClass h5 small,
+.ashCustomClass h6 small,
+.ashCustomClass .h1 small,
+.ashCustomClass .h2 small,
+.ashCustomClass .h3 small,
+.ashCustomClass .h4 small,
+.ashCustomClass .h5 small,
+.ashCustomClass .h6 small,
+.ashCustomClass h1 .small,
+.ashCustomClass h2 .small,
+.ashCustomClass h3 .small,
+.ashCustomClass h4 .small,
+.ashCustomClass h5 .small,
+.ashCustomClass h6 .small,
+.ashCustomClass .h1 .small,
+.ashCustomClass .h2 .small,
+.ashCustomClass .h3 .small,
+.ashCustomClass .h4 .small,
+.ashCustomClass .h5 .small,
+.ashCustomClass .h6 .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777;
+}
+.ashCustomClass h1,
+.ashCustomClass .h1,
+.ashCustomClass h2,
+.ashCustomClass .h2,
+.ashCustomClass h3,
+.ashCustomClass .h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.ashCustomClass h1 small,
+.ashCustomClass .h1 small,
+.ashCustomClass h2 small,
+.ashCustomClass .h2 small,
+.ashCustomClass h3 small,
+.ashCustomClass .h3 small,
+.ashCustomClass h1 .small,
+.ashCustomClass .h1 .small,
+.ashCustomClass h2 .small,
+.ashCustomClass .h2 .small,
+.ashCustomClass h3 .small,
+.ashCustomClass .h3 .small {
+  font-size: 65%;
+}
+.ashCustomClass h4,
+.ashCustomClass .h4,
+.ashCustomClass h5,
+.ashCustomClass .h5,
+.ashCustomClass h6,
+.ashCustomClass .h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ashCustomClass h4 small,
+.ashCustomClass .h4 small,
+.ashCustomClass h5 small,
+.ashCustomClass .h5 small,
+.ashCustomClass h6 small,
+.ashCustomClass .h6 small,
+.ashCustomClass h4 .small,
+.ashCustomClass .h4 .small,
+.ashCustomClass h5 .small,
+.ashCustomClass .h5 .small,
+.ashCustomClass h6 .small,
+.ashCustomClass .h6 .small {
+  font-size: 75%;
+}
+.ashCustomClass h1,
+.ashCustomClass .h1 {
+  font-size: 36px;
+}
+.ashCustomClass h2,
+.ashCustomClass .h2 {
+  font-size: 30px;
+}
+.ashCustomClass h3,
+.ashCustomClass .h3 {
+  font-size: 24px;
+}
+.ashCustomClass h4,
+.ashCustomClass .h4 {
+  font-size: 18px;
+}
+.ashCustomClass h5,
+.ashCustomClass .h5 {
+  font-size: 14px;
+}
+.ashCustomClass h6,
+.ashCustomClass .h6 {
+  font-size: 12px;
+}
+.ashCustomClass p {
+  margin: 0 0 10px;
+}
+.ashCustomClass .lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .lead {
+    font-size: 21px;
+  }
+}
+.ashCustomClass small,
+.ashCustomClass .small {
+  font-size: 85%;
+}
+.ashCustomClass mark,
+.ashCustomClass .mark {
+  padding: .2em;
+  background-color: #fcf8e3;
+}
+.ashCustomClass .text-left {
+  text-align: left;
+}
+.ashCustomClass .text-right {
+  text-align: right;
+}
+.ashCustomClass .text-center {
+  text-align: center;
+}
+.ashCustomClass .text-justify {
+  text-align: justify;
+}
+.ashCustomClass .text-nowrap {
+  white-space: nowrap;
+}
+.ashCustomClass .text-lowercase {
+  text-transform: lowercase;
+}
+.ashCustomClass .text-uppercase {
+  text-transform: uppercase;
+}
+.ashCustomClass .text-capitalize {
+  text-transform: capitalize;
+}
+.ashCustomClass .text-muted {
+  color: #777;
+}
+.ashCustomClass .text-primary {
+  color: #337ab7;
+}
+.ashCustomClass a.text-primary:hover {
+  color: #286090;
+}
+.ashCustomClass .text-success {
+  color: #3c763d;
+}
+.ashCustomClass a.text-success:hover {
+  color: #2b542c;
+}
+.ashCustomClass .text-info {
+  color: #31708f;
+}
+.ashCustomClass a.text-info:hover {
+  color: #245269;
+}
+.ashCustomClass .text-warning {
+  color: #8a6d3b;
+}
+.ashCustomClass a.text-warning:hover {
+  color: #66512c;
+}
+.ashCustomClass .text-danger {
+  color: #a94442;
+}
+.ashCustomClass a.text-danger:hover {
+  color: #843534;
+}
+.ashCustomClass .bg-primary {
+  color: #fff;
+  background-color: #337ab7;
+}
+.ashCustomClass a.bg-primary:hover {
+  background-color: #286090;
+}
+.ashCustomClass .bg-success {
+  background-color: #dff0d8;
+}
+.ashCustomClass a.bg-success:hover {
+  background-color: #c1e2b3;
+}
+.ashCustomClass .bg-info {
+  background-color: #d9edf7;
+}
+.ashCustomClass a.bg-info:hover {
+  background-color: #afd9ee;
+}
+.ashCustomClass .bg-warning {
+  background-color: #fcf8e3;
+}
+.ashCustomClass a.bg-warning:hover {
+  background-color: #f7ecb5;
+}
+.ashCustomClass .bg-danger {
+  background-color: #f2dede;
+}
+.ashCustomClass a.bg-danger:hover {
+  background-color: #e4b9b9;
+}
+.ashCustomClass .page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+}
+.ashCustomClass ul,
+.ashCustomClass ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.ashCustomClass ul ul,
+.ashCustomClass ol ul,
+.ashCustomClass ul ol,
+.ashCustomClass ol ol {
+  margin-bottom: 0;
+}
+.ashCustomClass .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.ashCustomClass .list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.ashCustomClass .list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.ashCustomClass dl {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.ashCustomClass dt,
+.ashCustomClass dd {
+  line-height: 1.42857143;
+}
+.ashCustomClass dt {
+  font-weight: bold;
+}
+.ashCustomClass dd {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .ashCustomClass .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+.ashCustomClass abbr[title],
+.ashCustomClass abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #777;
+}
+.ashCustomClass .initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+.ashCustomClass blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eee;
+}
+.ashCustomClass blockquote p:last-child,
+.ashCustomClass blockquote ul:last-child,
+.ashCustomClass blockquote ol:last-child {
+  margin-bottom: 0;
+}
+.ashCustomClass blockquote footer,
+.ashCustomClass blockquote small,
+.ashCustomClass blockquote .small {
+  display: block;
+  font-size: 80%;
+  line-height: 1.42857143;
+  color: #777;
+}
+.ashCustomClass blockquote footer:before,
+.ashCustomClass blockquote small:before,
+.ashCustomClass blockquote .small:before {
+  content: '\2014 \00A0';
+}
+.ashCustomClass .blockquote-reverse,
+.ashCustomClass blockquote.pull-right {
+  padding-right: 15px;
+  padding-left: 0;
+  text-align: right;
+  border-right: 5px solid #eee;
+  border-left: 0;
+}
+.ashCustomClass .blockquote-reverse footer:before,
+.ashCustomClass blockquote.pull-right footer:before,
+.ashCustomClass .blockquote-reverse small:before,
+.ashCustomClass blockquote.pull-right small:before,
+.ashCustomClass .blockquote-reverse .small:before,
+.ashCustomClass blockquote.pull-right .small:before {
+  content: '';
+}
+.ashCustomClass .blockquote-reverse footer:after,
+.ashCustomClass blockquote.pull-right footer:after,
+.ashCustomClass .blockquote-reverse small:after,
+.ashCustomClass blockquote.pull-right small:after,
+.ashCustomClass .blockquote-reverse .small:after,
+.ashCustomClass blockquote.pull-right .small:after {
+  content: '\00A0 \2014';
+}
+.ashCustomClass address {
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1.42857143;
+}
+.ashCustomClass code,
+.ashCustomClass kbd,
+.ashCustomClass pre,
+.ashCustomClass samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.ashCustomClass code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+.ashCustomClass kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #fff;
+  background-color: #333;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.ashCustomClass kbd kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ashCustomClass pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.ashCustomClass pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+.ashCustomClass .pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+.ashCustomClass .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .ashCustomClass .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .ashCustomClass .container {
+    width: 1170px;
+  }
+}
+.ashCustomClass .container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.ashCustomClass .row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.ashCustomClass .col-xs-1,
+.ashCustomClass .col-sm-1,
+.ashCustomClass .col-md-1,
+.ashCustomClass .col-lg-1,
+.ashCustomClass .col-xs-2,
+.ashCustomClass .col-sm-2,
+.ashCustomClass .col-md-2,
+.ashCustomClass .col-lg-2,
+.ashCustomClass .col-xs-3,
+.ashCustomClass .col-sm-3,
+.ashCustomClass .col-md-3,
+.ashCustomClass .col-lg-3,
+.ashCustomClass .col-xs-4,
+.ashCustomClass .col-sm-4,
+.ashCustomClass .col-md-4,
+.ashCustomClass .col-lg-4,
+.ashCustomClass .col-xs-5,
+.ashCustomClass .col-sm-5,
+.ashCustomClass .col-md-5,
+.ashCustomClass .col-lg-5,
+.ashCustomClass .col-xs-6,
+.ashCustomClass .col-sm-6,
+.ashCustomClass .col-md-6,
+.ashCustomClass .col-lg-6,
+.ashCustomClass .col-xs-7,
+.ashCustomClass .col-sm-7,
+.ashCustomClass .col-md-7,
+.ashCustomClass .col-lg-7,
+.ashCustomClass .col-xs-8,
+.ashCustomClass .col-sm-8,
+.ashCustomClass .col-md-8,
+.ashCustomClass .col-lg-8,
+.ashCustomClass .col-xs-9,
+.ashCustomClass .col-sm-9,
+.ashCustomClass .col-md-9,
+.ashCustomClass .col-lg-9,
+.ashCustomClass .col-xs-10,
+.ashCustomClass .col-sm-10,
+.ashCustomClass .col-md-10,
+.ashCustomClass .col-lg-10,
+.ashCustomClass .col-xs-11,
+.ashCustomClass .col-sm-11,
+.ashCustomClass .col-md-11,
+.ashCustomClass .col-lg-11,
+.ashCustomClass .col-xs-12,
+.ashCustomClass .col-sm-12,
+.ashCustomClass .col-md-12,
+.ashCustomClass .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.ashCustomClass .col-xs-1,
+.ashCustomClass .col-xs-2,
+.ashCustomClass .col-xs-3,
+.ashCustomClass .col-xs-4,
+.ashCustomClass .col-xs-5,
+.ashCustomClass .col-xs-6,
+.ashCustomClass .col-xs-7,
+.ashCustomClass .col-xs-8,
+.ashCustomClass .col-xs-9,
+.ashCustomClass .col-xs-10,
+.ashCustomClass .col-xs-11,
+.ashCustomClass .col-xs-12 {
+  float: left;
+}
+.ashCustomClass .col-xs-12 {
+  width: 100%;
+}
+.ashCustomClass .col-xs-11 {
+  width: 91.66666667%;
+}
+.ashCustomClass .col-xs-10 {
+  width: 83.33333333%;
+}
+.ashCustomClass .col-xs-9 {
+  width: 75%;
+}
+.ashCustomClass .col-xs-8 {
+  width: 66.66666667%;
+}
+.ashCustomClass .col-xs-7 {
+  width: 58.33333333%;
+}
+.ashCustomClass .col-xs-6 {
+  width: 50%;
+}
+.ashCustomClass .col-xs-5 {
+  width: 41.66666667%;
+}
+.ashCustomClass .col-xs-4 {
+  width: 33.33333333%;
+}
+.ashCustomClass .col-xs-3 {
+  width: 25%;
+}
+.ashCustomClass .col-xs-2 {
+  width: 16.66666667%;
+}
+.ashCustomClass .col-xs-1 {
+  width: 8.33333333%;
+}
+.ashCustomClass .col-xs-pull-12 {
+  right: 100%;
+}
+.ashCustomClass .col-xs-pull-11 {
+  right: 91.66666667%;
+}
+.ashCustomClass .col-xs-pull-10 {
+  right: 83.33333333%;
+}
+.ashCustomClass .col-xs-pull-9 {
+  right: 75%;
+}
+.ashCustomClass .col-xs-pull-8 {
+  right: 66.66666667%;
+}
+.ashCustomClass .col-xs-pull-7 {
+  right: 58.33333333%;
+}
+.ashCustomClass .col-xs-pull-6 {
+  right: 50%;
+}
+.ashCustomClass .col-xs-pull-5 {
+  right: 41.66666667%;
+}
+.ashCustomClass .col-xs-pull-4 {
+  right: 33.33333333%;
+}
+.ashCustomClass .col-xs-pull-3 {
+  right: 25%;
+}
+.ashCustomClass .col-xs-pull-2 {
+  right: 16.66666667%;
+}
+.ashCustomClass .col-xs-pull-1 {
+  right: 8.33333333%;
+}
+.ashCustomClass .col-xs-pull-0 {
+  right: auto;
+}
+.ashCustomClass .col-xs-push-12 {
+  left: 100%;
+}
+.ashCustomClass .col-xs-push-11 {
+  left: 91.66666667%;
+}
+.ashCustomClass .col-xs-push-10 {
+  left: 83.33333333%;
+}
+.ashCustomClass .col-xs-push-9 {
+  left: 75%;
+}
+.ashCustomClass .col-xs-push-8 {
+  left: 66.66666667%;
+}
+.ashCustomClass .col-xs-push-7 {
+  left: 58.33333333%;
+}
+.ashCustomClass .col-xs-push-6 {
+  left: 50%;
+}
+.ashCustomClass .col-xs-push-5 {
+  left: 41.66666667%;
+}
+.ashCustomClass .col-xs-push-4 {
+  left: 33.33333333%;
+}
+.ashCustomClass .col-xs-push-3 {
+  left: 25%;
+}
+.ashCustomClass .col-xs-push-2 {
+  left: 16.66666667%;
+}
+.ashCustomClass .col-xs-push-1 {
+  left: 8.33333333%;
+}
+.ashCustomClass .col-xs-push-0 {
+  left: auto;
+}
+.ashCustomClass .col-xs-offset-12 {
+  margin-left: 100%;
+}
+.ashCustomClass .col-xs-offset-11 {
+  margin-left: 91.66666667%;
+}
+.ashCustomClass .col-xs-offset-10 {
+  margin-left: 83.33333333%;
+}
+.ashCustomClass .col-xs-offset-9 {
+  margin-left: 75%;
+}
+.ashCustomClass .col-xs-offset-8 {
+  margin-left: 66.66666667%;
+}
+.ashCustomClass .col-xs-offset-7 {
+  margin-left: 58.33333333%;
+}
+.ashCustomClass .col-xs-offset-6 {
+  margin-left: 50%;
+}
+.ashCustomClass .col-xs-offset-5 {
+  margin-left: 41.66666667%;
+}
+.ashCustomClass .col-xs-offset-4 {
+  margin-left: 33.33333333%;
+}
+.ashCustomClass .col-xs-offset-3 {
+  margin-left: 25%;
+}
+.ashCustomClass .col-xs-offset-2 {
+  margin-left: 16.66666667%;
+}
+.ashCustomClass .col-xs-offset-1 {
+  margin-left: 8.33333333%;
+}
+.ashCustomClass .col-xs-offset-0 {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .col-sm-1,
+  .ashCustomClass .col-sm-2,
+  .ashCustomClass .col-sm-3,
+  .ashCustomClass .col-sm-4,
+  .ashCustomClass .col-sm-5,
+  .ashCustomClass .col-sm-6,
+  .ashCustomClass .col-sm-7,
+  .ashCustomClass .col-sm-8,
+  .ashCustomClass .col-sm-9,
+  .ashCustomClass .col-sm-10,
+  .ashCustomClass .col-sm-11,
+  .ashCustomClass .col-sm-12 {
+    float: left;
+  }
+  .ashCustomClass .col-sm-12 {
+    width: 100%;
+  }
+  .ashCustomClass .col-sm-11 {
+    width: 91.66666667%;
+  }
+  .ashCustomClass .col-sm-10 {
+    width: 83.33333333%;
+  }
+  .ashCustomClass .col-sm-9 {
+    width: 75%;
+  }
+  .ashCustomClass .col-sm-8 {
+    width: 66.66666667%;
+  }
+  .ashCustomClass .col-sm-7 {
+    width: 58.33333333%;
+  }
+  .ashCustomClass .col-sm-6 {
+    width: 50%;
+  }
+  .ashCustomClass .col-sm-5 {
+    width: 41.66666667%;
+  }
+  .ashCustomClass .col-sm-4 {
+    width: 33.33333333%;
+  }
+  .ashCustomClass .col-sm-3 {
+    width: 25%;
+  }
+  .ashCustomClass .col-sm-2 {
+    width: 16.66666667%;
+  }
+  .ashCustomClass .col-sm-1 {
+    width: 8.33333333%;
+  }
+  .ashCustomClass .col-sm-pull-12 {
+    right: 100%;
+  }
+  .ashCustomClass .col-sm-pull-11 {
+    right: 91.66666667%;
+  }
+  .ashCustomClass .col-sm-pull-10 {
+    right: 83.33333333%;
+  }
+  .ashCustomClass .col-sm-pull-9 {
+    right: 75%;
+  }
+  .ashCustomClass .col-sm-pull-8 {
+    right: 66.66666667%;
+  }
+  .ashCustomClass .col-sm-pull-7 {
+    right: 58.33333333%;
+  }
+  .ashCustomClass .col-sm-pull-6 {
+    right: 50%;
+  }
+  .ashCustomClass .col-sm-pull-5 {
+    right: 41.66666667%;
+  }
+  .ashCustomClass .col-sm-pull-4 {
+    right: 33.33333333%;
+  }
+  .ashCustomClass .col-sm-pull-3 {
+    right: 25%;
+  }
+  .ashCustomClass .col-sm-pull-2 {
+    right: 16.66666667%;
+  }
+  .ashCustomClass .col-sm-pull-1 {
+    right: 8.33333333%;
+  }
+  .ashCustomClass .col-sm-pull-0 {
+    right: auto;
+  }
+  .ashCustomClass .col-sm-push-12 {
+    left: 100%;
+  }
+  .ashCustomClass .col-sm-push-11 {
+    left: 91.66666667%;
+  }
+  .ashCustomClass .col-sm-push-10 {
+    left: 83.33333333%;
+  }
+  .ashCustomClass .col-sm-push-9 {
+    left: 75%;
+  }
+  .ashCustomClass .col-sm-push-8 {
+    left: 66.66666667%;
+  }
+  .ashCustomClass .col-sm-push-7 {
+    left: 58.33333333%;
+  }
+  .ashCustomClass .col-sm-push-6 {
+    left: 50%;
+  }
+  .ashCustomClass .col-sm-push-5 {
+    left: 41.66666667%;
+  }
+  .ashCustomClass .col-sm-push-4 {
+    left: 33.33333333%;
+  }
+  .ashCustomClass .col-sm-push-3 {
+    left: 25%;
+  }
+  .ashCustomClass .col-sm-push-2 {
+    left: 16.66666667%;
+  }
+  .ashCustomClass .col-sm-push-1 {
+    left: 8.33333333%;
+  }
+  .ashCustomClass .col-sm-push-0 {
+    left: auto;
+  }
+  .ashCustomClass .col-sm-offset-12 {
+    margin-left: 100%;
+  }
+  .ashCustomClass .col-sm-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .ashCustomClass .col-sm-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .ashCustomClass .col-sm-offset-9 {
+    margin-left: 75%;
+  }
+  .ashCustomClass .col-sm-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .ashCustomClass .col-sm-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .ashCustomClass .col-sm-offset-6 {
+    margin-left: 50%;
+  }
+  .ashCustomClass .col-sm-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .ashCustomClass .col-sm-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .ashCustomClass .col-sm-offset-3 {
+    margin-left: 25%;
+  }
+  .ashCustomClass .col-sm-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .ashCustomClass .col-sm-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .ashCustomClass .col-sm-offset-0 {
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  .ashCustomClass .col-md-1,
+  .ashCustomClass .col-md-2,
+  .ashCustomClass .col-md-3,
+  .ashCustomClass .col-md-4,
+  .ashCustomClass .col-md-5,
+  .ashCustomClass .col-md-6,
+  .ashCustomClass .col-md-7,
+  .ashCustomClass .col-md-8,
+  .ashCustomClass .col-md-9,
+  .ashCustomClass .col-md-10,
+  .ashCustomClass .col-md-11,
+  .ashCustomClass .col-md-12 {
+    float: left;
+  }
+  .ashCustomClass .col-md-12 {
+    width: 100%;
+  }
+  .ashCustomClass .col-md-11 {
+    width: 91.66666667%;
+  }
+  .ashCustomClass .col-md-10 {
+    width: 83.33333333%;
+  }
+  .ashCustomClass .col-md-9 {
+    width: 75%;
+  }
+  .ashCustomClass .col-md-8 {
+    width: 66.66666667%;
+  }
+  .ashCustomClass .col-md-7 {
+    width: 58.33333333%;
+  }
+  .ashCustomClass .col-md-6 {
+    width: 50%;
+  }
+  .ashCustomClass .col-md-5 {
+    width: 41.66666667%;
+  }
+  .ashCustomClass .col-md-4 {
+    width: 33.33333333%;
+  }
+  .ashCustomClass .col-md-3 {
+    width: 25%;
+  }
+  .ashCustomClass .col-md-2 {
+    width: 16.66666667%;
+  }
+  .ashCustomClass .col-md-1 {
+    width: 8.33333333%;
+  }
+  .ashCustomClass .col-md-pull-12 {
+    right: 100%;
+  }
+  .ashCustomClass .col-md-pull-11 {
+    right: 91.66666667%;
+  }
+  .ashCustomClass .col-md-pull-10 {
+    right: 83.33333333%;
+  }
+  .ashCustomClass .col-md-pull-9 {
+    right: 75%;
+  }
+  .ashCustomClass .col-md-pull-8 {
+    right: 66.66666667%;
+  }
+  .ashCustomClass .col-md-pull-7 {
+    right: 58.33333333%;
+  }
+  .ashCustomClass .col-md-pull-6 {
+    right: 50%;
+  }
+  .ashCustomClass .col-md-pull-5 {
+    right: 41.66666667%;
+  }
+  .ashCustomClass .col-md-pull-4 {
+    right: 33.33333333%;
+  }
+  .ashCustomClass .col-md-pull-3 {
+    right: 25%;
+  }
+  .ashCustomClass .col-md-pull-2 {
+    right: 16.66666667%;
+  }
+  .ashCustomClass .col-md-pull-1 {
+    right: 8.33333333%;
+  }
+  .ashCustomClass .col-md-pull-0 {
+    right: auto;
+  }
+  .ashCustomClass .col-md-push-12 {
+    left: 100%;
+  }
+  .ashCustomClass .col-md-push-11 {
+    left: 91.66666667%;
+  }
+  .ashCustomClass .col-md-push-10 {
+    left: 83.33333333%;
+  }
+  .ashCustomClass .col-md-push-9 {
+    left: 75%;
+  }
+  .ashCustomClass .col-md-push-8 {
+    left: 66.66666667%;
+  }
+  .ashCustomClass .col-md-push-7 {
+    left: 58.33333333%;
+  }
+  .ashCustomClass .col-md-push-6 {
+    left: 50%;
+  }
+  .ashCustomClass .col-md-push-5 {
+    left: 41.66666667%;
+  }
+  .ashCustomClass .col-md-push-4 {
+    left: 33.33333333%;
+  }
+  .ashCustomClass .col-md-push-3 {
+    left: 25%;
+  }
+  .ashCustomClass .col-md-push-2 {
+    left: 16.66666667%;
+  }
+  .ashCustomClass .col-md-push-1 {
+    left: 8.33333333%;
+  }
+  .ashCustomClass .col-md-push-0 {
+    left: auto;
+  }
+  .ashCustomClass .col-md-offset-12 {
+    margin-left: 100%;
+  }
+  .ashCustomClass .col-md-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .ashCustomClass .col-md-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .ashCustomClass .col-md-offset-9 {
+    margin-left: 75%;
+  }
+  .ashCustomClass .col-md-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .ashCustomClass .col-md-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .ashCustomClass .col-md-offset-6 {
+    margin-left: 50%;
+  }
+  .ashCustomClass .col-md-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .ashCustomClass .col-md-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .ashCustomClass .col-md-offset-3 {
+    margin-left: 25%;
+  }
+  .ashCustomClass .col-md-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .ashCustomClass .col-md-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .ashCustomClass .col-md-offset-0 {
+    margin-left: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .ashCustomClass .col-lg-1,
+  .ashCustomClass .col-lg-2,
+  .ashCustomClass .col-lg-3,
+  .ashCustomClass .col-lg-4,
+  .ashCustomClass .col-lg-5,
+  .ashCustomClass .col-lg-6,
+  .ashCustomClass .col-lg-7,
+  .ashCustomClass .col-lg-8,
+  .ashCustomClass .col-lg-9,
+  .ashCustomClass .col-lg-10,
+  .ashCustomClass .col-lg-11,
+  .ashCustomClass .col-lg-12 {
+    float: left;
+  }
+  .ashCustomClass .col-lg-12 {
+    width: 100%;
+  }
+  .ashCustomClass .col-lg-11 {
+    width: 91.66666667%;
+  }
+  .ashCustomClass .col-lg-10 {
+    width: 83.33333333%;
+  }
+  .ashCustomClass .col-lg-9 {
+    width: 75%;
+  }
+  .ashCustomClass .col-lg-8 {
+    width: 66.66666667%;
+  }
+  .ashCustomClass .col-lg-7 {
+    width: 58.33333333%;
+  }
+  .ashCustomClass .col-lg-6 {
+    width: 50%;
+  }
+  .ashCustomClass .col-lg-5 {
+    width: 41.66666667%;
+  }
+  .ashCustomClass .col-lg-4 {
+    width: 33.33333333%;
+  }
+  .ashCustomClass .col-lg-3 {
+    width: 25%;
+  }
+  .ashCustomClass .col-lg-2 {
+    width: 16.66666667%;
+  }
+  .ashCustomClass .col-lg-1 {
+    width: 8.33333333%;
+  }
+  .ashCustomClass .col-lg-pull-12 {
+    right: 100%;
+  }
+  .ashCustomClass .col-lg-pull-11 {
+    right: 91.66666667%;
+  }
+  .ashCustomClass .col-lg-pull-10 {
+    right: 83.33333333%;
+  }
+  .ashCustomClass .col-lg-pull-9 {
+    right: 75%;
+  }
+  .ashCustomClass .col-lg-pull-8 {
+    right: 66.66666667%;
+  }
+  .ashCustomClass .col-lg-pull-7 {
+    right: 58.33333333%;
+  }
+  .ashCustomClass .col-lg-pull-6 {
+    right: 50%;
+  }
+  .ashCustomClass .col-lg-pull-5 {
+    right: 41.66666667%;
+  }
+  .ashCustomClass .col-lg-pull-4 {
+    right: 33.33333333%;
+  }
+  .ashCustomClass .col-lg-pull-3 {
+    right: 25%;
+  }
+  .ashCustomClass .col-lg-pull-2 {
+    right: 16.66666667%;
+  }
+  .ashCustomClass .col-lg-pull-1 {
+    right: 8.33333333%;
+  }
+  .ashCustomClass .col-lg-pull-0 {
+    right: auto;
+  }
+  .ashCustomClass .col-lg-push-12 {
+    left: 100%;
+  }
+  .ashCustomClass .col-lg-push-11 {
+    left: 91.66666667%;
+  }
+  .ashCustomClass .col-lg-push-10 {
+    left: 83.33333333%;
+  }
+  .ashCustomClass .col-lg-push-9 {
+    left: 75%;
+  }
+  .ashCustomClass .col-lg-push-8 {
+    left: 66.66666667%;
+  }
+  .ashCustomClass .col-lg-push-7 {
+    left: 58.33333333%;
+  }
+  .ashCustomClass .col-lg-push-6 {
+    left: 50%;
+  }
+  .ashCustomClass .col-lg-push-5 {
+    left: 41.66666667%;
+  }
+  .ashCustomClass .col-lg-push-4 {
+    left: 33.33333333%;
+  }
+  .ashCustomClass .col-lg-push-3 {
+    left: 25%;
+  }
+  .ashCustomClass .col-lg-push-2 {
+    left: 16.66666667%;
+  }
+  .ashCustomClass .col-lg-push-1 {
+    left: 8.33333333%;
+  }
+  .ashCustomClass .col-lg-push-0 {
+    left: auto;
+  }
+  .ashCustomClass .col-lg-offset-12 {
+    margin-left: 100%;
+  }
+  .ashCustomClass .col-lg-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .ashCustomClass .col-lg-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .ashCustomClass .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+  .ashCustomClass .col-lg-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .ashCustomClass .col-lg-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .ashCustomClass .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+  .ashCustomClass .col-lg-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .ashCustomClass .col-lg-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .ashCustomClass .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+  .ashCustomClass .col-lg-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .ashCustomClass .col-lg-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .ashCustomClass .col-lg-offset-0 {
+    margin-left: 0;
+  }
+}
+.ashCustomClass table {
+  background-color: transparent;
+}
+.ashCustomClass caption {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #777;
+  text-align: left;
+}
+.ashCustomClass th {
+  text-align: left;
+}
+.ashCustomClass .table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.ashCustomClass .table > thead > tr > th,
+.ashCustomClass .table > tbody > tr > th,
+.ashCustomClass .table > tfoot > tr > th,
+.ashCustomClass .table > thead > tr > td,
+.ashCustomClass .table > tbody > tr > td,
+.ashCustomClass .table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.ashCustomClass .table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.ashCustomClass .table > caption + thead > tr:first-child > th,
+.ashCustomClass .table > colgroup + thead > tr:first-child > th,
+.ashCustomClass .table > thead:first-child > tr:first-child > th,
+.ashCustomClass .table > caption + thead > tr:first-child > td,
+.ashCustomClass .table > colgroup + thead > tr:first-child > td,
+.ashCustomClass .table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.ashCustomClass .table > tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.ashCustomClass .table .table {
+  background-color: #fff;
+}
+.ashCustomClass .table-condensed > thead > tr > th,
+.ashCustomClass .table-condensed > tbody > tr > th,
+.ashCustomClass .table-condensed > tfoot > tr > th,
+.ashCustomClass .table-condensed > thead > tr > td,
+.ashCustomClass .table-condensed > tbody > tr > td,
+.ashCustomClass .table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+.ashCustomClass .table-bordered {
+  border: 1px solid #ddd;
+}
+.ashCustomClass .table-bordered > thead > tr > th,
+.ashCustomClass .table-bordered > tbody > tr > th,
+.ashCustomClass .table-bordered > tfoot > tr > th,
+.ashCustomClass .table-bordered > thead > tr > td,
+.ashCustomClass .table-bordered > tbody > tr > td,
+.ashCustomClass .table-bordered > tfoot > tr > td {
+  border: 1px solid #ddd;
+}
+.ashCustomClass .table-bordered > thead > tr > th,
+.ashCustomClass .table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+.ashCustomClass .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+.ashCustomClass .table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+.ashCustomClass table col[class*="col-"] {
+  position: static;
+  display: table-column;
+  float: none;
+}
+.ashCustomClass table td[class*="col-"],
+.ashCustomClass table th[class*="col-"] {
+  position: static;
+  display: table-cell;
+  float: none;
+}
+.ashCustomClass .table > thead > tr > td.active,
+.ashCustomClass .table > tbody > tr > td.active,
+.ashCustomClass .table > tfoot > tr > td.active,
+.ashCustomClass .table > thead > tr > th.active,
+.ashCustomClass .table > tbody > tr > th.active,
+.ashCustomClass .table > tfoot > tr > th.active,
+.ashCustomClass .table > thead > tr.active > td,
+.ashCustomClass .table > tbody > tr.active > td,
+.ashCustomClass .table > tfoot > tr.active > td,
+.ashCustomClass .table > thead > tr.active > th,
+.ashCustomClass .table > tbody > tr.active > th,
+.ashCustomClass .table > tfoot > tr.active > th {
+  background-color: #f5f5f5;
+}
+.ashCustomClass .table-hover > tbody > tr > td.active:hover,
+.ashCustomClass .table-hover > tbody > tr > th.active:hover,
+.ashCustomClass .table-hover > tbody > tr.active:hover > td,
+.ashCustomClass .table-hover > tbody > tr:hover > .active,
+.ashCustomClass .table-hover > tbody > tr.active:hover > th {
+  background-color: #e8e8e8;
+}
+.ashCustomClass .table > thead > tr > td.success,
+.ashCustomClass .table > tbody > tr > td.success,
+.ashCustomClass .table > tfoot > tr > td.success,
+.ashCustomClass .table > thead > tr > th.success,
+.ashCustomClass .table > tbody > tr > th.success,
+.ashCustomClass .table > tfoot > tr > th.success,
+.ashCustomClass .table > thead > tr.success > td,
+.ashCustomClass .table > tbody > tr.success > td,
+.ashCustomClass .table > tfoot > tr.success > td,
+.ashCustomClass .table > thead > tr.success > th,
+.ashCustomClass .table > tbody > tr.success > th,
+.ashCustomClass .table > tfoot > tr.success > th {
+  background-color: #dff0d8;
+}
+.ashCustomClass .table-hover > tbody > tr > td.success:hover,
+.ashCustomClass .table-hover > tbody > tr > th.success:hover,
+.ashCustomClass .table-hover > tbody > tr.success:hover > td,
+.ashCustomClass .table-hover > tbody > tr:hover > .success,
+.ashCustomClass .table-hover > tbody > tr.success:hover > th {
+  background-color: #d0e9c6;
+}
+.ashCustomClass .table > thead > tr > td.info,
+.ashCustomClass .table > tbody > tr > td.info,
+.ashCustomClass .table > tfoot > tr > td.info,
+.ashCustomClass .table > thead > tr > th.info,
+.ashCustomClass .table > tbody > tr > th.info,
+.ashCustomClass .table > tfoot > tr > th.info,
+.ashCustomClass .table > thead > tr.info > td,
+.ashCustomClass .table > tbody > tr.info > td,
+.ashCustomClass .table > tfoot > tr.info > td,
+.ashCustomClass .table > thead > tr.info > th,
+.ashCustomClass .table > tbody > tr.info > th,
+.ashCustomClass .table > tfoot > tr.info > th {
+  background-color: #d9edf7;
+}
+.ashCustomClass .table-hover > tbody > tr > td.info:hover,
+.ashCustomClass .table-hover > tbody > tr > th.info:hover,
+.ashCustomClass .table-hover > tbody > tr.info:hover > td,
+.ashCustomClass .table-hover > tbody > tr:hover > .info,
+.ashCustomClass .table-hover > tbody > tr.info:hover > th {
+  background-color: #c4e3f3;
+}
+.ashCustomClass .table > thead > tr > td.warning,
+.ashCustomClass .table > tbody > tr > td.warning,
+.ashCustomClass .table > tfoot > tr > td.warning,
+.ashCustomClass .table > thead > tr > th.warning,
+.ashCustomClass .table > tbody > tr > th.warning,
+.ashCustomClass .table > tfoot > tr > th.warning,
+.ashCustomClass .table > thead > tr.warning > td,
+.ashCustomClass .table > tbody > tr.warning > td,
+.ashCustomClass .table > tfoot > tr.warning > td,
+.ashCustomClass .table > thead > tr.warning > th,
+.ashCustomClass .table > tbody > tr.warning > th,
+.ashCustomClass .table > tfoot > tr.warning > th {
+  background-color: #fcf8e3;
+}
+.ashCustomClass .table-hover > tbody > tr > td.warning:hover,
+.ashCustomClass .table-hover > tbody > tr > th.warning:hover,
+.ashCustomClass .table-hover > tbody > tr.warning:hover > td,
+.ashCustomClass .table-hover > tbody > tr:hover > .warning,
+.ashCustomClass .table-hover > tbody > tr.warning:hover > th {
+  background-color: #faf2cc;
+}
+.ashCustomClass .table > thead > tr > td.danger,
+.ashCustomClass .table > tbody > tr > td.danger,
+.ashCustomClass .table > tfoot > tr > td.danger,
+.ashCustomClass .table > thead > tr > th.danger,
+.ashCustomClass .table > tbody > tr > th.danger,
+.ashCustomClass .table > tfoot > tr > th.danger,
+.ashCustomClass .table > thead > tr.danger > td,
+.ashCustomClass .table > tbody > tr.danger > td,
+.ashCustomClass .table > tfoot > tr.danger > td,
+.ashCustomClass .table > thead > tr.danger > th,
+.ashCustomClass .table > tbody > tr.danger > th,
+.ashCustomClass .table > tfoot > tr.danger > th {
+  background-color: #f2dede;
+}
+.ashCustomClass .table-hover > tbody > tr > td.danger:hover,
+.ashCustomClass .table-hover > tbody > tr > th.danger:hover,
+.ashCustomClass .table-hover > tbody > tr.danger:hover > td,
+.ashCustomClass .table-hover > tbody > tr:hover > .danger,
+.ashCustomClass .table-hover > tbody > tr.danger:hover > th {
+  background-color: #ebcccc;
+}
+.ashCustomClass .table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+@media screen and (max-width: 767px) {
+  .ashCustomClass .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+  .ashCustomClass .table-responsive > .table {
+    margin-bottom: 0;
+  }
+  .ashCustomClass .table-responsive > .table > thead > tr > th,
+  .ashCustomClass .table-responsive > .table > tbody > tr > th,
+  .ashCustomClass .table-responsive > .table > tfoot > tr > th,
+  .ashCustomClass .table-responsive > .table > thead > tr > td,
+  .ashCustomClass .table-responsive > .table > tbody > tr > td,
+  .ashCustomClass .table-responsive > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  .ashCustomClass .table-responsive > .table-bordered {
+    border: 0;
+  }
+  .ashCustomClass .table-responsive > .table-bordered > thead > tr > th:first-child,
+  .ashCustomClass .table-responsive > .table-bordered > tbody > tr > th:first-child,
+  .ashCustomClass .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+  .ashCustomClass .table-responsive > .table-bordered > thead > tr > td:first-child,
+  .ashCustomClass .table-responsive > .table-bordered > tbody > tr > td:first-child,
+  .ashCustomClass .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+  }
+  .ashCustomClass .table-responsive > .table-bordered > thead > tr > th:last-child,
+  .ashCustomClass .table-responsive > .table-bordered > tbody > tr > th:last-child,
+  .ashCustomClass .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+  .ashCustomClass .table-responsive > .table-bordered > thead > tr > td:last-child,
+  .ashCustomClass .table-responsive > .table-bordered > tbody > tr > td:last-child,
+  .ashCustomClass .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+  }
+  .ashCustomClass .table-responsive > .table-bordered > tbody > tr:last-child > th,
+  .ashCustomClass .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+  .ashCustomClass .table-responsive > .table-bordered > tbody > tr:last-child > td,
+  .ashCustomClass .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+    border-bottom: 0;
+  }
+}
+.ashCustomClass fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.ashCustomClass legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.ashCustomClass label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.ashCustomClass input[type="search"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ashCustomClass input[type="radio"],
+.ashCustomClass input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+.ashCustomClass input[type="file"] {
+  display: block;
+}
+.ashCustomClass input[type="range"] {
+  display: block;
+  width: 100%;
+}
+.ashCustomClass select[multiple],
+.ashCustomClass select[size] {
+  height: auto;
+}
+.ashCustomClass input[type="file"]:focus,
+.ashCustomClass input[type="radio"]:focus,
+.ashCustomClass input[type="checkbox"]:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.ashCustomClass output {
+  display: block;
+  padding-top: 7px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+}
+.ashCustomClass .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.ashCustomClass .form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.ashCustomClass .form-control::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.ashCustomClass .form-control:-ms-input-placeholder {
+  color: #999;
+}
+.ashCustomClass .form-control::-webkit-input-placeholder {
+  color: #999;
+}
+.ashCustomClass .form-control[disabled],
+.ashCustomClass .form-control[readonly],
+.ashCustomClass fieldset[disabled] .form-control {
+  background-color: #eee;
+  opacity: 1;
+}
+.ashCustomClass .form-control[disabled],
+.ashCustomClass fieldset[disabled] .form-control {
+  cursor: not-allowed;
+}
+.ashCustomClass textarea.form-control {
+  height: auto;
+}
+.ashCustomClass input[type="search"] {
+  -webkit-appearance: none;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .ashCustomClass input[type="date"],
+  .ashCustomClass input[type="time"],
+  .ashCustomClass input[type="datetime-local"],
+  .ashCustomClass input[type="month"] {
+    line-height: 34px;
+  }
+  .ashCustomClass input[type="date"].input-sm,
+  .ashCustomClass input[type="time"].input-sm,
+  .ashCustomClass input[type="datetime-local"].input-sm,
+  .ashCustomClass input[type="month"].input-sm,
+  .ashCustomClass .input-group-sm input[type="date"],
+  .ashCustomClass .input-group-sm input[type="time"],
+  .ashCustomClass .input-group-sm input[type="datetime-local"],
+  .ashCustomClass .input-group-sm input[type="month"] {
+    line-height: 30px;
+  }
+  .ashCustomClass input[type="date"].input-lg,
+  .ashCustomClass input[type="time"].input-lg,
+  .ashCustomClass input[type="datetime-local"].input-lg,
+  .ashCustomClass input[type="month"].input-lg,
+  .ashCustomClass .input-group-lg input[type="date"],
+  .ashCustomClass .input-group-lg input[type="time"],
+  .ashCustomClass .input-group-lg input[type="datetime-local"],
+  .ashCustomClass .input-group-lg input[type="month"] {
+    line-height: 46px;
+  }
+}
+.ashCustomClass .form-group {
+  margin-bottom: 15px;
+}
+.ashCustomClass .radio,
+.ashCustomClass .checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ashCustomClass .radio label,
+.ashCustomClass .checkbox label {
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+.ashCustomClass .radio input[type="radio"],
+.ashCustomClass .radio-inline input[type="radio"],
+.ashCustomClass .checkbox input[type="checkbox"],
+.ashCustomClass .checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-top: 4px \9;
+  margin-left: -20px;
+}
+.ashCustomClass .radio + .radio,
+.ashCustomClass .checkbox + .checkbox {
+  margin-top: -5px;
+}
+.ashCustomClass .radio-inline,
+.ashCustomClass .checkbox-inline {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.ashCustomClass .radio-inline + .radio-inline,
+.ashCustomClass .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+.ashCustomClass input[type="radio"][disabled],
+.ashCustomClass input[type="checkbox"][disabled],
+.ashCustomClass input[type="radio"].disabled,
+.ashCustomClass input[type="checkbox"].disabled,
+.ashCustomClass fieldset[disabled] input[type="radio"],
+.ashCustomClass fieldset[disabled] input[type="checkbox"] {
+  cursor: not-allowed;
+}
+.ashCustomClass .radio-inline.disabled,
+.ashCustomClass .checkbox-inline.disabled,
+.ashCustomClass fieldset[disabled] .radio-inline,
+.ashCustomClass fieldset[disabled] .checkbox-inline {
+  cursor: not-allowed;
+}
+.ashCustomClass .radio.disabled label,
+.ashCustomClass .checkbox.disabled label,
+.ashCustomClass fieldset[disabled] .radio label,
+.ashCustomClass fieldset[disabled] .checkbox label {
+  cursor: not-allowed;
+}
+.ashCustomClass .form-control-static {
+  min-height: 34px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 0;
+}
+.ashCustomClass .form-control-static.input-lg,
+.ashCustomClass .form-control-static.input-sm {
+  padding-right: 0;
+  padding-left: 0;
+}
+.ashCustomClass .input-sm {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.ashCustomClass select.input-sm {
+  height: 30px;
+  line-height: 30px;
+}
+.ashCustomClass textarea.input-sm,
+.ashCustomClass select[multiple].input-sm {
+  height: auto;
+}
+.ashCustomClass .form-group-sm .form-control {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.ashCustomClass select.form-group-sm .form-control {
+  height: 30px;
+  line-height: 30px;
+}
+.ashCustomClass textarea.form-group-sm .form-control,
+.ashCustomClass select[multiple].form-group-sm .form-control {
+  height: auto;
+}
+.ashCustomClass .form-group-sm .form-control-static {
+  height: 30px;
+  min-height: 32px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.ashCustomClass .input-lg {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.ashCustomClass select.input-lg {
+  height: 46px;
+  line-height: 46px;
+}
+.ashCustomClass textarea.input-lg,
+.ashCustomClass select[multiple].input-lg {
+  height: auto;
+}
+.ashCustomClass .form-group-lg .form-control {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.ashCustomClass select.form-group-lg .form-control {
+  height: 46px;
+  line-height: 46px;
+}
+.ashCustomClass textarea.form-group-lg .form-control,
+.ashCustomClass select[multiple].form-group-lg .form-control {
+  height: auto;
+}
+.ashCustomClass .form-group-lg .form-control-static {
+  height: 46px;
+  min-height: 38px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.ashCustomClass .has-feedback {
+  position: relative;
+}
+.ashCustomClass .has-feedback .form-control {
+  padding-right: 42.5px;
+}
+.ashCustomClass .form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
+.ashCustomClass .input-lg + .form-control-feedback {
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+}
+.ashCustomClass .input-sm + .form-control-feedback {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.ashCustomClass .has-success .help-block,
+.ashCustomClass .has-success .control-label,
+.ashCustomClass .has-success .radio,
+.ashCustomClass .has-success .checkbox,
+.ashCustomClass .has-success .radio-inline,
+.ashCustomClass .has-success .checkbox-inline,
+.ashCustomClass .has-success.radio label,
+.ashCustomClass .has-success.checkbox label,
+.ashCustomClass .has-success.radio-inline label,
+.ashCustomClass .has-success.checkbox-inline label {
+  color: #3c763d;
+}
+.ashCustomClass .has-success .form-control {
+  border-color: #3c763d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.ashCustomClass .has-success .form-control:focus {
+  border-color: #2b542c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+}
+.ashCustomClass .has-success .input-group-addon {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #3c763d;
+}
+.ashCustomClass .has-success .form-control-feedback {
+  color: #3c763d;
+}
+.ashCustomClass .has-warning .help-block,
+.ashCustomClass .has-warning .control-label,
+.ashCustomClass .has-warning .radio,
+.ashCustomClass .has-warning .checkbox,
+.ashCustomClass .has-warning .radio-inline,
+.ashCustomClass .has-warning .checkbox-inline,
+.ashCustomClass .has-warning.radio label,
+.ashCustomClass .has-warning.checkbox label,
+.ashCustomClass .has-warning.radio-inline label,
+.ashCustomClass .has-warning.checkbox-inline label {
+  color: #8a6d3b;
+}
+.ashCustomClass .has-warning .form-control {
+  border-color: #8a6d3b;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.ashCustomClass .has-warning .form-control:focus {
+  border-color: #66512c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+}
+.ashCustomClass .has-warning .input-group-addon {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #8a6d3b;
+}
+.ashCustomClass .has-warning .form-control-feedback {
+  color: #8a6d3b;
+}
+.ashCustomClass .has-error .help-block,
+.ashCustomClass .has-error .control-label,
+.ashCustomClass .has-error .radio,
+.ashCustomClass .has-error .checkbox,
+.ashCustomClass .has-error .radio-inline,
+.ashCustomClass .has-error .checkbox-inline,
+.ashCustomClass .has-error.radio label,
+.ashCustomClass .has-error.checkbox label,
+.ashCustomClass .has-error.radio-inline label,
+.ashCustomClass .has-error.checkbox-inline label {
+  color: #a94442;
+}
+.ashCustomClass .has-error .form-control {
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.ashCustomClass .has-error .form-control:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+.ashCustomClass .has-error .input-group-addon {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #a94442;
+}
+.ashCustomClass .has-error .form-control-feedback {
+  color: #a94442;
+}
+.ashCustomClass .has-feedback label ~ .form-control-feedback {
+  top: 25px;
+}
+.ashCustomClass .has-feedback label.sr-only ~ .form-control-feedback {
+  top: 0;
+}
+.ashCustomClass .help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .ashCustomClass .form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .ashCustomClass .form-inline .form-control-static {
+    display: inline-block;
+  }
+  .ashCustomClass .form-inline .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  .ashCustomClass .form-inline .input-group .input-group-addon,
+  .ashCustomClass .form-inline .input-group .input-group-btn,
+  .ashCustomClass .form-inline .input-group .form-control {
+    width: auto;
+  }
+  .ashCustomClass .form-inline .input-group > .form-control {
+    width: 100%;
+  }
+  .ashCustomClass .form-inline .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .ashCustomClass .form-inline .radio,
+  .ashCustomClass .form-inline .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .ashCustomClass .form-inline .radio label,
+  .ashCustomClass .form-inline .checkbox label {
+    padding-left: 0;
+  }
+  .ashCustomClass .form-inline .radio input[type="radio"],
+  .ashCustomClass .form-inline .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+  .ashCustomClass .form-inline .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+.ashCustomClass .form-horizontal .radio,
+.ashCustomClass .form-horizontal .checkbox,
+.ashCustomClass .form-horizontal .radio-inline,
+.ashCustomClass .form-horizontal .checkbox-inline {
+  padding-top: 7px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.ashCustomClass .form-horizontal .radio,
+.ashCustomClass .form-horizontal .checkbox {
+  min-height: 27px;
+}
+.ashCustomClass .form-horizontal .form-group {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+  }
+}
+.ashCustomClass .form-horizontal .has-feedback .form-control-feedback {
+  right: 15px;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .form-horizontal .form-group-lg .control-label {
+    padding-top: 14.333333px;
+  }
+}
+@media (min-width: 768px) {
+  .ashCustomClass .form-horizontal .form-group-sm .control-label {
+    padding-top: 6px;
+  }
+}
+.ashCustomClass .btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.ashCustomClass .btn:focus,
+.ashCustomClass .btn:active:focus,
+.ashCustomClass .btn.active:focus,
+.ashCustomClass .btn.focus,
+.ashCustomClass .btn:active.focus,
+.ashCustomClass .btn.active.focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.ashCustomClass .btn:hover,
+.ashCustomClass .btn:focus,
+.ashCustomClass .btn.focus {
+  color: #333;
+  text-decoration: none;
+}
+.ashCustomClass .btn:active,
+.ashCustomClass .btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.ashCustomClass .btn.disabled,
+.ashCustomClass .btn[disabled],
+.ashCustomClass fieldset[disabled] .btn {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: .65;
+}
+.ashCustomClass .btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.ashCustomClass .btn-default:hover,
+.ashCustomClass .btn-default:focus,
+.ashCustomClass .btn-default.focus,
+.ashCustomClass .btn-default:active,
+.ashCustomClass .btn-default.active,
+.ashCustomClass .open > .dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+.ashCustomClass .btn-default:active,
+.ashCustomClass .btn-default.active,
+.ashCustomClass .open > .dropdown-toggle.btn-default {
+  background-image: none;
+}
+.ashCustomClass .btn-default.disabled,
+.ashCustomClass .btn-default[disabled],
+.ashCustomClass fieldset[disabled] .btn-default,
+.ashCustomClass .btn-default.disabled:hover,
+.ashCustomClass .btn-default[disabled]:hover,
+.ashCustomClass fieldset[disabled] .btn-default:hover,
+.ashCustomClass .btn-default.disabled:focus,
+.ashCustomClass .btn-default[disabled]:focus,
+.ashCustomClass fieldset[disabled] .btn-default:focus,
+.ashCustomClass .btn-default.disabled.focus,
+.ashCustomClass .btn-default[disabled].focus,
+.ashCustomClass fieldset[disabled] .btn-default.focus,
+.ashCustomClass .btn-default.disabled:active,
+.ashCustomClass .btn-default[disabled]:active,
+.ashCustomClass fieldset[disabled] .btn-default:active,
+.ashCustomClass .btn-default.disabled.active,
+.ashCustomClass .btn-default[disabled].active,
+.ashCustomClass fieldset[disabled] .btn-default.active {
+  background-color: #fff;
+  border-color: #ccc;
+}
+.ashCustomClass .btn-default .badge {
+  color: #fff;
+  background-color: #333;
+}
+.ashCustomClass .btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.ashCustomClass .btn-primary:hover,
+.ashCustomClass .btn-primary:focus,
+.ashCustomClass .btn-primary.focus,
+.ashCustomClass .btn-primary:active,
+.ashCustomClass .btn-primary.active,
+.ashCustomClass .open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.ashCustomClass .btn-primary:active,
+.ashCustomClass .btn-primary.active,
+.ashCustomClass .open > .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.ashCustomClass .btn-primary.disabled,
+.ashCustomClass .btn-primary[disabled],
+.ashCustomClass fieldset[disabled] .btn-primary,
+.ashCustomClass .btn-primary.disabled:hover,
+.ashCustomClass .btn-primary[disabled]:hover,
+.ashCustomClass fieldset[disabled] .btn-primary:hover,
+.ashCustomClass .btn-primary.disabled:focus,
+.ashCustomClass .btn-primary[disabled]:focus,
+.ashCustomClass fieldset[disabled] .btn-primary:focus,
+.ashCustomClass .btn-primary.disabled.focus,
+.ashCustomClass .btn-primary[disabled].focus,
+.ashCustomClass fieldset[disabled] .btn-primary.focus,
+.ashCustomClass .btn-primary.disabled:active,
+.ashCustomClass .btn-primary[disabled]:active,
+.ashCustomClass fieldset[disabled] .btn-primary:active,
+.ashCustomClass .btn-primary.disabled.active,
+.ashCustomClass .btn-primary[disabled].active,
+.ashCustomClass fieldset[disabled] .btn-primary.active {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.ashCustomClass .btn-primary .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.ashCustomClass .btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.ashCustomClass .btn-success:hover,
+.ashCustomClass .btn-success:focus,
+.ashCustomClass .btn-success.focus,
+.ashCustomClass .btn-success:active,
+.ashCustomClass .btn-success.active,
+.ashCustomClass .open > .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.ashCustomClass .btn-success:active,
+.ashCustomClass .btn-success.active,
+.ashCustomClass .open > .dropdown-toggle.btn-success {
+  background-image: none;
+}
+.ashCustomClass .btn-success.disabled,
+.ashCustomClass .btn-success[disabled],
+.ashCustomClass fieldset[disabled] .btn-success,
+.ashCustomClass .btn-success.disabled:hover,
+.ashCustomClass .btn-success[disabled]:hover,
+.ashCustomClass fieldset[disabled] .btn-success:hover,
+.ashCustomClass .btn-success.disabled:focus,
+.ashCustomClass .btn-success[disabled]:focus,
+.ashCustomClass fieldset[disabled] .btn-success:focus,
+.ashCustomClass .btn-success.disabled.focus,
+.ashCustomClass .btn-success[disabled].focus,
+.ashCustomClass fieldset[disabled] .btn-success.focus,
+.ashCustomClass .btn-success.disabled:active,
+.ashCustomClass .btn-success[disabled]:active,
+.ashCustomClass fieldset[disabled] .btn-success:active,
+.ashCustomClass .btn-success.disabled.active,
+.ashCustomClass .btn-success[disabled].active,
+.ashCustomClass fieldset[disabled] .btn-success.active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.ashCustomClass .btn-success .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
+.ashCustomClass .btn-info {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.ashCustomClass .btn-info:hover,
+.ashCustomClass .btn-info:focus,
+.ashCustomClass .btn-info.focus,
+.ashCustomClass .btn-info:active,
+.ashCustomClass .btn-info.active,
+.ashCustomClass .open > .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.ashCustomClass .btn-info:active,
+.ashCustomClass .btn-info.active,
+.ashCustomClass .open > .dropdown-toggle.btn-info {
+  background-image: none;
+}
+.ashCustomClass .btn-info.disabled,
+.ashCustomClass .btn-info[disabled],
+.ashCustomClass fieldset[disabled] .btn-info,
+.ashCustomClass .btn-info.disabled:hover,
+.ashCustomClass .btn-info[disabled]:hover,
+.ashCustomClass fieldset[disabled] .btn-info:hover,
+.ashCustomClass .btn-info.disabled:focus,
+.ashCustomClass .btn-info[disabled]:focus,
+.ashCustomClass fieldset[disabled] .btn-info:focus,
+.ashCustomClass .btn-info.disabled.focus,
+.ashCustomClass .btn-info[disabled].focus,
+.ashCustomClass fieldset[disabled] .btn-info.focus,
+.ashCustomClass .btn-info.disabled:active,
+.ashCustomClass .btn-info[disabled]:active,
+.ashCustomClass fieldset[disabled] .btn-info:active,
+.ashCustomClass .btn-info.disabled.active,
+.ashCustomClass .btn-info[disabled].active,
+.ashCustomClass fieldset[disabled] .btn-info.active {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.ashCustomClass .btn-info .badge {
+  color: #5bc0de;
+  background-color: #fff;
+}
+.ashCustomClass .btn-warning {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.ashCustomClass .btn-warning:hover,
+.ashCustomClass .btn-warning:focus,
+.ashCustomClass .btn-warning.focus,
+.ashCustomClass .btn-warning:active,
+.ashCustomClass .btn-warning.active,
+.ashCustomClass .open > .dropdown-toggle.btn-warning {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.ashCustomClass .btn-warning:active,
+.ashCustomClass .btn-warning.active,
+.ashCustomClass .open > .dropdown-toggle.btn-warning {
+  background-image: none;
+}
+.ashCustomClass .btn-warning.disabled,
+.ashCustomClass .btn-warning[disabled],
+.ashCustomClass fieldset[disabled] .btn-warning,
+.ashCustomClass .btn-warning.disabled:hover,
+.ashCustomClass .btn-warning[disabled]:hover,
+.ashCustomClass fieldset[disabled] .btn-warning:hover,
+.ashCustomClass .btn-warning.disabled:focus,
+.ashCustomClass .btn-warning[disabled]:focus,
+.ashCustomClass fieldset[disabled] .btn-warning:focus,
+.ashCustomClass .btn-warning.disabled.focus,
+.ashCustomClass .btn-warning[disabled].focus,
+.ashCustomClass fieldset[disabled] .btn-warning.focus,
+.ashCustomClass .btn-warning.disabled:active,
+.ashCustomClass .btn-warning[disabled]:active,
+.ashCustomClass fieldset[disabled] .btn-warning:active,
+.ashCustomClass .btn-warning.disabled.active,
+.ashCustomClass .btn-warning[disabled].active,
+.ashCustomClass fieldset[disabled] .btn-warning.active {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.ashCustomClass .btn-warning .badge {
+  color: #f0ad4e;
+  background-color: #fff;
+}
+.ashCustomClass .btn-danger {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.ashCustomClass .btn-danger:hover,
+.ashCustomClass .btn-danger:focus,
+.ashCustomClass .btn-danger.focus,
+.ashCustomClass .btn-danger:active,
+.ashCustomClass .btn-danger.active,
+.ashCustomClass .open > .dropdown-toggle.btn-danger {
+  color: #fff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.ashCustomClass .btn-danger:active,
+.ashCustomClass .btn-danger.active,
+.ashCustomClass .open > .dropdown-toggle.btn-danger {
+  background-image: none;
+}
+.ashCustomClass .btn-danger.disabled,
+.ashCustomClass .btn-danger[disabled],
+.ashCustomClass fieldset[disabled] .btn-danger,
+.ashCustomClass .btn-danger.disabled:hover,
+.ashCustomClass .btn-danger[disabled]:hover,
+.ashCustomClass fieldset[disabled] .btn-danger:hover,
+.ashCustomClass .btn-danger.disabled:focus,
+.ashCustomClass .btn-danger[disabled]:focus,
+.ashCustomClass fieldset[disabled] .btn-danger:focus,
+.ashCustomClass .btn-danger.disabled.focus,
+.ashCustomClass .btn-danger[disabled].focus,
+.ashCustomClass fieldset[disabled] .btn-danger.focus,
+.ashCustomClass .btn-danger.disabled:active,
+.ashCustomClass .btn-danger[disabled]:active,
+.ashCustomClass fieldset[disabled] .btn-danger:active,
+.ashCustomClass .btn-danger.disabled.active,
+.ashCustomClass .btn-danger[disabled].active,
+.ashCustomClass fieldset[disabled] .btn-danger.active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.ashCustomClass .btn-danger .badge {
+  color: #d9534f;
+  background-color: #fff;
+}
+.ashCustomClass .btn-link {
+  font-weight: normal;
+  color: #337ab7;
+  border-radius: 0;
+}
+.ashCustomClass .btn-link,
+.ashCustomClass .btn-link:active,
+.ashCustomClass .btn-link.active,
+.ashCustomClass .btn-link[disabled],
+.ashCustomClass fieldset[disabled] .btn-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ashCustomClass .btn-link,
+.ashCustomClass .btn-link:hover,
+.ashCustomClass .btn-link:focus,
+.ashCustomClass .btn-link:active {
+  border-color: transparent;
+}
+.ashCustomClass .btn-link:hover,
+.ashCustomClass .btn-link:focus {
+  color: #23527c;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.ashCustomClass .btn-link[disabled]:hover,
+.ashCustomClass fieldset[disabled] .btn-link:hover,
+.ashCustomClass .btn-link[disabled]:focus,
+.ashCustomClass fieldset[disabled] .btn-link:focus {
+  color: #777;
+  text-decoration: none;
+}
+.ashCustomClass .btn-lg,
+.ashCustomClass .btn-group-lg > .btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.ashCustomClass .btn-sm,
+.ashCustomClass .btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.ashCustomClass .btn-xs,
+.ashCustomClass .btn-group-xs > .btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.ashCustomClass .btn-block {
+  display: block;
+  width: 100%;
+}
+.ashCustomClass .btn-block + .btn-block {
+  margin-top: 5px;
+}
+.ashCustomClass input[type="submit"].btn-block,
+.ashCustomClass input[type="reset"].btn-block,
+.ashCustomClass input[type="button"].btn-block {
+  width: 100%;
+}
+.ashCustomClass .fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+.ashCustomClass .fade.in {
+  opacity: 1;
+}
+.ashCustomClass .collapse {
+  display: none;
+}
+.ashCustomClass .collapse.in {
+  display: block;
+}
+.ashCustomClass tr.collapse.in {
+  display: table-row;
+}
+.ashCustomClass tbody.collapse.in {
+  display: table-row-group;
+}
+.ashCustomClass .collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: .35s;
+  -o-transition-duration: .35s;
+  transition-duration: .35s;
+  -webkit-transition-property: height, visibility;
+  -o-transition-property: height, visibility;
+  transition-property: height, visibility;
+}
+.ashCustomClass .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.ashCustomClass .dropup,
+.ashCustomClass .dropdown {
+  position: relative;
+}
+.ashCustomClass .dropdown-toggle:focus {
+  outline: 0;
+}
+.ashCustomClass .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+.ashCustomClass .dropdown-menu.pull-right {
+  right: 0;
+  left: auto;
+}
+.ashCustomClass .dropdown-menu .divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.ashCustomClass .dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+.ashCustomClass .dropdown-menu > li > a:hover,
+.ashCustomClass .dropdown-menu > li > a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+.ashCustomClass .dropdown-menu > .active > a,
+.ashCustomClass .dropdown-menu > .active > a:hover,
+.ashCustomClass .dropdown-menu > .active > a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #337ab7;
+  outline: 0;
+}
+.ashCustomClass .dropdown-menu > .disabled > a,
+.ashCustomClass .dropdown-menu > .disabled > a:hover,
+.ashCustomClass .dropdown-menu > .disabled > a:focus {
+  color: #777;
+}
+.ashCustomClass .dropdown-menu > .disabled > a:hover,
+.ashCustomClass .dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.ashCustomClass .open > .dropdown-menu {
+  display: block;
+}
+.ashCustomClass .open > a {
+  outline: 0;
+}
+.ashCustomClass .dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+.ashCustomClass .dropdown-menu-left {
+  right: auto;
+  left: 0;
+}
+.ashCustomClass .dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #777;
+  white-space: nowrap;
+}
+.ashCustomClass .dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+}
+.ashCustomClass .pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+.ashCustomClass .dropup .caret,
+.ashCustomClass .navbar-fixed-bottom .dropdown .caret {
+  content: "";
+  border-top: 0;
+  border-bottom: 4px solid;
+}
+.ashCustomClass .dropup .dropdown-menu,
+.ashCustomClass .navbar-fixed-bottom .dropdown .dropdown-menu {
+  top: auto;
+  bottom: 100%;
+  margin-bottom: 2px;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-right .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+  .ashCustomClass .navbar-right .dropdown-menu-left {
+    right: auto;
+    left: 0;
+  }
+}
+.ashCustomClass .btn-group,
+.ashCustomClass .btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.ashCustomClass .btn-group > .btn,
+.ashCustomClass .btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+.ashCustomClass .btn-group > .btn:hover,
+.ashCustomClass .btn-group-vertical > .btn:hover,
+.ashCustomClass .btn-group > .btn:focus,
+.ashCustomClass .btn-group-vertical > .btn:focus,
+.ashCustomClass .btn-group > .btn:active,
+.ashCustomClass .btn-group-vertical > .btn:active,
+.ashCustomClass .btn-group > .btn.active,
+.ashCustomClass .btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+.ashCustomClass .btn-group .btn + .btn,
+.ashCustomClass .btn-group .btn + .btn-group,
+.ashCustomClass .btn-group .btn-group + .btn,
+.ashCustomClass .btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.ashCustomClass .btn-toolbar {
+  margin-left: -5px;
+}
+.ashCustomClass .btn-toolbar .btn-group,
+.ashCustomClass .btn-toolbar .input-group {
+  float: left;
+}
+.ashCustomClass .btn-toolbar > .btn,
+.ashCustomClass .btn-toolbar > .btn-group,
+.ashCustomClass .btn-toolbar > .input-group {
+  margin-left: 5px;
+}
+.ashCustomClass .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.ashCustomClass .btn-group > .btn:first-child {
+  margin-left: 0;
+}
+.ashCustomClass .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ashCustomClass .btn-group > .btn:last-child:not(:first-child),
+.ashCustomClass .btn-group > .dropdown-toggle:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ashCustomClass .btn-group > .btn-group {
+  float: left;
+}
+.ashCustomClass .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.ashCustomClass .btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.ashCustomClass .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ashCustomClass .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ashCustomClass .btn-group .dropdown-toggle:active,
+.ashCustomClass .btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+.ashCustomClass .btn-group > .btn + .dropdown-toggle {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.ashCustomClass .btn-group > .btn-lg + .dropdown-toggle {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.ashCustomClass .btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.ashCustomClass .btn-group.open .dropdown-toggle.btn-link {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.ashCustomClass .btn .caret {
+  margin-left: 0;
+}
+.ashCustomClass .btn-lg .caret {
+  border-width: 5px 5px 0;
+  border-bottom-width: 0;
+}
+.ashCustomClass .dropup .btn-lg .caret {
+  border-width: 0 5px 5px;
+}
+.ashCustomClass .btn-group-vertical > .btn,
+.ashCustomClass .btn-group-vertical > .btn-group,
+.ashCustomClass .btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+.ashCustomClass .btn-group-vertical > .btn-group > .btn {
+  float: none;
+}
+.ashCustomClass .btn-group-vertical > .btn + .btn,
+.ashCustomClass .btn-group-vertical > .btn + .btn-group,
+.ashCustomClass .btn-group-vertical > .btn-group + .btn,
+.ashCustomClass .btn-group-vertical > .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.ashCustomClass .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.ashCustomClass .btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ashCustomClass .btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+}
+.ashCustomClass .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.ashCustomClass .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.ashCustomClass .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ashCustomClass .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.ashCustomClass .btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+.ashCustomClass .btn-group-justified > .btn,
+.ashCustomClass .btn-group-justified > .btn-group {
+  display: table-cell;
+  float: none;
+  width: 1%;
+}
+.ashCustomClass .btn-group-justified > .btn-group .btn {
+  width: 100%;
+}
+.ashCustomClass .btn-group-justified > .btn-group .dropdown-menu {
+  left: auto;
+}
+.ashCustomClass [data-toggle="buttons"] > .btn input[type="radio"],
+.ashCustomClass [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+.ashCustomClass [data-toggle="buttons"] > .btn input[type="checkbox"],
+.ashCustomClass [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+.ashCustomClass .input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.ashCustomClass .input-group[class*="col-"] {
+  float: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+.ashCustomClass .input-group .form-control {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+.ashCustomClass .input-group-lg > .form-control,
+.ashCustomClass .input-group-lg > .input-group-addon,
+.ashCustomClass .input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.ashCustomClass select.input-group-lg > .form-control,
+.ashCustomClass select.input-group-lg > .input-group-addon,
+.ashCustomClass select.input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  line-height: 46px;
+}
+.ashCustomClass textarea.input-group-lg > .form-control,
+.ashCustomClass textarea.input-group-lg > .input-group-addon,
+.ashCustomClass textarea.input-group-lg > .input-group-btn > .btn,
+.ashCustomClass select[multiple].input-group-lg > .form-control,
+.ashCustomClass select[multiple].input-group-lg > .input-group-addon,
+.ashCustomClass select[multiple].input-group-lg > .input-group-btn > .btn {
+  height: auto;
+}
+.ashCustomClass .input-group-sm > .form-control,
+.ashCustomClass .input-group-sm > .input-group-addon,
+.ashCustomClass .input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.ashCustomClass select.input-group-sm > .form-control,
+.ashCustomClass select.input-group-sm > .input-group-addon,
+.ashCustomClass select.input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  line-height: 30px;
+}
+.ashCustomClass textarea.input-group-sm > .form-control,
+.ashCustomClass textarea.input-group-sm > .input-group-addon,
+.ashCustomClass textarea.input-group-sm > .input-group-btn > .btn,
+.ashCustomClass select[multiple].input-group-sm > .form-control,
+.ashCustomClass select[multiple].input-group-sm > .input-group-addon,
+.ashCustomClass select[multiple].input-group-sm > .input-group-btn > .btn {
+  height: auto;
+}
+.ashCustomClass .input-group-addon,
+.ashCustomClass .input-group-btn,
+.ashCustomClass .input-group .form-control {
+  display: table-cell;
+}
+.ashCustomClass .input-group-addon:not(:first-child):not(:last-child),
+.ashCustomClass .input-group-btn:not(:first-child):not(:last-child),
+.ashCustomClass .input-group .form-control:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.ashCustomClass .input-group-addon,
+.ashCustomClass .input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.ashCustomClass .input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.ashCustomClass .input-group-addon.input-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+.ashCustomClass .input-group-addon.input-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+.ashCustomClass .input-group-addon input[type="radio"],
+.ashCustomClass .input-group-addon input[type="checkbox"] {
+  margin-top: 0;
+}
+.ashCustomClass .input-group .form-control:first-child,
+.ashCustomClass .input-group-addon:first-child,
+.ashCustomClass .input-group-btn:first-child > .btn,
+.ashCustomClass .input-group-btn:first-child > .btn-group > .btn,
+.ashCustomClass .input-group-btn:first-child > .dropdown-toggle,
+.ashCustomClass .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.ashCustomClass .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ashCustomClass .input-group-addon:first-child {
+  border-right: 0;
+}
+.ashCustomClass .input-group .form-control:last-child,
+.ashCustomClass .input-group-addon:last-child,
+.ashCustomClass .input-group-btn:last-child > .btn,
+.ashCustomClass .input-group-btn:last-child > .btn-group > .btn,
+.ashCustomClass .input-group-btn:last-child > .dropdown-toggle,
+.ashCustomClass .input-group-btn:first-child > .btn:not(:first-child),
+.ashCustomClass .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ashCustomClass .input-group-addon:last-child {
+  border-left: 0;
+}
+.ashCustomClass .input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+}
+.ashCustomClass .input-group-btn > .btn {
+  position: relative;
+}
+.ashCustomClass .input-group-btn > .btn + .btn {
+  margin-left: -1px;
+}
+.ashCustomClass .input-group-btn > .btn:hover,
+.ashCustomClass .input-group-btn > .btn:focus,
+.ashCustomClass .input-group-btn > .btn:active {
+  z-index: 2;
+}
+.ashCustomClass .input-group-btn:first-child > .btn,
+.ashCustomClass .input-group-btn:first-child > .btn-group {
+  margin-right: -1px;
+}
+.ashCustomClass .input-group-btn:last-child > .btn,
+.ashCustomClass .input-group-btn:last-child > .btn-group {
+  margin-left: -1px;
+}
+.ashCustomClass .nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.ashCustomClass .nav > li {
+  position: relative;
+  display: block;
+}
+.ashCustomClass .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.ashCustomClass .nav > li > a:hover,
+.ashCustomClass .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.ashCustomClass .nav > li.disabled > a {
+  color: #777;
+}
+.ashCustomClass .nav > li.disabled > a:hover,
+.ashCustomClass .nav > li.disabled > a:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.ashCustomClass .nav .open > a,
+.ashCustomClass .nav .open > a:hover,
+.ashCustomClass .nav .open > a:focus {
+  background-color: #eee;
+  border-color: #337ab7;
+}
+.ashCustomClass .nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.ashCustomClass .nav > li > a > img {
+  max-width: none;
+}
+.ashCustomClass .nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+.ashCustomClass .nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.ashCustomClass .nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.ashCustomClass .nav-tabs > li > a:hover {
+  border-color: #eee #eee #ddd;
+}
+.ashCustomClass .nav-tabs > li.active > a,
+.ashCustomClass .nav-tabs > li.active > a:hover,
+.ashCustomClass .nav-tabs > li.active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.ashCustomClass .nav-tabs.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.ashCustomClass .nav-tabs.nav-justified > li {
+  float: none;
+}
+.ashCustomClass .nav-tabs.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.ashCustomClass .nav-tabs.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .ashCustomClass .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.ashCustomClass .nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.ashCustomClass .nav-tabs.nav-justified > .active > a,
+.ashCustomClass .nav-tabs.nav-justified > .active > a:hover,
+.ashCustomClass .nav-tabs.nav-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .ashCustomClass .nav-tabs.nav-justified > .active > a,
+  .ashCustomClass .nav-tabs.nav-justified > .active > a:hover,
+  .ashCustomClass .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+}
+.ashCustomClass .nav-pills > li {
+  float: left;
+}
+.ashCustomClass .nav-pills > li > a {
+  border-radius: 4px;
+}
+.ashCustomClass .nav-pills > li + li {
+  margin-left: 2px;
+}
+.ashCustomClass .nav-pills > li.active > a,
+.ashCustomClass .nav-pills > li.active > a:hover,
+.ashCustomClass .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #337ab7;
+}
+.ashCustomClass .nav-stacked > li {
+  float: none;
+}
+.ashCustomClass .nav-stacked > li + li {
+  margin-top: 2px;
+  margin-left: 0;
+}
+.ashCustomClass .nav-justified {
+  width: 100%;
+}
+.ashCustomClass .nav-justified > li {
+  float: none;
+}
+.ashCustomClass .nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.ashCustomClass .nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .ashCustomClass .nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.ashCustomClass .nav-tabs-justified {
+  border-bottom: 0;
+}
+.ashCustomClass .nav-tabs-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.ashCustomClass .nav-tabs-justified > .active > a,
+.ashCustomClass .nav-tabs-justified > .active > a:hover,
+.ashCustomClass .nav-tabs-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .nav-tabs-justified > li > a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .ashCustomClass .nav-tabs-justified > .active > a,
+  .ashCustomClass .nav-tabs-justified > .active > a:hover,
+  .ashCustomClass .nav-tabs-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+}
+.ashCustomClass .tab-content > .tab-pane {
+  display: none;
+}
+.ashCustomClass .tab-content > .active {
+  display: block;
+}
+.ashCustomClass .nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.ashCustomClass .navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar {
+    border-radius: 4px;
+  }
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-header {
+    float: left;
+  }
+}
+.ashCustomClass .navbar-collapse {
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow-x: visible;
+  -webkit-overflow-scrolling: touch;
+  border-top: 1px solid transparent;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.ashCustomClass .navbar-collapse.in {
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-collapse {
+    width: auto;
+    border-top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .ashCustomClass .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  .ashCustomClass .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  .ashCustomClass .navbar-fixed-top .navbar-collapse,
+  .ashCustomClass .navbar-static-top .navbar-collapse,
+  .ashCustomClass .navbar-fixed-bottom .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.ashCustomClass .navbar-fixed-top .navbar-collapse,
+.ashCustomClass .navbar-fixed-bottom .navbar-collapse {
+  max-height: 340px;
+}
+@media (max-device-width: 480px) and (orientation: landscape) {
+  .ashCustomClass .navbar-fixed-top .navbar-collapse,
+  .ashCustomClass .navbar-fixed-bottom .navbar-collapse {
+    max-height: 200px;
+  }
+}
+.ashCustomClass .container > .navbar-header,
+.ashCustomClass .container-fluid > .navbar-header,
+.ashCustomClass .container > .navbar-collapse,
+.ashCustomClass .container-fluid > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .container > .navbar-header,
+  .ashCustomClass .container-fluid > .navbar-header,
+  .ashCustomClass .container > .navbar-collapse,
+  .ashCustomClass .container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+.ashCustomClass .navbar-static-top {
+  z-index: 1000;
+  border-width: 0 0 1px;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-static-top {
+    border-radius: 0;
+  }
+}
+.ashCustomClass .navbar-fixed-top,
+.ashCustomClass .navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-fixed-top,
+  .ashCustomClass .navbar-fixed-bottom {
+    border-radius: 0;
+  }
+}
+.ashCustomClass .navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+}
+.ashCustomClass .navbar-fixed-bottom {
+  bottom: 0;
+  margin-bottom: 0;
+  border-width: 1px 0 0;
+}
+.ashCustomClass .navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+.ashCustomClass .navbar-brand:hover,
+.ashCustomClass .navbar-brand:focus {
+  text-decoration: none;
+}
+.ashCustomClass .navbar-brand > img {
+  display: block;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar > .container .navbar-brand,
+  .ashCustomClass .navbar > .container-fluid .navbar-brand {
+    margin-left: -15px;
+  }
+}
+.ashCustomClass .navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.ashCustomClass .navbar-toggle:focus {
+  outline: 0;
+}
+.ashCustomClass .navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.ashCustomClass .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-toggle {
+    display: none;
+  }
+}
+.ashCustomClass .navbar-nav {
+  margin: 7.5px -15px;
+}
+.ashCustomClass .navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+@media (max-width: 767px) {
+  .ashCustomClass .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .ashCustomClass .navbar-nav .open .dropdown-menu > li > a,
+  .ashCustomClass .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  .ashCustomClass .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 20px;
+  }
+  .ashCustomClass .navbar-nav .open .dropdown-menu > li > a:hover,
+  .ashCustomClass .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-image: none;
+  }
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+  .ashCustomClass .navbar-nav > li {
+    float: left;
+  }
+  .ashCustomClass .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.ashCustomClass .navbar-form {
+  padding: 10px 15px;
+  margin-top: 8px;
+  margin-right: -15px;
+  margin-bottom: 8px;
+  margin-left: -15px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-form .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .ashCustomClass .navbar-form .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .ashCustomClass .navbar-form .form-control-static {
+    display: inline-block;
+  }
+  .ashCustomClass .navbar-form .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  .ashCustomClass .navbar-form .input-group .input-group-addon,
+  .ashCustomClass .navbar-form .input-group .input-group-btn,
+  .ashCustomClass .navbar-form .input-group .form-control {
+    width: auto;
+  }
+  .ashCustomClass .navbar-form .input-group > .form-control {
+    width: 100%;
+  }
+  .ashCustomClass .navbar-form .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .ashCustomClass .navbar-form .radio,
+  .ashCustomClass .navbar-form .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .ashCustomClass .navbar-form .radio label,
+  .ashCustomClass .navbar-form .checkbox label {
+    padding-left: 0;
+  }
+  .ashCustomClass .navbar-form .radio input[type="radio"],
+  .ashCustomClass .navbar-form .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+  .ashCustomClass .navbar-form .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .ashCustomClass .navbar-form .form-group {
+    margin-bottom: 5px;
+  }
+  .ashCustomClass .navbar-form .form-group:last-child {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-form {
+    width: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+.ashCustomClass .navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.ashCustomClass .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+  margin-bottom: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ashCustomClass .navbar-btn {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.ashCustomClass .navbar-btn.btn-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ashCustomClass .navbar-btn.btn-xs {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.ashCustomClass .navbar-text {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-text {
+    float: left;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .ashCustomClass .navbar-left {
+    float: left !important;
+  }
+  .ashCustomClass .navbar-right {
+    float: right !important;
+    margin-right: -15px;
+  }
+  .ashCustomClass .navbar-right ~ .navbar-right {
+    margin-right: 0;
+  }
+}
+.ashCustomClass .navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.ashCustomClass .navbar-default .navbar-brand {
+  color: #777;
+}
+.ashCustomClass .navbar-default .navbar-brand:hover,
+.ashCustomClass .navbar-default .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.ashCustomClass .navbar-default .navbar-text {
+  color: #777;
+}
+.ashCustomClass .navbar-default .navbar-nav > li > a {
+  color: #777;
+}
+.ashCustomClass .navbar-default .navbar-nav > li > a:hover,
+.ashCustomClass .navbar-default .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+.ashCustomClass .navbar-default .navbar-nav > .active > a,
+.ashCustomClass .navbar-default .navbar-nav > .active > a:hover,
+.ashCustomClass .navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+.ashCustomClass .navbar-default .navbar-nav > .disabled > a,
+.ashCustomClass .navbar-default .navbar-nav > .disabled > a:hover,
+.ashCustomClass .navbar-default .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.ashCustomClass .navbar-default .navbar-toggle {
+  border-color: #ddd;
+}
+.ashCustomClass .navbar-default .navbar-toggle:hover,
+.ashCustomClass .navbar-default .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.ashCustomClass .navbar-default .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.ashCustomClass .navbar-default .navbar-collapse,
+.ashCustomClass .navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+.ashCustomClass .navbar-default .navbar-nav > .open > a,
+.ashCustomClass .navbar-default .navbar-nav > .open > a:hover,
+.ashCustomClass .navbar-default .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .ashCustomClass .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .ashCustomClass .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .ashCustomClass .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .ashCustomClass .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .ashCustomClass .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .ashCustomClass .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .ashCustomClass .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
+  .ashCustomClass .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .ashCustomClass .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.ashCustomClass .navbar-default .navbar-link {
+  color: #777;
+}
+.ashCustomClass .navbar-default .navbar-link:hover {
+  color: #333;
+}
+.ashCustomClass .navbar-default .btn-link {
+  color: #777;
+}
+.ashCustomClass .navbar-default .btn-link:hover,
+.ashCustomClass .navbar-default .btn-link:focus {
+  color: #333;
+}
+.ashCustomClass .navbar-default .btn-link[disabled]:hover,
+.ashCustomClass fieldset[disabled] .navbar-default .btn-link:hover,
+.ashCustomClass .navbar-default .btn-link[disabled]:focus,
+.ashCustomClass fieldset[disabled] .navbar-default .btn-link:focus {
+  color: #ccc;
+}
+.ashCustomClass .navbar-inverse {
+  background-color: #222;
+  border-color: #080808;
+}
+.ashCustomClass .navbar-inverse .navbar-brand {
+  color: #9d9d9d;
+}
+.ashCustomClass .navbar-inverse .navbar-brand:hover,
+.ashCustomClass .navbar-inverse .navbar-brand:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.ashCustomClass .navbar-inverse .navbar-text {
+  color: #9d9d9d;
+}
+.ashCustomClass .navbar-inverse .navbar-nav > li > a {
+  color: #9d9d9d;
+}
+.ashCustomClass .navbar-inverse .navbar-nav > li > a:hover,
+.ashCustomClass .navbar-inverse .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.ashCustomClass .navbar-inverse .navbar-nav > .active > a,
+.ashCustomClass .navbar-inverse .navbar-nav > .active > a:hover,
+.ashCustomClass .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #080808;
+}
+.ashCustomClass .navbar-inverse .navbar-nav > .disabled > a,
+.ashCustomClass .navbar-inverse .navbar-nav > .disabled > a:hover,
+.ashCustomClass .navbar-inverse .navbar-nav > .disabled > a:focus {
+  color: #444;
+  background-color: transparent;
+}
+.ashCustomClass .navbar-inverse .navbar-toggle {
+  border-color: #333;
+}
+.ashCustomClass .navbar-inverse .navbar-toggle:hover,
+.ashCustomClass .navbar-inverse .navbar-toggle:focus {
+  background-color: #333;
+}
+.ashCustomClass .navbar-inverse .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.ashCustomClass .navbar-inverse .navbar-collapse,
+.ashCustomClass .navbar-inverse .navbar-form {
+  border-color: #101010;
+}
+.ashCustomClass .navbar-inverse .navbar-nav > .open > a,
+.ashCustomClass .navbar-inverse .navbar-nav > .open > a:hover,
+.ashCustomClass .navbar-inverse .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: #080808;
+}
+@media (max-width: 767px) {
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
+    border-color: #080808;
+  }
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+    background-color: #080808;
+  }
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #9d9d9d;
+  }
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+  }
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #fff;
+    background-color: #080808;
+  }
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .ashCustomClass .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #444;
+    background-color: transparent;
+  }
+}
+.ashCustomClass .navbar-inverse .navbar-link {
+  color: #9d9d9d;
+}
+.ashCustomClass .navbar-inverse .navbar-link:hover {
+  color: #fff;
+}
+.ashCustomClass .navbar-inverse .btn-link {
+  color: #9d9d9d;
+}
+.ashCustomClass .navbar-inverse .btn-link:hover,
+.ashCustomClass .navbar-inverse .btn-link:focus {
+  color: #fff;
+}
+.ashCustomClass .navbar-inverse .btn-link[disabled]:hover,
+.ashCustomClass fieldset[disabled] .navbar-inverse .btn-link:hover,
+.ashCustomClass .navbar-inverse .btn-link[disabled]:focus,
+.ashCustomClass fieldset[disabled] .navbar-inverse .btn-link:focus {
+  color: #444;
+}
+.ashCustomClass .breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.ashCustomClass .breadcrumb > li {
+  display: inline-block;
+}
+.ashCustomClass .breadcrumb > li + li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+.ashCustomClass .breadcrumb > .active {
+  color: #777;
+}
+.ashCustomClass .pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.ashCustomClass .pagination > li {
+  display: inline;
+}
+.ashCustomClass .pagination > li > a,
+.ashCustomClass .pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.ashCustomClass .pagination > li:first-child > a,
+.ashCustomClass .pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.ashCustomClass .pagination > li:last-child > a,
+.ashCustomClass .pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.ashCustomClass .pagination > li > a:hover,
+.ashCustomClass .pagination > li > span:hover,
+.ashCustomClass .pagination > li > a:focus,
+.ashCustomClass .pagination > li > span:focus {
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.ashCustomClass .pagination > .active > a,
+.ashCustomClass .pagination > .active > span,
+.ashCustomClass .pagination > .active > a:hover,
+.ashCustomClass .pagination > .active > span:hover,
+.ashCustomClass .pagination > .active > a:focus,
+.ashCustomClass .pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.ashCustomClass .pagination > .disabled > span,
+.ashCustomClass .pagination > .disabled > span:hover,
+.ashCustomClass .pagination > .disabled > span:focus,
+.ashCustomClass .pagination > .disabled > a,
+.ashCustomClass .pagination > .disabled > a:hover,
+.ashCustomClass .pagination > .disabled > a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.ashCustomClass .pagination-lg > li > a,
+.ashCustomClass .pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+.ashCustomClass .pagination-lg > li:first-child > a,
+.ashCustomClass .pagination-lg > li:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.ashCustomClass .pagination-lg > li:last-child > a,
+.ashCustomClass .pagination-lg > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.ashCustomClass .pagination-sm > li > a,
+.ashCustomClass .pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.ashCustomClass .pagination-sm > li:first-child > a,
+.ashCustomClass .pagination-sm > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.ashCustomClass .pagination-sm > li:last-child > a,
+.ashCustomClass .pagination-sm > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.ashCustomClass .pager {
+  padding-left: 0;
+  margin: 20px 0;
+  text-align: center;
+  list-style: none;
+}
+.ashCustomClass .pager li {
+  display: inline;
+}
+.ashCustomClass .pager li > a,
+.ashCustomClass .pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+.ashCustomClass .pager li > a:hover,
+.ashCustomClass .pager li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.ashCustomClass .pager .next > a,
+.ashCustomClass .pager .next > span {
+  float: right;
+}
+.ashCustomClass .pager .previous > a,
+.ashCustomClass .pager .previous > span {
+  float: left;
+}
+.ashCustomClass .pager .disabled > a,
+.ashCustomClass .pager .disabled > a:hover,
+.ashCustomClass .pager .disabled > a:focus,
+.ashCustomClass .pager .disabled > span {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+}
+.ashCustomClass .label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+.ashCustomClass a.label:hover,
+.ashCustomClass a.label:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ashCustomClass .label:empty {
+  display: none;
+}
+.ashCustomClass .btn .label {
+  position: relative;
+  top: -1px;
+}
+.ashCustomClass .label-default {
+  background-color: #777;
+}
+.ashCustomClass .label-default[href]:hover,
+.ashCustomClass .label-default[href]:focus {
+  background-color: #5e5e5e;
+}
+.ashCustomClass .label-primary {
+  background-color: #337ab7;
+}
+.ashCustomClass .label-primary[href]:hover,
+.ashCustomClass .label-primary[href]:focus {
+  background-color: #286090;
+}
+.ashCustomClass .label-success {
+  background-color: #5cb85c;
+}
+.ashCustomClass .label-success[href]:hover,
+.ashCustomClass .label-success[href]:focus {
+  background-color: #449d44;
+}
+.ashCustomClass .label-info {
+  background-color: #5bc0de;
+}
+.ashCustomClass .label-info[href]:hover,
+.ashCustomClass .label-info[href]:focus {
+  background-color: #31b0d5;
+}
+.ashCustomClass .label-warning {
+  background-color: #f0ad4e;
+}
+.ashCustomClass .label-warning[href]:hover,
+.ashCustomClass .label-warning[href]:focus {
+  background-color: #ec971f;
+}
+.ashCustomClass .label-danger {
+  background-color: #d9534f;
+}
+.ashCustomClass .label-danger[href]:hover,
+.ashCustomClass .label-danger[href]:focus {
+  background-color: #c9302c;
+}
+.ashCustomClass .badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #777;
+  border-radius: 10px;
+}
+.ashCustomClass .badge:empty {
+  display: none;
+}
+.ashCustomClass .btn .badge {
+  position: relative;
+  top: -1px;
+}
+.ashCustomClass .btn-xs .badge,
+.ashCustomClass .btn-group-xs > .btn .badge {
+  top: 0;
+  padding: 1px 5px;
+}
+.ashCustomClass a.badge:hover,
+.ashCustomClass a.badge:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ashCustomClass .list-group-item.active > .badge,
+.ashCustomClass .nav-pills > .active > a > .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.ashCustomClass .list-group-item > .badge {
+  float: right;
+}
+.ashCustomClass .list-group-item > .badge + .badge {
+  margin-right: 5px;
+}
+.ashCustomClass .nav-pills > li > a > .badge {
+  margin-left: 3px;
+}
+.ashCustomClass .jumbotron {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  color: inherit;
+  background-color: #eee;
+}
+.ashCustomClass .jumbotron h1,
+.ashCustomClass .jumbotron .h1 {
+  color: inherit;
+}
+.ashCustomClass .jumbotron p {
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+.ashCustomClass .jumbotron > hr {
+  border-top-color: #d5d5d5;
+}
+.ashCustomClass .container .jumbotron,
+.ashCustomClass .container-fluid .jumbotron {
+  border-radius: 6px;
+}
+.ashCustomClass .jumbotron .container {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .ashCustomClass .jumbotron {
+    padding: 48px 0;
+  }
+  .ashCustomClass .container .jumbotron,
+  .ashCustomClass .container-fluid .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .ashCustomClass .jumbotron h1,
+  .ashCustomClass .jumbotron .h1 {
+    font-size: 63px;
+  }
+}
+.ashCustomClass .thumbnail {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+}
+.ashCustomClass .thumbnail > img,
+.ashCustomClass .thumbnail a > img {
+  margin-right: auto;
+  margin-left: auto;
+}
+.ashCustomClass a.thumbnail:hover,
+.ashCustomClass a.thumbnail:focus,
+.ashCustomClass a.thumbnail.active {
+  border-color: #337ab7;
+}
+.ashCustomClass .thumbnail .caption {
+  padding: 9px;
+  color: #333;
+}
+.ashCustomClass .alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.ashCustomClass .alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.ashCustomClass .alert .alert-link {
+  font-weight: bold;
+}
+.ashCustomClass .alert > p,
+.ashCustomClass .alert > ul {
+  margin-bottom: 0;
+}
+.ashCustomClass .alert > p + p {
+  margin-top: 5px;
+}
+.ashCustomClass .alert-dismissable,
+.ashCustomClass .alert-dismissible {
+  padding-right: 35px;
+}
+.ashCustomClass .alert-dismissable .close,
+.ashCustomClass .alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+.ashCustomClass .alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.ashCustomClass .alert-success hr {
+  border-top-color: #c9e2b3;
+}
+.ashCustomClass .alert-success .alert-link {
+  color: #2b542c;
+}
+.ashCustomClass .alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.ashCustomClass .alert-info hr {
+  border-top-color: #a6e1ec;
+}
+.ashCustomClass .alert-info .alert-link {
+  color: #245269;
+}
+.ashCustomClass .alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.ashCustomClass .alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+.ashCustomClass .alert-warning .alert-link {
+  color: #66512c;
+}
+.ashCustomClass .alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.ashCustomClass .alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+.ashCustomClass .alert-danger .alert-link {
+  color: #843534;
+}
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@-o-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.ashCustomClass .progress {
+  height: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.ashCustomClass .progress-bar {
+  float: left;
+  width: 0;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width .6s ease;
+  -o-transition: width .6s ease;
+  transition: width .6s ease;
+}
+.ashCustomClass .progress-striped .progress-bar,
+.ashCustomClass .progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+}
+.ashCustomClass .progress.active .progress-bar,
+.ashCustomClass .progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.ashCustomClass .progress-bar-success {
+  background-color: #5cb85c;
+}
+.ashCustomClass .progress-striped .progress-bar-success {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.ashCustomClass .progress-bar-info {
+  background-color: #5bc0de;
+}
+.ashCustomClass .progress-striped .progress-bar-info {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.ashCustomClass .progress-bar-warning {
+  background-color: #f0ad4e;
+}
+.ashCustomClass .progress-striped .progress-bar-warning {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.ashCustomClass .progress-bar-danger {
+  background-color: #d9534f;
+}
+.ashCustomClass .progress-striped .progress-bar-danger {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.ashCustomClass .media {
+  margin-top: 15px;
+}
+.ashCustomClass .media:first-child {
+  margin-top: 0;
+}
+.ashCustomClass .media,
+.ashCustomClass .media-body {
+  overflow: hidden;
+  zoom: 1;
+}
+.ashCustomClass .media-body {
+  width: 10000px;
+}
+.ashCustomClass .media-object {
+  display: block;
+}
+.ashCustomClass .media-right,
+.ashCustomClass .media > .pull-right {
+  padding-left: 10px;
+}
+.ashCustomClass .media-left,
+.ashCustomClass .media > .pull-left {
+  padding-right: 10px;
+}
+.ashCustomClass .media-left,
+.ashCustomClass .media-right,
+.ashCustomClass .media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+.ashCustomClass .media-middle {
+  vertical-align: middle;
+}
+.ashCustomClass .media-bottom {
+  vertical-align: bottom;
+}
+.ashCustomClass .media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.ashCustomClass .media-list {
+  padding-left: 0;
+  list-style: none;
+}
+.ashCustomClass .list-group {
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+.ashCustomClass .list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.ashCustomClass .list-group-item:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.ashCustomClass .list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.ashCustomClass a.list-group-item {
+  color: #555;
+}
+.ashCustomClass a.list-group-item .list-group-item-heading {
+  color: #333;
+}
+.ashCustomClass a.list-group-item:hover,
+.ashCustomClass a.list-group-item:focus {
+  color: #555;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+.ashCustomClass .list-group-item.disabled,
+.ashCustomClass .list-group-item.disabled:hover,
+.ashCustomClass .list-group-item.disabled:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #eee;
+}
+.ashCustomClass .list-group-item.disabled .list-group-item-heading,
+.ashCustomClass .list-group-item.disabled:hover .list-group-item-heading,
+.ashCustomClass .list-group-item.disabled:focus .list-group-item-heading {
+  color: inherit;
+}
+.ashCustomClass .list-group-item.disabled .list-group-item-text,
+.ashCustomClass .list-group-item.disabled:hover .list-group-item-text,
+.ashCustomClass .list-group-item.disabled:focus .list-group-item-text {
+  color: #777;
+}
+.ashCustomClass .list-group-item.active,
+.ashCustomClass .list-group-item.active:hover,
+.ashCustomClass .list-group-item.active:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.ashCustomClass .list-group-item.active .list-group-item-heading,
+.ashCustomClass .list-group-item.active:hover .list-group-item-heading,
+.ashCustomClass .list-group-item.active:focus .list-group-item-heading,
+.ashCustomClass .list-group-item.active .list-group-item-heading > small,
+.ashCustomClass .list-group-item.active:hover .list-group-item-heading > small,
+.ashCustomClass .list-group-item.active:focus .list-group-item-heading > small,
+.ashCustomClass .list-group-item.active .list-group-item-heading > .small,
+.ashCustomClass .list-group-item.active:hover .list-group-item-heading > .small,
+.ashCustomClass .list-group-item.active:focus .list-group-item-heading > .small {
+  color: inherit;
+}
+.ashCustomClass .list-group-item.active .list-group-item-text,
+.ashCustomClass .list-group-item.active:hover .list-group-item-text,
+.ashCustomClass .list-group-item.active:focus .list-group-item-text {
+  color: #c7ddef;
+}
+.ashCustomClass .list-group-item-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+}
+.ashCustomClass a.list-group-item-success {
+  color: #3c763d;
+}
+.ashCustomClass a.list-group-item-success .list-group-item-heading {
+  color: inherit;
+}
+.ashCustomClass a.list-group-item-success:hover,
+.ashCustomClass a.list-group-item-success:focus {
+  color: #3c763d;
+  background-color: #d0e9c6;
+}
+.ashCustomClass a.list-group-item-success.active,
+.ashCustomClass a.list-group-item-success.active:hover,
+.ashCustomClass a.list-group-item-success.active:focus {
+  color: #fff;
+  background-color: #3c763d;
+  border-color: #3c763d;
+}
+.ashCustomClass .list-group-item-info {
+  color: #31708f;
+  background-color: #d9edf7;
+}
+.ashCustomClass a.list-group-item-info {
+  color: #31708f;
+}
+.ashCustomClass a.list-group-item-info .list-group-item-heading {
+  color: inherit;
+}
+.ashCustomClass a.list-group-item-info:hover,
+.ashCustomClass a.list-group-item-info:focus {
+  color: #31708f;
+  background-color: #c4e3f3;
+}
+.ashCustomClass a.list-group-item-info.active,
+.ashCustomClass a.list-group-item-info.active:hover,
+.ashCustomClass a.list-group-item-info.active:focus {
+  color: #fff;
+  background-color: #31708f;
+  border-color: #31708f;
+}
+.ashCustomClass .list-group-item-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+.ashCustomClass a.list-group-item-warning {
+  color: #8a6d3b;
+}
+.ashCustomClass a.list-group-item-warning .list-group-item-heading {
+  color: inherit;
+}
+.ashCustomClass a.list-group-item-warning:hover,
+.ashCustomClass a.list-group-item-warning:focus {
+  color: #8a6d3b;
+  background-color: #faf2cc;
+}
+.ashCustomClass a.list-group-item-warning.active,
+.ashCustomClass a.list-group-item-warning.active:hover,
+.ashCustomClass a.list-group-item-warning.active:focus {
+  color: #fff;
+  background-color: #8a6d3b;
+  border-color: #8a6d3b;
+}
+.ashCustomClass .list-group-item-danger {
+  color: #a94442;
+  background-color: #f2dede;
+}
+.ashCustomClass a.list-group-item-danger {
+  color: #a94442;
+}
+.ashCustomClass a.list-group-item-danger .list-group-item-heading {
+  color: inherit;
+}
+.ashCustomClass a.list-group-item-danger:hover,
+.ashCustomClass a.list-group-item-danger:focus {
+  color: #a94442;
+  background-color: #ebcccc;
+}
+.ashCustomClass a.list-group-item-danger.active,
+.ashCustomClass a.list-group-item-danger.active:hover,
+.ashCustomClass a.list-group-item-danger.active:focus {
+  color: #fff;
+  background-color: #a94442;
+  border-color: #a94442;
+}
+.ashCustomClass .list-group-item-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.ashCustomClass .list-group-item-text {
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+.ashCustomClass .panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.ashCustomClass .panel-body {
+  padding: 15px;
+}
+.ashCustomClass .panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.ashCustomClass .panel-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+.ashCustomClass .panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
+}
+.ashCustomClass .panel-title > a,
+.ashCustomClass .panel-title > small,
+.ashCustomClass .panel-title > .small,
+.ashCustomClass .panel-title > small > a,
+.ashCustomClass .panel-title > .small > a {
+  color: inherit;
+}
+.ashCustomClass .panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.ashCustomClass .panel > .list-group,
+.ashCustomClass .panel > .panel-collapse > .list-group {
+  margin-bottom: 0;
+}
+.ashCustomClass .panel > .list-group .list-group-item,
+.ashCustomClass .panel > .panel-collapse > .list-group .list-group-item {
+  border-width: 1px 0;
+  border-radius: 0;
+}
+.ashCustomClass .panel > .list-group:first-child .list-group-item:first-child,
+.ashCustomClass .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+  border-top: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.ashCustomClass .panel > .list-group:last-child .list-group-item:last-child,
+.ashCustomClass .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.ashCustomClass .panel-heading + .list-group .list-group-item:first-child {
+  border-top-width: 0;
+}
+.ashCustomClass .list-group + .panel-footer {
+  border-top-width: 0;
+}
+.ashCustomClass .panel > .table,
+.ashCustomClass .panel > .table-responsive > .table,
+.ashCustomClass .panel > .panel-collapse > .table {
+  margin-bottom: 0;
+}
+.ashCustomClass .panel > .table caption,
+.ashCustomClass .panel > .table-responsive > .table caption,
+.ashCustomClass .panel > .panel-collapse > .table caption {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.ashCustomClass .panel > .table:first-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.ashCustomClass .panel > .table:first-child > thead:first-child > tr:first-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+.ashCustomClass .panel > .table:first-child > tbody:first-child > tr:first-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.ashCustomClass .panel > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+.ashCustomClass .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+.ashCustomClass .panel > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+.ashCustomClass .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+  border-top-left-radius: 3px;
+}
+.ashCustomClass .panel > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+.ashCustomClass .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+.ashCustomClass .panel > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+.ashCustomClass .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+.ashCustomClass .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+  border-top-right-radius: 3px;
+}
+.ashCustomClass .panel > .table:last-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.ashCustomClass .panel > .table:last-child > tbody:last-child > tr:last-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+.ashCustomClass .panel > .table:last-child > tfoot:last-child > tr:last-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.ashCustomClass .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+.ashCustomClass .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+.ashCustomClass .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+.ashCustomClass .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+  border-bottom-left-radius: 3px;
+}
+.ashCustomClass .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+.ashCustomClass .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+.ashCustomClass .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+.ashCustomClass .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+.ashCustomClass .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+  border-bottom-right-radius: 3px;
+}
+.ashCustomClass .panel > .panel-body + .table,
+.ashCustomClass .panel > .panel-body + .table-responsive,
+.ashCustomClass .panel > .table + .panel-body,
+.ashCustomClass .panel > .table-responsive + .panel-body {
+  border-top: 1px solid #ddd;
+}
+.ashCustomClass .panel > .table > tbody:first-child > tr:first-child th,
+.ashCustomClass .panel > .table > tbody:first-child > tr:first-child td {
+  border-top: 0;
+}
+.ashCustomClass .panel > .table-bordered,
+.ashCustomClass .panel > .table-responsive > .table-bordered {
+  border: 0;
+}
+.ashCustomClass .panel > .table-bordered > thead > tr > th:first-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > thead > tr > th:first-child,
+.ashCustomClass .panel > .table-bordered > tbody > tr > th:first-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+.ashCustomClass .panel > .table-bordered > tfoot > tr > th:first-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+.ashCustomClass .panel > .table-bordered > thead > tr > td:first-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > thead > tr > td:first-child,
+.ashCustomClass .panel > .table-bordered > tbody > tr > td:first-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+.ashCustomClass .panel > .table-bordered > tfoot > tr > td:first-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  border-left: 0;
+}
+.ashCustomClass .panel > .table-bordered > thead > tr > th:last-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > thead > tr > th:last-child,
+.ashCustomClass .panel > .table-bordered > tbody > tr > th:last-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+.ashCustomClass .panel > .table-bordered > tfoot > tr > th:last-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+.ashCustomClass .panel > .table-bordered > thead > tr > td:last-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > thead > tr > td:last-child,
+.ashCustomClass .panel > .table-bordered > tbody > tr > td:last-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+.ashCustomClass .panel > .table-bordered > tfoot > tr > td:last-child,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  border-right: 0;
+}
+.ashCustomClass .panel > .table-bordered > thead > tr:first-child > td,
+.ashCustomClass .panel > .table-responsive > .table-bordered > thead > tr:first-child > td,
+.ashCustomClass .panel > .table-bordered > tbody > tr:first-child > td,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+.ashCustomClass .panel > .table-bordered > thead > tr:first-child > th,
+.ashCustomClass .panel > .table-responsive > .table-bordered > thead > tr:first-child > th,
+.ashCustomClass .panel > .table-bordered > tbody > tr:first-child > th,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  border-bottom: 0;
+}
+.ashCustomClass .panel > .table-bordered > tbody > tr:last-child > td,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+.ashCustomClass .panel > .table-bordered > tfoot > tr:last-child > td,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+.ashCustomClass .panel > .table-bordered > tbody > tr:last-child > th,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+.ashCustomClass .panel > .table-bordered > tfoot > tr:last-child > th,
+.ashCustomClass .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  border-bottom: 0;
+}
+.ashCustomClass .panel > .table-responsive {
+  margin-bottom: 0;
+  border: 0;
+}
+.ashCustomClass .panel-group {
+  margin-bottom: 20px;
+}
+.ashCustomClass .panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+.ashCustomClass .panel-group .panel + .panel {
+  margin-top: 5px;
+}
+.ashCustomClass .panel-group .panel-heading {
+  border-bottom: 0;
+}
+.ashCustomClass .panel-group .panel-heading + .panel-collapse > .panel-body,
+.ashCustomClass .panel-group .panel-heading + .panel-collapse > .list-group {
+  border-top: 1px solid #ddd;
+}
+.ashCustomClass .panel-group .panel-footer {
+  border-top: 0;
+}
+.ashCustomClass .panel-group .panel-footer + .panel-collapse .panel-body {
+  border-bottom: 1px solid #ddd;
+}
+.ashCustomClass .panel-default {
+  border-color: #ddd;
+}
+.ashCustomClass .panel-default > .panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+.ashCustomClass .panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ddd;
+}
+.ashCustomClass .panel-default > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333;
+}
+.ashCustomClass .panel-default > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ddd;
+}
+.ashCustomClass .panel-primary {
+  border-color: #337ab7;
+}
+.ashCustomClass .panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.ashCustomClass .panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #337ab7;
+}
+.ashCustomClass .panel-primary > .panel-heading .badge {
+  color: #337ab7;
+  background-color: #fff;
+}
+.ashCustomClass .panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #337ab7;
+}
+.ashCustomClass .panel-success {
+  border-color: #d6e9c6;
+}
+.ashCustomClass .panel-success > .panel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.ashCustomClass .panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #d6e9c6;
+}
+.ashCustomClass .panel-success > .panel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+.ashCustomClass .panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #d6e9c6;
+}
+.ashCustomClass .panel-info {
+  border-color: #bce8f1;
+}
+.ashCustomClass .panel-info > .panel-heading {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.ashCustomClass .panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #bce8f1;
+}
+.ashCustomClass .panel-info > .panel-heading .badge {
+  color: #d9edf7;
+  background-color: #31708f;
+}
+.ashCustomClass .panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #bce8f1;
+}
+.ashCustomClass .panel-warning {
+  border-color: #faebcc;
+}
+.ashCustomClass .panel-warning > .panel-heading {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.ashCustomClass .panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #faebcc;
+}
+.ashCustomClass .panel-warning > .panel-heading .badge {
+  color: #fcf8e3;
+  background-color: #8a6d3b;
+}
+.ashCustomClass .panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #faebcc;
+}
+.ashCustomClass .panel-danger {
+  border-color: #ebccd1;
+}
+.ashCustomClass .panel-danger > .panel-heading {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.ashCustomClass .panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ebccd1;
+}
+.ashCustomClass .panel-danger > .panel-heading .badge {
+  color: #f2dede;
+  background-color: #a94442;
+}
+.ashCustomClass .panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ebccd1;
+}
+.ashCustomClass .embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.ashCustomClass .embed-responsive .embed-responsive-item,
+.ashCustomClass .embed-responsive iframe,
+.ashCustomClass .embed-responsive embed,
+.ashCustomClass .embed-responsive object,
+.ashCustomClass .embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.ashCustomClass .embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+.ashCustomClass .embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
+.ashCustomClass .well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.ashCustomClass .well blockquote {
+  border-color: #ddd;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.ashCustomClass .well-lg {
+  padding: 24px;
+  border-radius: 6px;
+}
+.ashCustomClass .well-sm {
+  padding: 9px;
+  border-radius: 3px;
+}
+.ashCustomClass .close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
+.ashCustomClass .close:hover,
+.ashCustomClass .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.ashCustomClass button.close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+.ashCustomClass .modal-open {
+  overflow: hidden;
+}
+.ashCustomClass .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.ashCustomClass .modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  -o-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+}
+.ashCustomClass .modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.ashCustomClass .modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.ashCustomClass .modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.ashCustomClass .modal-content {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+}
+.ashCustomClass .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+.ashCustomClass .modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.ashCustomClass .modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.ashCustomClass .modal-header {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.ashCustomClass .modal-header .close {
+  margin-top: -2px;
+}
+.ashCustomClass .modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+.ashCustomClass .modal-body {
+  position: relative;
+  padding: 15px;
+}
+.ashCustomClass .modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+.ashCustomClass .modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.ashCustomClass .modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.ashCustomClass .modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+.ashCustomClass .modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+@media (min-width: 768px) {
+  .ashCustomClass .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .ashCustomClass .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  .ashCustomClass .modal-sm {
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .ashCustomClass .modal-lg {
+    width: 900px;
+  }
+}
+.ashCustomClass .tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.4;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.ashCustomClass .tooltip.in {
+  filter: alpha(opacity=90);
+  opacity: .9;
+}
+.ashCustomClass .tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+.ashCustomClass .tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+.ashCustomClass .tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+.ashCustomClass .tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+.ashCustomClass .tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #000;
+  border-radius: 4px;
+}
+.ashCustomClass .tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.ashCustomClass .tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.ashCustomClass .tooltip.top-left .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.ashCustomClass .tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.ashCustomClass .tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+.ashCustomClass .tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+}
+.ashCustomClass .tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.ashCustomClass .tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.ashCustomClass .tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.ashCustomClass .popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: left;
+  white-space: normal;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.ashCustomClass .popover.top {
+  margin-top: -10px;
+}
+.ashCustomClass .popover.right {
+  margin-left: 10px;
+}
+.ashCustomClass .popover.bottom {
+  margin-top: 10px;
+}
+.ashCustomClass .popover.left {
+  margin-left: -10px;
+}
+.ashCustomClass .popover-title {
+  padding: 8px 14px;
+  margin: 0;
+  font-size: 14px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+.ashCustomClass .popover-content {
+  padding: 9px 14px;
+}
+.ashCustomClass .popover > .arrow,
+.ashCustomClass .popover > .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.ashCustomClass .popover > .arrow {
+  border-width: 11px;
+}
+.ashCustomClass .popover > .arrow:after {
+  content: "";
+  border-width: 10px;
+}
+.ashCustomClass .popover.top > .arrow {
+  bottom: -11px;
+  left: 50%;
+  margin-left: -11px;
+  border-top-color: #999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  border-bottom-width: 0;
+}
+.ashCustomClass .popover.top > .arrow:after {
+  bottom: 1px;
+  margin-left: -10px;
+  content: " ";
+  border-top-color: #fff;
+  border-bottom-width: 0;
+}
+.ashCustomClass .popover.right > .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-right-color: #999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+  border-left-width: 0;
+}
+.ashCustomClass .popover.right > .arrow:after {
+  bottom: -10px;
+  left: 1px;
+  content: " ";
+  border-right-color: #fff;
+  border-left-width: 0;
+}
+.ashCustomClass .popover.bottom > .arrow {
+  top: -11px;
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+}
+.ashCustomClass .popover.bottom > .arrow:after {
+  top: 1px;
+  margin-left: -10px;
+  content: " ";
+  border-top-width: 0;
+  border-bottom-color: #fff;
+}
+.ashCustomClass .popover.left > .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+.ashCustomClass .popover.left > .arrow:after {
+  right: 1px;
+  bottom: -10px;
+  content: " ";
+  border-right-width: 0;
+  border-left-color: #fff;
+}
+.ashCustomClass .carousel {
+  position: relative;
+}
+.ashCustomClass .carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.ashCustomClass .carousel-inner > .item {
+  position: relative;
+  display: none;
+  -webkit-transition: 0.6s ease-in-out left;
+  -o-transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left;
+}
+.ashCustomClass .carousel-inner > .item > img,
+.ashCustomClass .carousel-inner > .item > a > img {
+  line-height: 1;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .ashCustomClass .carousel-inner > .item {
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    -o-transition: -o-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  .ashCustomClass .carousel-inner > .item.next,
+  .ashCustomClass .carousel-inner > .item.active.right {
+    left: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  .ashCustomClass .carousel-inner > .item.prev,
+  .ashCustomClass .carousel-inner > .item.active.left {
+    left: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  .ashCustomClass .carousel-inner > .item.next.left,
+  .ashCustomClass .carousel-inner > .item.prev.right,
+  .ashCustomClass .carousel-inner > .item.active {
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.ashCustomClass .carousel-inner > .active,
+.ashCustomClass .carousel-inner > .next,
+.ashCustomClass .carousel-inner > .prev {
+  display: block;
+}
+.ashCustomClass .carousel-inner > .active {
+  left: 0;
+}
+.ashCustomClass .carousel-inner > .next,
+.ashCustomClass .carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.ashCustomClass .carousel-inner > .next {
+  left: 100%;
+}
+.ashCustomClass .carousel-inner > .prev {
+  left: -100%;
+}
+.ashCustomClass .carousel-inner > .next.left,
+.ashCustomClass .carousel-inner > .prev.right {
+  left: 0;
+}
+.ashCustomClass .carousel-inner > .active.left {
+  left: -100%;
+}
+.ashCustomClass .carousel-inner > .active.right {
+  left: 100%;
+}
+.ashCustomClass .carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.ashCustomClass .carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+.ashCustomClass .carousel-control.right {
+  right: 0;
+  left: auto;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+.ashCustomClass .carousel-control:hover,
+.ashCustomClass .carousel-control:focus {
+  color: #fff;
+  text-decoration: none;
+  filter: alpha(opacity=90);
+  outline: 0;
+  opacity: .9;
+}
+.ashCustomClass .carousel-control .icon-prev,
+.ashCustomClass .carousel-control .icon-next,
+.ashCustomClass .carousel-control .glyphicon-chevron-left,
+.ashCustomClass .carousel-control .glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+}
+.ashCustomClass .carousel-control .icon-prev,
+.ashCustomClass .carousel-control .glyphicon-chevron-left {
+  left: 50%;
+  margin-left: -10px;
+}
+.ashCustomClass .carousel-control .icon-next,
+.ashCustomClass .carousel-control .glyphicon-chevron-right {
+  right: 50%;
+  margin-right: -10px;
+}
+.ashCustomClass .carousel-control .icon-prev,
+.ashCustomClass .carousel-control .icon-next {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  font-family: serif;
+  line-height: 1;
+}
+.ashCustomClass .carousel-control .icon-prev:before {
+  content: '\2039';
+}
+.ashCustomClass .carousel-control .icon-next:before {
+  content: '\203a';
+}
+.ashCustomClass .carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  list-style: none;
+}
+.ashCustomClass .carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+.ashCustomClass .carousel-indicators .active {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #fff;
+}
+.ashCustomClass .carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.ashCustomClass .carousel-caption .btn {
+  text-shadow: none;
+}
+@media screen and (min-width: 768px) {
+  .ashCustomClass .carousel-control .glyphicon-chevron-left,
+  .ashCustomClass .carousel-control .glyphicon-chevron-right,
+  .ashCustomClass .carousel-control .icon-prev,
+  .ashCustomClass .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    font-size: 30px;
+  }
+  .ashCustomClass .carousel-control .glyphicon-chevron-left,
+  .ashCustomClass .carousel-control .icon-prev {
+    margin-left: -15px;
+  }
+  .ashCustomClass .carousel-control .glyphicon-chevron-right,
+  .ashCustomClass .carousel-control .icon-next {
+    margin-right: -15px;
+  }
+  .ashCustomClass .carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 30px;
+  }
+  .ashCustomClass .carousel-indicators {
+    bottom: 20px;
+  }
+}
+.ashCustomClass .clearfix:before,
+.ashCustomClass .clearfix:after,
+.ashCustomClass .dl-horizontal dd:before,
+.ashCustomClass .dl-horizontal dd:after,
+.ashCustomClass .container:before,
+.ashCustomClass .container:after,
+.ashCustomClass .container-fluid:before,
+.ashCustomClass .container-fluid:after,
+.ashCustomClass .row:before,
+.ashCustomClass .row:after,
+.ashCustomClass .form-horizontal .form-group:before,
+.ashCustomClass .form-horizontal .form-group:after,
+.ashCustomClass .btn-toolbar:before,
+.ashCustomClass .btn-toolbar:after,
+.ashCustomClass .btn-group-vertical > .btn-group:before,
+.ashCustomClass .btn-group-vertical > .btn-group:after,
+.ashCustomClass .nav:before,
+.ashCustomClass .nav:after,
+.ashCustomClass .navbar:before,
+.ashCustomClass .navbar:after,
+.ashCustomClass .navbar-header:before,
+.ashCustomClass .navbar-header:after,
+.ashCustomClass .navbar-collapse:before,
+.ashCustomClass .navbar-collapse:after,
+.ashCustomClass .pager:before,
+.ashCustomClass .pager:after,
+.ashCustomClass .panel-body:before,
+.ashCustomClass .panel-body:after,
+.ashCustomClass .modal-footer:before,
+.ashCustomClass .modal-footer:after {
+  display: table;
+  content: " ";
+}
+.ashCustomClass .clearfix:after,
+.ashCustomClass .dl-horizontal dd:after,
+.ashCustomClass .container:after,
+.ashCustomClass .container-fluid:after,
+.ashCustomClass .row:after,
+.ashCustomClass .form-horizontal .form-group:after,
+.ashCustomClass .btn-toolbar:after,
+.ashCustomClass .btn-group-vertical > .btn-group:after,
+.ashCustomClass .nav:after,
+.ashCustomClass .navbar:after,
+.ashCustomClass .navbar-header:after,
+.ashCustomClass .navbar-collapse:after,
+.ashCustomClass .pager:after,
+.ashCustomClass .panel-body:after,
+.ashCustomClass .modal-footer:after {
+  clear: both;
+}
+.ashCustomClass .center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.ashCustomClass .pull-right {
+  float: right !important;
+}
+.ashCustomClass .pull-left {
+  float: left !important;
+}
+.ashCustomClass .hide {
+  display: none !important;
+}
+.ashCustomClass .show {
+  display: block !important;
+}
+.ashCustomClass .invisible {
+  visibility: hidden;
+}
+.ashCustomClass .text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.ashCustomClass .hidden {
+  display: none !important;
+}
+.ashCustomClass .affix {
+  position: fixed;
+}
+@-ms-viewport {
+  width: device-width;
+}
+.ashCustomClass .visible-xs,
+.ashCustomClass .visible-sm,
+.ashCustomClass .visible-md,
+.ashCustomClass .visible-lg {
+  display: none !important;
+}
+.ashCustomClass .visible-xs-block,
+.ashCustomClass .visible-xs-inline,
+.ashCustomClass .visible-xs-inline-block,
+.ashCustomClass .visible-sm-block,
+.ashCustomClass .visible-sm-inline,
+.ashCustomClass .visible-sm-inline-block,
+.ashCustomClass .visible-md-block,
+.ashCustomClass .visible-md-inline,
+.ashCustomClass .visible-md-inline-block,
+.ashCustomClass .visible-lg-block,
+.ashCustomClass .visible-lg-inline,
+.ashCustomClass .visible-lg-inline-block {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .ashCustomClass .visible-xs {
+    display: block !important;
+  }
+  .ashCustomClass table.visible-xs {
+    display: table;
+  }
+  .ashCustomClass tr.visible-xs {
+    display: table-row !important;
+  }
+  .ashCustomClass th.visible-xs,
+  .ashCustomClass td.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (max-width: 767px) {
+  .ashCustomClass .visible-xs-block {
+    display: block !important;
+  }
+}
+@media (max-width: 767px) {
+  .ashCustomClass .visible-xs-inline {
+    display: inline !important;
+  }
+}
+@media (max-width: 767px) {
+  .ashCustomClass .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .ashCustomClass .visible-sm {
+    display: block !important;
+  }
+  .ashCustomClass table.visible-sm {
+    display: table;
+  }
+  .ashCustomClass tr.visible-sm {
+    display: table-row !important;
+  }
+  .ashCustomClass th.visible-sm,
+  .ashCustomClass td.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .ashCustomClass .visible-sm-block {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .ashCustomClass .visible-sm-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .ashCustomClass .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ashCustomClass .visible-md {
+    display: block !important;
+  }
+  .ashCustomClass table.visible-md {
+    display: table;
+  }
+  .ashCustomClass tr.visible-md {
+    display: table-row !important;
+  }
+  .ashCustomClass th.visible-md,
+  .ashCustomClass td.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ashCustomClass .visible-md-block {
+    display: block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ashCustomClass .visible-md-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ashCustomClass .visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 1200px) {
+  .ashCustomClass .visible-lg {
+    display: block !important;
+  }
+  .ashCustomClass table.visible-lg {
+    display: table;
+  }
+  .ashCustomClass tr.visible-lg {
+    display: table-row !important;
+  }
+  .ashCustomClass th.visible-lg,
+  .ashCustomClass td.visible-lg {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  .ashCustomClass .visible-lg-block {
+    display: block !important;
+  }
+}
+@media (min-width: 1200px) {
+  .ashCustomClass .visible-lg-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 1200px) {
+  .ashCustomClass .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (max-width: 767px) {
+  .ashCustomClass .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .ashCustomClass .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ashCustomClass .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .ashCustomClass .hidden-lg {
+    display: none !important;
+  }
+}
+.ashCustomClass .visible-print {
+  display: none !important;
+}
+@media print {
+  .ashCustomClass .visible-print {
+    display: block !important;
+  }
+  .ashCustomClass table.visible-print {
+    display: table;
+  }
+  .ashCustomClass tr.visible-print {
+    display: table-row !important;
+  }
+  .ashCustomClass th.visible-print,
+  .ashCustomClass td.visible-print {
+    display: table-cell !important;
+  }
+}
+.ashCustomClass .visible-print-block {
+  display: none !important;
+}
+@media print {
+  .ashCustomClass .visible-print-block {
+    display: block !important;
+  }
+}
+.ashCustomClass .visible-print-inline {
+  display: none !important;
+}
+@media print {
+  .ashCustomClass .visible-print-inline {
+    display: inline !important;
+  }
+}
+.ashCustomClass .visible-print-inline-block {
+  display: none !important;
+}
+@media print {
+  .ashCustomClass .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+@media print {
+  .ashCustomClass .hidden-print {
+    display: none !important;
+  }
+}

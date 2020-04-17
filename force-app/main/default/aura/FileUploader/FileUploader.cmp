@@ -1,0 +1,82 @@
+<!-- fileUpload2.cmp is identical -->
+<aura:component controller="FileUploadController">
+    <aura:attribute name="parentId" type="Id"/>
+    <aura:attribute name="isVisible" type="Boolean" default="false" />
+    <aura:attribute name="isUploading" type="Boolean" default="false" />
+    <aura:attribute name="fileName" type="String" default="" />
+    <aura:attribute name="fileModifiedDate" type="Date" default="" />
+    <aura:attribute name="fileSize" type="String" default="" />
+    <aura:attribute name="errorMessage" type="String" default="" />
+    <aura:attribute name="hasError" type="Boolean" default="false" />
+    
+    <div>
+        <aura:if isTrue="{!v.isVisible}">
+            <div role="dialog" tabindex="-1" aria-labelledby="FileUploaderModalHeader" class="slds-modal slds-fade-in-open slds-modal--large">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <lightning:buttonIcon class="slds-modal__close slds-button--icon-inverse" iconName="utility:close" variant="bare" alternativeText="Close" onclick="{!c.onClose}" />
+                        <h2 id="FileUploaderModalHeader" class="slds-text-heading--medium">Upload File</h2>
+                    </div>
+                    <div class="slds-modal__content slds-p-around--medium slds-is-relative">
+                        <lightning:spinner aura:id="Spinner" class="{!if(v.isUploading, '', 'slds-hide')}" variant="brand" size="medium" />
+                        <aura:if isTrue="{!v.hasError}">
+                            <ui:message title="Error:" severity="error">
+                                {!v.errorMessage}
+                            </ui:message>
+                        </aura:if>
+                        
+                        <div class="slds-form--stacked">
+                            <div class="slds-form-element">
+                                <span class="slds-form-element__label" id="FileControlLabel">Attachment</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-file-selector slds-file-selector--files">
+                                        <div class="slds-file-selector__dropzone">
+                                            <input type="file" aura:id="FileControl" class="slds-file-selector__input slds-assistive-text" multiple="false" id="FileUploadControl" aria-describedby="FileControlLabel" onchange="{!c.onFileControlChange}" />
+                                            <label class="slds-file-selector__body" for="FileUploadControl">
+                                                <span class="slds-file-selector__button slds-button slds-button--neutral">
+                                                    <lightning:buttonIcon iconClass="slds-button__icon slds-button__icon--left" iconName="utility:upload" variant="bare" alternativeText="Upload" />
+                                                    Upload Files
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <aura:if isTrue="{!not(empty(v.fileName))}">
+                            <ul class="slds-has-dividers--bottom-space">
+                                <li class="slds-item">
+                                    <div class="slds-tile slds-media">
+                                        <div class="slds-media__figure">
+                                            <lightning:icon iconName="doctype:zip" />
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <h3 class="slds-truncate" title="{!v.fileName}">
+                                                <a href="javascript:void(0);">{!v.fileName}</a>
+                                            </h3>
+                                            <div class="slds-tile__detail slds-text-body--small">
+                                                <ul class="slds-list--horizontal slds-has-dividers--right">
+                                                    <li class="slds-item">
+                                                        <ui:outputDateTime value="{!v.fileModifiedDate}"/>
+                                                    </li>
+                                                    <li class="slds-item">{!v.fileSize}</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </aura:if>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <lightning:button label="Close" onclick="{!c.onClose}" />
+                        <lightning:button label="Upload" variant="brand" onclick="{!c.save}" />
+                    </div>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+        </aura:if>
+    </div>
+    
+</aura:component>

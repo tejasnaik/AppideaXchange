@@ -1,0 +1,8 @@
+<design:component >
+    <design:attribute name="totalProgress" label="Denominator" description="Total value of work field API." />
+    <design:attribute name="actualProgress" label="Numerator" description="Actual value of work field API."/>
+    <design:attribute name="sObjectName" 	label="Object API" description="API name of object." />
+    
+    
+    
+</design:component>

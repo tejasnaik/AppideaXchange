@@ -1,0 +1,73 @@
+<aura:component controller="imageUploadController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+
+    <aura:attribute name="recordId" type="Id"/>  
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <aura:attribute name="pictureSource" type="String" default="https://s3-us-west-1.amazonaws.com/sfdc-demo/image-placeholder.png"/>
+    
+    <div class="slds">
+        
+        <div tabindex="-1" aria-labelledby="header" aria-hidden="false" id="modal" role="dialog" class="slds-modal slds-fade-in-open" style="display:none;">
+            <div class="slds-backdrop slds-backdrop--open">
+                <div class="slds-modal__container">
+                    
+                    <div class="slds-modal__header">
+                        
+                        <lightning:buttonIcon class="slds-modal__close" iconName="utility:close" variant="bare-inverse" size="large" alternativeText="Close" onclick="{!c.closeModal}" />
+                        <h2 id="header" class="slds-text-heading--medium">Avatar</h2>
+                    </div>
+                    
+                    <div class="slds-modal__content">
+                        
+                        <div  class="slds-align--absolute-center slds-p-top--small">
+                            <span class="slds">
+                                <img style="height:175px;width:175px" src="{!v.pictureSource}"  alt="Avatar" />
+                            </span>
+                        </div>
+                        
+                        
+                        <div class="slds-form-element slds-align--absolute-center slds-p-top--small">
+                            <div class="slds-form-element__control">
+                                <div class="slds-file-selector slds-file-selector--files">
+                                    <div class="slds-file-selector__dropzone">
+                                        <input type="file" class="slds-file-selector__input slds-assistive-text" id="file" aria-describedby="file-selector-id" />
+                                        <label class="slds-file-selector__body" for="file">
+                                            <span class="slds-file-selector__button slds-button slds-button--neutral">
+                                                <lightning:icon iconName="utility:upload" size="x-small" alternativeText="Indicates approval"/>
+                                                Upload Files</span>
+                                            <div ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
+                                                <span class="slds-file-selector__text slds-medium-show">or Drop Files</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                        <div class="slds-p-around--small"></div>
+                        
+                    </div>
+                    
+                    <div class="slds-modal__footer">
+                        <button class="slds-button slds-button--brand" onclick="{!c.closeModal}">Close</button>
+                        <button class="slds-button slds-button--brand" onclick="{!c.save}">Save</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div  class="slds-align--absolute-center">
+            <div class="slds-file-selector__dropzone">
+                <span class="slds">
+                    <img  style="height:280px;width:300px"  src="{!v.pictureSource}"  alt="Avatar" />
+                </span>
+            </div>
+        </div>
+        
+        <div class="slds-p-top--small">
+            <button class="slds-button slds-button--neutral slds-align--absolute-center " onclick="{!c.showModal}">Upload</button>
+        </div>
+        
+    </div>
+    
+</aura:component>

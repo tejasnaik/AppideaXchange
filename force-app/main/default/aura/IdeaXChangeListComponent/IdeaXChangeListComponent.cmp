@@ -1,0 +1,125 @@
+<aura:component controller="IdeaXChangeController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <!--lightning resources-->
+    <!--SY0402 -->
+    <!--ltng:require scripts="{$Resource.Jquery}" /-->
+    <!--SY0402 -->
+    
+    <!--attribut decleration-->
+    <aura:attribute name="searchKeyword" type="String" default=""/>
+    <aura:attribute name="filterType" type="String" default="RECENT"/>
+    <aura:attribute name="limit" type="Integer" default="5"/>
+    <aura:attribute name="ideaCount" type="Integer" default="0"/>
+    <aura:attribute name="ideas" type="Idea[]"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    
+    <!--handler events-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="ideaCreationEvent" event="c:IdeaComponentEvent" action="{!c.handlerIdeaCreationEvent}"/>
+    
+    <!--component-->
+    <div class="slds-grid slds-grid--align-spread">
+        <div class="slds-col slds-size--2-of-12">
+            <ui:inputSelect class="slds-select" value="{!v.filterType}" change="{!c.onFilterChange}">
+                <ui:inputSelectOption text="Recent" label="Recent Ideas" />
+                <ui:inputSelectOption text="Popular" label="Popular Ideas" />
+            </ui:inputSelect>
+        </div>
+        <div class="slds-col slds-size--4-of-12">
+            <div class="slds-form-element">
+                <label class="slds-assistive-text" for="IdeaSearchTextbox">Search Idea</label>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
+                    <lightning:buttonIcon class="slds-input__icon" variant="bare" iconName="utility:search" onclick="{!c.onSearchIdeaClick}" alternativeText="Search Idea" />
+                    <ui:inputText class="slds-input" value="{!v.searchKeyword}" keyup="{!c.onSearchIdeaKeyup}" updateOn="keyup" placeholder="Search Idea" />
+                </div>
+            </div>
+        </div>
+        <div class="slds-col">
+            <lightning:button variant="brand" label="Post an Idea" onclick="{!c.submitIdea}"></lightning:button>
+        </div>
+    </div>
+    <br/>
+    
+    <div class="slds-scrollable">
+        <lightning:spinner aura:id="Spinner" class="slds-hide" variant="brand" size="large"/>
+        <aura:if isTrue="{!v.ideas.length > 0}">
+            <div>
+                <aura:iteration items="{!v.ideas}" var="idea">
+                    <div class="slds-grid slds-box slds-box--x-small slds-m-bottom--small">
+                        <div class="slds-box--x-small slds-text-align--center slds-m-around--x-small slds-border--right slds-size--4-of-6">
+                            <div class="slds-text-heading--small slds-m-bottom--small slds-text-align--left ">{!idea.CogniAppEx__Title__c}</div>
+                            <div class="slds-text-align--left slds-text-body--regular slds-p-bottom_small">
+                                <lightning:formattedRichText value="{!idea.CogniAppEx__Description__c}" />
+                             </div>
+                            <aura:if isTrue="{!or(idea.CogniAppEx__POC__r.Name, idea.CogniAppEx__Vertical__c, idea.CogniAppEx__Cloud__c)}">
+                            <article class="slds-tile slds-text-align--left ">
+                                   <div class="slds-tile__detail">
+                                        <ul class="slds-list_horizontal ">
+                                            <aura:if isTrue="{!idea.CogniAppEx__POC__r.Name}" ><li class="slds-item slds-p-right_small"><b>POC Name : </b> <a href="{!'/'+idea.CogniAppEx__POC__c}" target="_blank">{!idea.CogniAppEx__POC__r.Name}</a> </li></aura:if> 
+                                            <aura:if isTrue="{!idea.CogniAppEx__Vertical__c}" > <li class="slds-item slds-p-right_small"><b>Vertical : </b>{!idea.CogniAppEx__Vertical__c} </li></aura:if> 
+                                            <aura:if isTrue="{!idea.CogniAppEx__Cloud__c}"> <li class="slds-item slds-p-right_small"><b>Cloud : </b>{!idea.CogniAppEx__Cloud__c} </li></aura:if> 
+                                        </ul>
+                                    </div>
+                                </article>
+                                </aura:if>
+                                <div class="slds-m-top--small">
+                                    <ul class="slds-post__footer-meta-list slds-list--horizontal slds-has-dividers--right slds-text-title">
+                                        <li class="slds-item slds-truncate">
+                                            <a href="javascript:void(0);" data-id="{!idea.Id}" onclick="{!c.postComment}">{!idea.CogniAppEx__Idea_Comments__r.length || 0}&nbsp;comments</a>
+                                        </li>
+                                        <li class="slds-item">{!idea.CogniAppEx__Days_Difference__c} days ago</li>
+                                    </ul>
+                                </div> 
+                        </div>
+                        <div class="slds-size--1-of-6 slds-text-align--center slds-align-middle">
+                            <div>
+                                <div class="slds-grid slds-grid--align-center">
+                                    <div class="slds-box slds-box--x-small slds-m-around--xxx-small">
+                                        <button class="slds-button slds-float--left" aria-live="assertive" title="Like" data-id="{!idea.Id}" data-vote-type="Up" onclick="{!c.likeOrUnlikeIdea}">
+                                            <lightning:icon iconName="utility:like" size="small" alternativeText="Like"/>
+                                            <div>({!idea.CogniAppEx__Like_Count__c})</div>
+                                        </button>
+                                    </div>
+                                    <div class="slds-m-around--xxx-small">
+                                        
+                                    </div>
+                                    <div class="slds-box slds-box--x-small slds-m-around--xxx-small">
+                                        <button class="slds-button  slds-float--left" aria-live="assertive" title="Dislike" data-id="{!idea.Id}" data-vote-type="Down" onclick="{!c.likeOrUnlikeIdea}">
+                                            <lightning:icon iconName="utility:dislike" size="small" alternativeText="Dislike"/>
+                                            <div>({!idea.CogniAppEx__Dislike_Count__c})</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="slds-badge">{!idea.CogniAppEx__Status__c}</span>
+                            </div>
+                        </div>
+                        <div class="slds-text-align--center slds-grid slds-grid--vertical-align-center slds-grid--align-center slds-size--1-of-6">
+                            <div>
+                                <span class="slds-avatar slds-avatar--circle slds-avatar--medium">
+                                    <img src="{!idea.CogniAppEx__User__r.SmallPhotoUrl}" alt="{!idea.CogniAppEx__User__r.Name}" />
+                                </span>
+                                <div>
+                                    <a href="{!'/'+idea.CogniAppEx__User__c}" target="_blank">{!idea.CogniAppEx__User__r.Name}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aura:iteration>
+                
+                <div aura:id="LoadinMoreText" class="slds-text-body--regular slds-text-align--center slds-hide">Loading more...</div>
+            </div>
+            
+            <aura:set attribute="else">
+                <div class="slds-box slds-theme--shade slds-theme--alert-texture">
+                    <p>No records found to display.</p>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+    
+    <!--modal dialog box:New Idea-->
+    <c:postIdea aura:id="PostIdea" isVisible="false" />
+    <c:postComment aura:id="PostComment" />
+    
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component >
+    <!-- created by Diwanshu Setia-for any doubts please contact ansh.setia1818@gmail.com-->
+    <aura:attribute name="matches" type="String[]"/>
+    <aura:attribute name="fields" type="String[]"/>
+    <aura:attribute access="public" name="fieldName" type="String" description="Id selected for which field. If we are rendering multiple lookups in same UI" />
+    <aura:attribute access="public" name="searchOn" type="String" description="Based on which field to search" />
+    <aura:registerEvent name="LookupDataSet" type="c:LookupDataSet"/>
+    
+    <aura:iteration items="{!v.matches}" var="match">
+        
+        <tr id="{!globalId + '_id_' + match.objRecords.Id}" onclick="{!c.select}">
+            {!match.objRecords.Name}
+        </tr>
+    </aura:iteration>
+   
+</aura:component>

@@ -1,0 +1,37 @@
+<!--
+	Desc - This component show only a button.
+	Functionality : Get the address and based on current record will save the address. (Currently for lead object)
+	Created Date : 25-Dec-2017
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                controller="GeoReverseAddressController"
+                access="global" >
+    
+    <!-- Attribute hold the Id of record based on URL-->
+    <aura:attribute name="recordId" type="String"/>
+    
+    <!-- Attribute hold the latitude of current position -->
+    <aura:attribute name="latitude" type="String"/>
+    
+    <!-- Attribute hold the Longitude of current position -->
+    <aura:attribute name="longitude" type="String"/>
+    
+    <!-- Attribute hold the standard address based on latitude and longitude -->
+    <aura:attribute name="StarndardAddress" type="String"/>
+    
+    <!-- This attribute tells to the controller to get short address format or full address format eg : USA or United State -->
+    <aura:attribute name="isShortName" type="boolean" default="true"/>
+    
+    <aura:attribute name="inProgress"  default="false" type="boolean"/>
+    <aura:attribute name="FieldAPI" description="Provide field api name where need to save full address." default="" type="String"/>
+    
+	
+    <div class="slds-grid slds-wrap slds-grid_pull-padded">
+            <div class="slds-p-horizontal_small slds-size_1-of-1">
+                    <lightning:buttonStateful labelWhenOff="Get Address and Save" 
+                              iconNameWhenOff="utility:add"   iconNameWhenOn="utility:settings"
+							  labelWhenOn="Getting address please wait.."                                              
+                              state="{!v.inProgress}" onclick="{! c.handleClick }" />
+            </div>
+    </div>
+</aura:component>

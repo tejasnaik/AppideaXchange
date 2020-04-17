@@ -1,0 +1,101 @@
+<!--
+ * Entity Name Name: TaskTile Component
+ * Description: Component to display Task information in tile format.
+ * Developed by: Rajendra Singh Nagar (640829)
+ * Author: Cognizant Technology Solutions
+-->
+<aura:component controller="TaskTileController" implements="forceCommunity:availableForAllPageTypes,flexiPage:availableForAllPageTypes">
+    <!-- Define Aura attributes - Start -->
+    <aura:attribute name="title" type="String"/>
+    <aura:attribute name="noRecordsMessage" type="String" default="No tasks to display."/>
+    <aura:attribute name="defaultTaskRange" type="String" default="Overdue" 
+                    Description="Enter any one: 'Today','Tomorrow','Overdue','ThisWeek','NextWeek'"
+                    required="true"/>
+    <aura:attribute name="gridSize" type="Integer" default="2"/>
+    <aura:attribute name="fields" type="String" default="Name,Birthdate"
+                    description="The first one will be highlight field."/>
+    <aura:attribute name="fieldsLabelMap" type="String" default="Birthdate:DOB"/>
+    <aura:attribute name="objName" type="String" default="Contact"/>
+    <aura:attribute name="imageField" type="String" default="Customer_Pic__c"/>
+    <aura:attribute name="showRange" type="boolean" default="true"/>
+    
+    <aura:attribute name="overdueSize" type="Integer"/>
+    <aura:attribute name="todaySize" type="Integer"/>
+    <aura:attribute name="tomorrowSize" type="Integer"/>
+    <aura:attribute name="thisWeekSize" type="Integer" default="0"/>
+    <aura:attribute name="nextWeekSize" type="Integer"/>
+    <aura:attribute name="patientList" type="list" default="[]"/>
+    <aura:attribute name="userContext" type="Object"/>
+    <aura:attribute name="rangeOptions" type="list"/>
+    <!-- Define Aura attributes - End -->
+    
+    <!-- Define Aura Handler - Start -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!-- Define Aura Handler - End -->
+    <div class="slds slds-border--top slds-border_bottom slds-p-bottom--medium slds-p-top_medium">
+        <lightning:spinner variant="brand" size="large" aura:id="mySpinner"/>
+        <div class="{!if(empty(v.title),'slds-hide','slds-p-left--small slds-text-heading--medium')}">
+            <lightning:layout horizontalAlign="" verticalAlign="start">
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    {!v.title}
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small" class="customWidth">
+                    <aura:if isTrue="{!v.showRange}">
+                        <lightning:select aura:id="rangeSelect" name="select" label="Select a range" required="true" class="selectSize" onchange="{!c.handleOnChange}">
+                            <aura:iteration items="{!v.rangeOptions}" var="range">
+                                <option value="{!range.value}" text="{!range.label}" selected="{!if(range.value==v.defaultTaskRange,true,false)}"></option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </aura:if>
+                </lightning:layoutItem>
+            </lightning:layout> 
+        </div>
+        
+        <div class="slds-grid slds-wrap slds-p-left--small">
+            <!-- Iterate over patient list to create board tiles - Start -->
+            <aura:iteration items="{!v.patientList}" var="patient" indexVar="count">
+                <div class="{!'slds-size_1-of-'+v.gridSize}" style="{!if(count>6,'display:none','')}">
+                    <div class="TileClass slds-p-around--xx-small">
+                        <ul class="slds-has-dividers_around-space">
+                            <li class="slds-item">
+                                <lightning:layout horizontalAlign="space" verticalAlign="center">
+                                    <lightning:layoutItem flexibility="auto">
+                                        <lightning:avatar src="{!patient.imageURL}" initials="PA" size="large"
+                                                          fallbackIconName="standard:contact" alternativeText="{!patient.record.Name}"/>
+                                    </lightning:layoutItem>
+                                    <lightning:layoutItem flexibility="auto" padding="around-small">
+                                        <article class="slds-tile slds-tile_board">
+                                            <aura:iteration items="{!patient.twr}" var="tileRec" indexVar="recCount">
+                                                <aura:if isTrue="{!recCount==0}">
+                                                    <h3 class="slds-truncate slds-text-heading--label" title="{!patient.record.Name}">
+                                                        <a href="" id="{!patient.recordId}" onclick="{!c.openPatientDetails}">{!tileRec.value}</a>
+                                                    </h3>   
+                                                    <aura:set attribute="else">
+                                                        <div class="slds-tile__detail slds-text-body_small">
+                                                            <p class="slds-p-top--xxx-small slds-text-heading--label-normal slds-truncate" title="{!patient.record.Birthdate}">
+                                                                {!tileRec.label} : {!tileRec.value}
+                                                            </p>
+                                                        </div>
+                                                    </aura:set>
+                                                </aura:if>
+                                                
+                                            </aura:iteration>
+                                        </article>
+                                    </lightning:layoutItem>
+                                </lightning:layout>
+                                <div class="TileBackground slds-box_border slds-p-top slds-text-align--center slds-text-color_inverse slds-text-heading--label">
+                                    Open Tasks: {!patient.taskCount}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aura:iteration>
+            <aura:if isTrue="{!empty(v.patientList)}">
+                <div class="slds-text-heading--label slds-page-header" style="width:99%">
+                    {!v.noRecordsMessage}
+                </div>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

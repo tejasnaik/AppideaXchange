@@ -1,0 +1,172 @@
+<aura:component controller="GoogleMap"  description="GoogleMapContainer" access="global" implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes">
+    <aura:attribute name="con" type="Contact[]" />
+    <aura:attribute name="acc" type="Account[]" />
+    <aura:attribute access="public" name="sObjectAPIName" type="String" default="Account" 
+                    description="The API name of the SObject to search" />
+    <aura:attribute name="recordId" type="Id" default="0012800000bC2QPAA0"/>
+    <aura:attribute access="public" name="searchOn" default="" type="String" description="Based on which field to search.It should be one of value included here
+                                                                                          {ALL,NAME,EMAIL,PHONE,SIDEBAR}" />
+    <aura:attribute name="mapOptions" type="Object" default='{"zoom": 2}' />
+    <aura:attribute name="mapOptionsCenter" type="Object" default='{lat:-25.363882, lng:131.044922}'/>
+    <aura:attribute name="mapData" type="Object[]" />
+    <aura:attribute name="searchData" type="String[]" />
+    <aura:attribute name="locData" type="Object[]" />
+    <aura:attribute name="searchString" type="String" default='' />
+    <aura:attribute name="searchState" type="String" default='' />
+    <aura:attribute name="searchCountry" type="String" default='' />
+    <aura:attribute name="searchCity" type="String" default='' />
+    <aura:attribute name="modalMessage" type="String" access="public"/>
+    <aura:attribute name="fields" type="String[]" default="Id, Name, BillingCountry,BillingLatitude, BillingLongitude,BillingStreet,BillingCity" />
+    <aura:attribute name="selectedValueDistance" type="String" default="choose one..."/>
+    <aura:attribute name="selectedValueUnits" type="String" default="choose one..."/>
+    <aura:attribute name="isDisplayDistance" type="String" default="no"/>
+    
+    <aura:handler name="setAttribute" event="c:setAttributeEvent" action="{!c.setAttributeValue}"/> 
+    
+    <!-- Fetch Account and contact list -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div >
+        <div class="slds-grid slds-grid--vertical">
+            <form class="slds-form--inline">
+                <div class="slds-page-header">
+                    <div class="slds-media">
+                        <div class="slds-media__body">
+                            <h2 class="slds-page-header__title slds-truncate slds-align-middle" title="Accounts Data">
+								<img class="googleLogo" src="https://searchengineland.com/figz/wp-content/seloads/2012/12/Screen-Shot-2012-12-12-at-9.52.35-PM.png"                                     />
+                                Partner Locator 
+                            </h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-card__body">
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer">  					
+                    <Tr class="slds-text-title_caps">
+                        
+                        <td scope="col">	
+                            <div class="slds-form-element"  >
+                                <div class="slds-form-element__control">
+                                    <c:GoogleMapsAutocomplete searchKey="{!v.searchCity}"
+                                                              searchKeyState="{!v.searchState}"
+                                                              searchKeyCountry="{!v.searchCountry}" 
+                                                              label="CITY"/>
+                                </div>
+                            </div>
+                        </td>
+                        <td scope="col">	
+                            <div class="slds-form-element" >
+                                <div class="slds-form-element__control">
+                                    <lightning:input type="text" label="State" value="{!v.searchState}"  class="slds-m-bottom--medium"/>
+                                </div>
+                            </div>
+                        </td>
+                        <td scope="col">	
+                            <div class="slds-form-element">
+                                <lightning:input type="text" label="Country" value="{!v.searchCountry}"  class="slds-m-bottom--medium"/>
+                            </div>
+                            
+                        </td>
+                        
+                       
+                       
+                    </Tr>
+                    
+                    <tr class="slds-text-title_caps">
+                        
+                        <td scope="col">
+                            <div class="slds-form-element" >
+                                <div class="slds-form-element__control">
+                                    <c:GoogleMapLookupSObject aura:id="Account" sObjectAPIName="Account" 
+                                                              label="Name"
+                                                              fieldName="def"
+                                                              fields="Name,Id,BillingCountry" 
+                                                              searchString="{!v.searchString}" 
+                                                              searchOn="NAME"
+                                                              />
+                                </div>
+                            </div>
+                            <div class="slds-form-element">
+                                <lightning:button class="slds-align--absolute-center" label="Locate" onclick="{! c.submit }"/>
+                            </div>
+                        </td>  
+                        <td scope="col"></td>
+                         <td scope="col">
+                         <aura:if isTrue="{!v.isDisplayDistance == 'yes'}" >
+                            <td scope="col">	
+                                <div class="slds-form-element">
+                                    <lightning:select name="selectItem" label="Distance" aura:id="distance" value="{!v.selectedValueDistance}" onchange="{! c.dropDownAction }">
+                                        <option value="choose one...">choose one...</option>
+                                        <option value="10">10</option>
+                                        <option value="100">100</option>
+                                        <option value="200">200</option>
+                                        <option value="300">300</option>
+                                        <option value="400">400</option>
+                                        <option value="500">500</option>
+                                    </lightning:select>
+                                </div>
+                             </td>
+                             <td scope="col">	
+                                <div class="slds-form-element">
+                                    <lightning:select name="selectItem" label="Units" aura:id="units"  value="{!v.selectedValueUnits}" >
+                                        <option value="choose one...">choose one...</option>
+                                        <option value="km">km</option>
+                                        <option value="mi">mi</option>
+                                    </lightning:select>
+                                </div>
+                            </td>
+                        </aura:if>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </form>            
+        </div>
+        
+        <br/>
+        <div  class="slds-grid slds-grid--Horizontal-align-center slds-grid--align-spread slds-m-right--xx-large">
+            
+            <div class="slds-size_1-of-4">
+                <aura:if isTrue="{!v.searchData !=''}" >
+                    <aura:iteration items="{!v.searchData}" var="acc">
+                        <div class="slds-media slds-tile slds-m-bottom--xx-small"
+                             onclick="{!c.selectOption}"
+                             data-value="{!acc.objRecords.Id}">
+                            <div class="slds-media__figure">
+                                <lightning:icon class="slds-m-right--xx-small" iconName="standard:account" variant="error"/>
+                            </div>
+                            <div class="slds-media__body">
+                                <p> {!acc.objRecords.Name }</p>
+                                <ul class="slds-tile__detail slds-list--horizantal slds-has-dividers slds-text-body--small">
+                                    <li class="slds-truncate slds-list__item">{!acc.objRecords.BillingStreet}
+                                        ,{!acc.objRecords.BillingCity}
+                                        ,{!acc.objRecords.BillingCountry}
+                                        ,{!acc.objRecords.BillingState}</li>
+                                </ul>
+                                <hr/>
+                            </div>
+                        </div>
+                        <br/>                       
+                    </aura:iteration>
+                </aura:if>
+            </div>
+            <div class="slds-size_3-of-4">
+                <!--c:GoogleMap aura:id="GoogleMap"  mapOptionsCenter="{!v.mapOptionsCenter}" recordId="{!v.recordId}" / -->
+                <c:GoogleMap aura:id="GoogleMap"/>
+            </div>
+        </div>
+    </div>
+    <div aura:id="modalbox" class="slds-tabs--default__content slds-hide">
+        <div class="slds-modal slds-fade-in-open" aria-hidden="false" role="dialog" >
+            <div class="slds-modal__container" >
+                <div class="slds-modal__header">      
+                    <h2 class="slds-text-heading--small">{!v.modalMessage}</h2>
+                </div>      
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button--neutral" onclick='{!c.closeModal}'>OK</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </div>
+    <br/>
+</aura:component>

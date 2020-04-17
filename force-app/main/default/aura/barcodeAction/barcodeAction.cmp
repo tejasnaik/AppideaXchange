@@ -1,0 +1,24 @@
+<aura:component controller="barcodeActionController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="selectedField" type="String"/>
+    <aura:attribute name="field" type="String" required="true" default="Name"/>
+    <aura:attribute name="selecttechnique" type="String" default="code128"/>
+    
+    <aura:method name="barcodegenerate" action="{!c.createBarcode}" access="PUBLIC"></aura:method>
+    <div class="slds-page-header">
+         <div class="slds-media">
+            <div class="slds-media__body">
+              <h1 class="slds-text-heading--label" title="BarCode">BarCode Type: {!v.selecttechnique}</h1> 
+              <p class="slds-page-header__title slds-m-right--small slds-truncate slds-align-left">Selected Field: {!v.field}</p>
+            </div>
+          </div>
+	</div>
+    <div id="multibarcode" class="multibarcode" style="overflow: auto;width:100%;"></div>
+    <div id="barcodeTarget" class="barcodeTarget"></div>
+    <canvas id="canvasTarget" ></canvas>
+    <ltng:require scripts="{!join(',', 
+    $Resource.jquerybarcode + '/jquery-latest.min.js', 
+    $Resource.jquerybarcode + '/jquery-barcode.js')}" afterScriptsLoaded="{!c.scriptLoaded}"/>
+</aura:component>

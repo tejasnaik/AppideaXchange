@@ -1,0 +1,57 @@
+<aura:component controller="Cts_CommentController" >
+    
+    <!--<aura:attribute name="UserId" type="String"/>-->
+    <aura:attribute name="ItemId" type="String"/>
+    <aura:attribute name="charRemain" type="Integer" default="240"/>
+    <aura:attribute name="showPastComment" type="boolean" default="false"/>
+    <aura:attribute name="CurrentCommnet" type="String"/>
+    <aura:attribute name="spinner" type="boolean" default="false"/>
+    
+    
+    
+    
+    <div class="slds-grid ">
+        <div class="slds-col--padded ">
+            <div class="slds-publisher slds-publisher--discussion slds-is-active">
+                <!--<dl class="slds-dl-1-inline slds-m-bottom-1-small slds-publisher__toggle-visibility">
+                    <dt class="slds-dl-1-inline__label slds-text-body-1-small">To: </dt>
+                    <dd class="slds-dl-1-inline__detail">My Followers</dd>
+                </dl>-->
+                <!--<label for="comment-text-input2" class="slds-assistive-text">Write a comment</label>-->
+                <div class="">
+	                <lightning:spinner variant="brand" alternativeText="Working..." size="small"  class="{!v.spinner?'slds-show':'slds-hide'}" /> 
+                </div>
+                <textarea aura:id="comment-text-input2" class="slds-publisher__input slds-textarea slds-text-longform" 
+                          placeholder="Write a comment…"
+                          onkeyup="{!c.countCharRem}"
+                          maxlength="240">
+                    
+                </textarea>
+                <span> {!v.charRemain} characters remaining.</span>
+                <div style="float:right" class="slds-publisher__actions slds-grid slds-grid--align-spread">
+                    <button class="slds-button slds-button--brand" onclick="{!c.shareComment}">Share</button>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="slds-p-around--medium">
+                
+                <aura:if isTrue="{!v.showPastComment}">
+                    <div aura:id="pastCommentsPannel">
+                    
+                    </div>
+                    <!--<c:Cts_PastComments ItemId="{!v.ItemId}" />-->
+                    <aura:set attribute="else">
+                        <center> 
+                            <lightning:button label="Show Past Comments" variant="brand" onclick="{! c.showPastComments }"/>
+                        </center>
+                    </aura:set> 
+                </aura:if>
+            </div>    
+        </div>
+    </div>
+    
+    
+    
+    
+</aura:component>

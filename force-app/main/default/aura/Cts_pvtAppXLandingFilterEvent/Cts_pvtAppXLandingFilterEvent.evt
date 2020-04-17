@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="CTS_pvtAppXLandingFilterEvent" >
+    <aura:attribute type="String" name="recordId"/>
+</aura:event>

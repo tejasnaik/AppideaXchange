@@ -1,0 +1,10 @@
+<design:component >
+    <design:attribute name="title" label="Title"
+                      description="Enter Title for Contact Card"/>
+    <design:attribute name="queryFields" label="Query Fields"
+                      description="Example: Id,Name,Birthdate,Email"/>
+    <design:attribute name="headerFields" label="Header Fields" description="Example: Name"/>
+    <design:attribute name="detailFields" label="Detail Fields" description="Example: Birthdate,Email"/>
+    <design:attribute name="headerFieldMapping" label="Header Field Mapping" description='Example: Provide mapping as below: {"Name":"Name","HealthCloudGA__Gender__c":"Gender"}'/>
+    <design:attribute name="detailFieldMapping" label="Detail Field Mapping" description='Example: Provide mapping as below:  {"Name":"Name","HealthCloudGA__Gender__c":"Gender"}'/>
+</design:component>

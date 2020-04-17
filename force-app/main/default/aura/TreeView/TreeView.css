@@ -1,0 +1,4 @@
+.THIS .slds-tree__item a:hover{
+	color: rgb(0,0,255);
+    text-decoration: underline;
+}

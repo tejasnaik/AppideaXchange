@@ -1,0 +1,35 @@
+.THIS .column region-sidebar-right {
+    display:none;
+}
+
+.THIS .detailSecionHide{
+    display:none!important; 
+}
+
+
+.THIS .applyButonclass{
+	margin-top: 18px; 
+    width: 120px;    
+}
+
+@media screen and (max-width: 482px){
+    .THIS .slds-modal__container{
+        margin-top:78px; 
+    }
+}
+
+
+@media (min-width: 48em){
+    .THIS .slds-modal__container{
+        margin-top:2.5%; 
+    }
+}
+
+@media (max-width: 48em){
+    .THIS .slds-modal__container{
+        margin-top:6%; 
+    }
+    .THIS .typeClass{
+        margin-top:-10% !important; 
+    }
+}

@@ -1,0 +1,24 @@
+<!--
+	Author		: Sachin Chavan
+	Date		: March 2017
+	Description	: Lightning Component for Data Column.
+-->
+<aura:component >
+    <aura:attribute name="field" type="Object" />
+    <aura:attribute name="sortDir" type="String" default="ASC" />
+    <aura:attribute name="sortable" type="Boolean" default="true" />
+    
+    <aura:registerEvent name="dataTableSortEvent" type="c:DataTableEvent" />
+    
+    <th scope="col" class="slds-is-sortable slds-text-title--caps">
+        <a href="javascript:void(0);" class="slds-th__action slds-text-link--reset" tabindex="0" onclick="{!c.onHeaderClick}">
+            <span class="slds-assistive-text">Sort </span>
+            <span class="slds-truncate" title="{!v.field.label}">{!v.field.label}</span>
+            <aura:if isTrue="{!v.sortable}">
+                <div class="slds-icon_container">
+                    <lightning:icon class="slds-icon slds-icon-text-default slds-is-sortable__icon" iconName="{!if(v.sortDir == 'ASC', 'utility:arrowup', 'utility:arrowdown')}" size="x-small" />
+                </div>
+            </aura:if>
+        </a>
+    </th>
+</aura:component>

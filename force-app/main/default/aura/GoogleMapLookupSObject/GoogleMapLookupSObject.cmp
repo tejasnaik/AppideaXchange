@@ -1,0 +1,74 @@
+<aura:component controller="LookupSObjectController" >
+     <!-- created by Diwanshu Setia-for any doubts please contact ansh.setia1818@gmail.com-->
+    <!-- Salesforce Lightning Design System : https://www.lightningdesignsystem.com/ --> 
+    <!-- Attributes -->
+    <aura:attribute access="public" name="sObjectAPIName" type="String" required="true" description="The API name of the SObject to search" />
+    <aura:attribute access="public" name="label" type="String" required="true" description="The label to assign to the lookup, eg: Account" />
+    <aura:attribute access="public" name="fieldName" type="String" description="Id selected for which field. If we are rendering multiple lookups in same UI" />
+    <aura:attribute access="public" name="searchString" type="String" description="The search string to find." />
+    <aura:attribute access="public" name="searchOn" type="String" description="Based on which field to search.It should be one of value included here
+                                                                               {ALL,NAME,EMAIL,PHONE,SIDEBAR}" />
+   	<aura:attribute name="fields" type="String[]" default="Id,Name" />
+    <aura:attribute name="selectedOption" type="String"/>
+    <aura:attribute name="filteredOptions" type="String[]"/>
+    <aura:attribute name="placeholder" type="String" default="Enter Account Name..."/>
+    
+    <!-- Lookup Markup : See https://www.lightningdesignsystem.com/components/lookups -->  
+    <div class="slds-form-element">
+        {!v.label}&nbsp;&nbsp;
+        <div class="slds-form-element__control">
+            <div class="slds-combobox_container slds-has-inline-listbox">
+                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-combobox-lookup"
+                     aria-expanded="false"
+                     aria-haspopup="listbox"
+                     role="combobox"
+                     aura:id="searchLookup">
+                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left"
+                         aura:id="iconDirection">
+                        <ui:inputText updateOn="keyup"
+                                      keyup="{!c.keyPressController}"
+                                      class="slds-input slds-combobox__input"
+                                      value="{!v.searchString}"
+                                      placeholder="{!v.placeholder}"/>
+                        <aura:if isTrue="{!empty(v.selectedOption)}">
+                            <lightning:icon class="slds-icon_container slds-button slds-input__icon" iconName="utility:search" variant="search" size="x-small"/>
+                            <span class="slds-assistive-text">Description of icon</span>
+                            <aura:set attribute="else">
+                                <lightning:buttonIcon size="x-small" class="slds-icon_container slds-button slds-input__icon" iconName="utility:close" alternativeText="Close" onclick="{!c.clear}"/>
+                                <span class="slds-assistive-text">Remove selected option</span>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+
+                    <div id="listbox-unique-id" role="listbox">
+                        <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid"
+                            role="presentation">
+
+                            <aura:iteration items="{!v.filteredOptions}" var="option">
+                                <li role="presentation"
+                                    class="slds-listbox__item slds-m-bottom--xx-small"
+                                    onclick="{!c.selectOption}"
+                                    data-value="{!option.objRecords.Id}"
+                                    data-record="{!option.objRecords.Name}">
+                                    <div class="slds-media slds-tile">
+                                        <div class="slds-media__figure">
+                                            <lightning:icon class="slds-m-right--xx-small" iconName="standard:account" variant="error"/>
+                                        </div>
+                                        <div class="slds-media__body" style="overflow: hidden !important;">
+                                            <p> {!option.objRecords.Name}</p>
+                                            <ul class="slds-tile__detail slds-list--horizantal slds-has-dividers slds-text-body--small">
+                                                <li class="slds-truncate slds-list__item">{!option.objRecords.BillingCountry}</li>
+                                                <HR />
+                                            </ul>
+                                        </div>
+                                    </div>
+                                 </li>
+                            </aura:iteration>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

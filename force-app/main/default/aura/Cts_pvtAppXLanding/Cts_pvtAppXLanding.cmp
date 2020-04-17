@@ -1,0 +1,349 @@
+<aura:component controller="Cts_pvtAppXlandingController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute type="String" name="sCategories" default=""/>
+    <aura:attribute type="String" name="sType" default=""/>
+    <aura:attribute type="String" name="sSorting" default="DESC#createddate"/>
+    <aura:attribute type="String" name="SearchInput" default=""/>
+	<aura:attribute type="Boolean" name="EnableStarRating" default="true" access="global"/>
+    
+    
+    <!-- Detail component attributes -->
+    <aura:attribute type="boolean" name="showDetail" default="false"/>
+    <aura:attribute type="boolean" name="showRedirection" default="false"/>
+    <aura:attribute type="object"  name="DetailRecord"/>
+    <aura:attribute type="String"  name="ComponentTypeIcon"/>
+    <aura:attribute type="Integer" name="totalComponents" default="0"/>
+    <aura:attribute type="Integer" name="componentListSize" default="0"/>
+    <aura:attribute type="Integer" name="offSet" default="0"/>
+    <aura:attribute type="Integer" name="limitNo" default="16" access="global"/>
+    <aura:attribute type="object"  name="searchOptionAttributes" />
+    <aura:attribute type="boolean" name="debugOn" default="false" access="global"/>
+    <aura:attribute type="String"  name="currentMsg" default="false" />
+    <aura:attribute type="String"  name="ComponentStatus" default="Published" access="global"/>
+    <aura:attribute type="boolean"  name="showCommnetBlock" default="false"/>
+    <aura:attribute type="boolean"  name="showRatingPanel" default="false"/>
+    <aura:attribute type="object"  name="ratingData"/>
+    <aura:attribute type="boolean"  name="isUserRated"/>
+    <aura:attribute type="Integer"  name="UserRatedValue"/>
+    
+    
+    
+   <!-- 
+		<aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+ 		<aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/> 
+  -->
+    
+    <aura:handler name="detailComponentEvent" event="c:Cts_pvtAppXLandingFilterEvent"   action="{!c.showdetailEventAction}"/>
+    
+    <aura:attribute type="object" name="resultFilter" />
+    <aura:attribute type="object[]" name="appsList" />
+    <aura:attribute type="boolean" name="spinner" default="false" />
+    <aura:handler value="{!this}" name="init" action="{!c.doInt}"/>
+    
+   
+    
+   
+    
+    <div class="slds-p1-around--small slds-card " style="background:white !important;    margin-top: -10px;">
+        <div class="slds-grid slds-wrap slds-grid--pull-padded">
+            <div class="slds-p-horizontal--small slds-size--1-of-1">
+                
+                <!-- *************************** Filter Area ****************************************************** -->
+                <lightning:card >
+                    <aura:set attribute="title">
+                        Filter(s)
+                    </aura:set>
+                    <aura:set attribute="actions">
+                        <ui:inputText value="{!v.searchOptionAttributes.searchKeyWord}" placeholder="Search" updateOn="change" change="{!c.searchComponent}"/>
+                    </aura:set>
+                    <p class="slds-p-horizontal--small">
+                        <div class="slds-p-horizontal--small slds-size--1-of-1"> 
+                            <div class="slds-grid slds-wrap slds-grid--pull-padded">
+                                <div class="slds-p-horizontal--small slds-size--1-of-4 slds-medium-size--2-of-8 slds-large-size--3-of-12">  
+                                    <span>
+                                        <ui:inputSelect class="slds-select" aura:id="levels1" value="{!v.sType}" label="Types"  change="{!c.onSelectChange}">
+                                            <ui:inputSelectOption text="" label="All Types"/>
+                                            <aura:iteration items="{!v.resultFilter.types}" var="val">
+                                                <ui:inputSelectOption text="{!val}" label="{!val}"/>
+                                            </aura:iteration>
+                                        </ui:inputSelect>
+                                    </span>
+                                </div>
+                                <div class="slds-p-horizontal--small slds-size--1-of-4 slds-medium-size--2-of-8 slds-large-size--3-of-12">  
+                                    <span>
+                                        <ui:inputSelect class="slds-select" aura:id="levels2" value="{!v.sCategories}" label="Categories" change="{!c.onSelectChange}">
+                                            <ui:inputSelectOption text="" label="All Categories"/>
+                                            <aura:iteration items="{!v.resultFilter.Categories}" var="val">
+                                                <ui:inputSelectOption text="{!val}" label="{!val}"/>
+                                            </aura:iteration>
+                                        </ui:inputSelect>
+                                    </span>
+                                </div>
+                                <div class="slds-p-horizontal--small slds-size--1-of-4 slds-medium-size--2-of-8 slds-large-size--3-of-12">  
+                                    
+                                    <ui:inputSelect class="slds-select" aura:id="levels3" value="{!v.sSorting}" label="Sort Order" change="{!c.onSelectChange}">
+                                        <ui:inputSelectOption text="" label="Choose one..."/>
+                                        <ui:inputSelectOption text="ASC#name" label="A-Z"/>
+                                        <ui:inputSelectOption text="DESC#name" label="Z-A"/>
+                                        <ui:inputSelectOption text="DESC#createddate" label="Latest"/>
+                                        <ui:inputSelectOption text="ASC#createddate" label="Oldest"/>
+                                    </ui:inputSelect>
+                                    
+                                </div>
+                                <div class="slds-p-horizontal--small slds-size--1-of-4 slds-medium-size--2-of-8 slds-large-size--3-of-12">  
+                                    <lightning:button variant="{!v.searchOptionAttributes.filterAppied?'brand':'neutral'}" label="Apply" class="applyButonclass" iconName="utility:check" iconPosition="left" onclick="{!c.applyFilters}" />	
+                                </div>
+                            </div>
+                        </div>  
+                    </p>
+                </lightning:card>
+            </div>
+            
+            <!-- *************************** Each Lighting Components show Area ********************************************************************************* -->
+            <div class="componentAreaClass slds-p-horizontal--small slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-1">
+                 <lightning:spinner variant="brand" alternativeText="Working..." size="large"  class="{!v.spinner?'slds-show':'slds-hide'}" />
+                <!--- Components will inserted here -->
+                <div aura:id="componentcontainerId" class="">
+                     <lightning:spinner variant="brand" alternativeText="Working..." size="small"  class="slds-show" />
+                </div>
+                <!-- Pagination to show components -->
+                <div class="slds-modal__footer" style="background-color:white !important;padding: .3rem 1rem !important; box-shadow: 0 0px 0px 0 !important;">
+                    <aura:if isTrue="{!v.totalComponents == 0}">
+                        <div class="" style="z-index:9999">
+                            <div class="slds-notify slds-notify--alert slds-theme--success slds-theme--alert-texture" role="alert">
+                                <span class="slds-assistive-text">Info</span>
+                                <h2> {!v.currentMsg} </h2>
+                            </div>
+                        </div>
+                    </aura:if>
+                    <aura:if isTrue="{!v.offSet > 0}">
+                        <a onclick="{!c.paginationCaller}" data-type="previous" class="slds-text-link--reset">
+                            <lightning:icon iconName="utility:chevronleft" size="x-small" alternativeText="Previous page" />
+                            <span class="slds-text-link">Previous Page</span>
+                        </a>
+                    </aura:if>
+                    <aura:if isTrue="{!v.totalComponents>0}">	
+                        <span class="slds-badge slds-m-horizontal-1-small">{!v.offSet +1} to {!v.offSet + v.componentListSize} of {!v.totalComponents}</span>
+                    </aura:if>
+                    <aura:if isTrue="{!(v.totalComponents)>(v.offSet+ v.componentListSize)  }">
+                        <a onclick="{!c.paginationCaller}" data-type="next" class="slds-text-link--reset"><span class="slds-text-link">Next Page </span>
+                            <lightning:icon iconName="utility:chevronright" size="x-small" alternativeText="Next page"  />
+                        </a>
+                    </aura:if>
+                </div>
+            </div>
+        </div>
+        
+        <!--  Model to show detail of each Components -->
+        <aura:if isTrue="{!v.showDetail}">
+            <div role="dialog" tabindex="-1" aura:id="showDetailID" class="slds-modal slds-fade-in-open slds-modal--medium" aria-labelledby="header43">
+                <div class="slds-modal__container " >
+                    <div class="slds-modal__header">
+                        <div style="float:left;margin-top:5px">
+                            <img style="height:40px;" src="{!'data:image/png;base64,'+v.DetailRecord.app.bl}"/>
+                        </div>
+                        <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.close}">
+                            <lightning:icon iconName="utility:close" size="small" alternativeText="Close" />
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="header43" class="slds-text-heading--medium">{!v.DetailRecord.app.res.CogniAppEx__Store__r.Name}<br/>{!v.DetailRecord.app.res.Name}</h2>
+                        <div class="typeClass" style="float:right;margin-top:-7%">
+                            <lightning:icon iconName="{!v.ComponentTypeIcon}" size="small" alternativeText="Close" />  
+                        </div>
+                    </div>
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <div class="slds-grid slds-wrap slds-grid--pull-padded">
+                            <div class="slds-hide slds-p-horizontal--small slds-size--1-of-4 slds-order--2 slds-medium-order--1 slds-large-order--1">
+                                <img  src="{!'data:image/png;base64,'+v.DetailRecord.app.bl}"/> --
+                            </div>
+                            <div class="slds-p-horizontal--small slds-size--3-of-3 slds-order--1 slds-medium-order--1 slds-large-order--1">
+                                <ul class="slds-has-dividers--bottom-space">
+                                    
+                                    <li class="slds-item">
+                                        <div class="slds-list--inline">
+                                            <div class="slds-item--detail  slds-has-dividers--bottom-space">{!v.DetailRecord.lsting[0].CogniAppEx__Description__c}</div>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="slds-item">
+                                        <div class="slds-list--inline">
+                                            <div class="slds-item--label slds-text-color--weak slds-truncate" title="App Name">App Name:</div>
+                                            <div class="slds-item--detail slds-truncate slds-has-dividers--bottom-space">{!v.DetailRecord.app.res.Name}</div>
+                                        </div>
+                                    </li>
+                                    <li class="slds-item">
+                                        <div class="slds-list--inline">
+                                            <div class="slds-item--label slds-text-color--weak slds-truncate" title="Categories">Categories:</div>
+                                            <div class="slds-item--detail slds-truncate slds-has-dividers--bottom-space">{!v.DetailRecord.app.res.CogniAppEx__Categories__c}</div>
+                                        </div>
+                                    </li>
+                                    <li class="slds-item">
+                                        <div class="slds-list--inline">
+                                            <div class="slds-item--label slds-text-color--weak slds-truncate" title="Categories">Effort Saving :</div>
+                                            <div class="slds-item--detail slds-truncate slds-has-dividers--bottom-space"> <img src="{!$Resource.SaveTime}" style="height:30px"/> {!v.DetailRecord.lsting[0].CogniAppEx__asb_App__r.CogniAppEx__Hours_Saved__c } </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <li class="slds-item">
+                                        <div class="slds-list--inline">
+                                            <div class="slds-item--label slds-text-color--weak slds-truncate" title="Listed Date">Listed Date:</div>
+                                            <div class="slds-item--detail slds-truncate slds-has-dividers--bottom-space">{!v.DetailRecord.lsting[0].CogniAppEx__ListedDate__c}</div>
+                                        </div>
+                                    </li>
+                                    <li class="slds-item">
+                                        <div class="slds-list--inline">
+                                            <div class="slds-item--label slds-text-color--weak slds-truncate" title="Type">Type:</div>
+                                            <div class="slds-item--detail slds-truncate slds-has-dividers--bottom-space">{!v.DetailRecord.app.res.CogniAppEx__AppType__c}</div>
+                                        </div>
+                                    </li>
+                                    <li class="slds-item">
+                                        <div class="slds-list--inline">
+                                            <div class="slds-item--label slds-text-color--weak slds-truncate" title="Requirements">Requirements:</div>
+                                            <div class="slds-item--detail slds-truncate slds-has-dividers--bottom-space">{!v.DetailRecord.lsting[0].CogniAppEx__Requirements__c} </div>
+                                        </div>
+                                    </li>
+                                    <li class="slds-item">
+                                        <div class="slds-list--inline">
+                                            <div class="slds-item--label slds-text-color--weak slds-truncate" title="Requirements">Resources:</div>
+                                            <div class="slds-item--detail slds-truncate slds-has-dividers--bottom-space">
+                                                <span>
+                                                    <ul class="slds-list--horizontal slds-has-dividers--left slds-has-block-links--space">
+                                                        <aura:iteration items="{!v.DetailRecord.lsting[0].CogniAppEx__ListingAssets__r.records}" var="d">
+                                                            <li class="slds-item">
+                                                                <a href="javascript:void(0);" onclick="{!c.fileDownload}" id="{!d.Id}">
+                                                                    <lightning:icon iconName="doctype:attachment" size="small" alternativeText="Indicates approval"/>
+                                                                    {!d.Name}           
+                                                                </a>
+                                                            </li>
+                                                        </aura:iteration>	
+                                                    </ul>    
+                                                </span>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+									 <aura:if isTrue="{!v.EnableStarRating}">
+                                     <li class="slds-item">
+                                        <div class="slds-list--inline">
+                                            <div class="slds-item--label slds-text-color--weak slds-truncate" title="User Rating">Rating</div>
+                                            <div class="slds-item--detail slds-truncate slds-has-dividers--bottom-space">
+                                            	<div aura:id="starRatingPannelId" id="starRatingDivId">
+                                                </div>
+                                          </div>
+                                        </div>
+                                    </li>
+									</aura:if>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="slds-modal__footer">
+                        <span style="float:left">
+                        	<lightning:button variant="neutral" label="Comment/FeedBack" iconName="utility:comments" iconPosition="left" onclick="{!c.openCommentBlock}" /> 
+                        </span>
+          				
+                        <lightning:button variant="neutral" label="Close" iconName="utility:close" iconPosition="left" onclick="{!c.close}" />
+                        <aura:if isTrue="{!v.DetailRecord.app.res.CogniAppEx__InstallUrl__c !=''}">
+							<lightning:button variant="neutral" label="Install" iconName="action:download" iconPosition="left" onclick="{!c.componentInstallRedirection }" />
+						</aura:if>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+        </aura:if> 
+        
+        
+        <aura:if isTrue="{!v.showCommnetBlock}">
+            <div role="dialog" aura:id="showCommnetBlockId" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal--medium" aria-labelledby="header43">
+                <div class="slds-modal__container " >
+                    <div class="slds-modal__header">
+                        <div style="float:left;margin-top:5px">
+                            <img style="height:40px;" src="{!'data:image/png;base64,'+v.DetailRecord.app.bl}"/>
+                        </div>
+                        <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeCommentBlock}">
+                            <lightning:icon iconName="utility:close" size="small" alternativeText="Close" />
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="header43" class="slds-text-heading--medium">{!v.DetailRecord.app.res.CogniAppEx__Store__r.Name}<br/>{!v.DetailRecord.app.res.Name}</h2>
+                        <div class="typeClass" style="float:right;margin-top:-7%">
+                            <lightning:icon iconName="{!v.ComponentTypeIcon}" size="small" alternativeText="Close" />  
+                        </div>
+                    </div>
+                    <div class="slds-modal__content slds-p-around--medium">
+                        <c:Cts_CommnetBox ItemId="{!v.DetailRecord.lsting[0].Id}" />
+                    </div>
+                    <div class="slds-modal__footer">
+                     <lightning:button variant="neutral" label="Close" iconName="utility:close" iconPosition="left" onclick="{!c.closeCommentBlock }" />
+                 </div>
+                </div>
+                
+            </div>
+             <div class="slds-backdrop slds-backdrop--open"></div>
+        </aura:if>
+                        
+                        
+        
+        
+        
+        <aura:if isTrue="{!v.showRedirection}"> 
+            
+            <div class="demo-only" style="height:640px;">
+                <div role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h2 class="slds-text-heading--medium">Install</h2>
+                            <p class="slds-m-top--x-small">Where do you want to install this Package?</p>
+                        </div>
+                        <div class="slds-modal__content slds-modal__menu">
+                            <button style="float:left" id="close" class="slds-button slds-button--neutral" onclick="{!c.closecomponentInstall }">Back</button>	
+                            <button style="float:right" id="SandboxURl" class="slds-button slds-button--neutral" onclick="{!c.componentInstall }">Sandbox</button>
+                            <button style="float:right" id="ProductionURl" class="slds-button slds-button--neutral" onclick="{!c.componentInstall }">Production</button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+            
+        </aura:if> 
+        
+        <aura:if isTrue="{!v.showRatingPanel}"> 
+            
+            <div class="demo-only" style="height:640px;">
+                
+                <div role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h2 class="slds-text-heading--medium">Rating</h2>
+                            <!--<p class="slds-m-top-x-small">Where do you want to install this Package?</p>-->
+                        </div>
+                        <div class="slds-modal__content slds-modal__menu" style="text-align:center">
+                        	<p class="slds-m-top-x--small">{!v.isUserRated?'You have rated this component':'Please rate this component.'}</p>
+                            <div>
+                                <c:Cts_UserRating aura:id="UserRatingDefinedID" showCaption="true" CurrentRating="{!v.UserRatedValue}" isDisplayOnly="{!v.isUserRated}" stepRating="1.0"/>
+                                
+                                <br/>
+                                <aura:if isTrue="{!!v.isUserRated}">
+                                	<lightning:button variant="neutral" label="Submit" iconName="utility:check" iconPosition="left" onclick="{!c.getRatingValue }" />
+                                </aura:if>    
+                            </div>
+                        </div>
+                        <div class="slds-modal__footer">
+                     		<lightning:button variant="neutral" label="Close" iconName="utility:close" iconPosition="left" onclick="{!c.closeRatingBlock }" />
+                 		</div>
+                    </div>
+                </div>
+                <div class="slds-backdrop slds-backdrop--open"></div>
+            </div>
+            
+        </aura:if> 
+        
+        
+        
+        
+    </div>
+    
+    
+</aura:component>

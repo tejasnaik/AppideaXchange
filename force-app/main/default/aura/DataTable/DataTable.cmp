@@ -1,0 +1,95 @@
+<!--
+	Author		: Sachin Chavan
+	Date		: March 2017
+	Description	: Lightning Component for Data Table.
+-->
+<aura:component controller="DataTableController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="label" type="String" default="Data Table" />
+    <aura:attribute name="object" type="String" default="Account" required="true" />
+    <aura:attribute name="fields" type="String" default="Name" required="true" />
+    <aura:attribute name="fieldsList" type="List" />
+    <aura:attribute name="limit" type="Integer" default="2000" />
+    <aura:attribute name="pages" type="List" />
+    <aura:attribute name="records" type="List" />
+    <aura:attribute name="keyword" type="String" default="" />
+    
+    <aura:attribute name="pageNumber" type="Integer" default="0" />
+    <aura:attribute name="pageSize" type="Integer" default="5" />
+    
+    <aura:attribute name="sortField" type="String" default="Name" />
+    <aura:attribute name="sortDir" type="String" default="ASC" />
+    
+    <aura:attribute name="creatable" type="Boolean" default="false" />
+    <aura:attribute name="searchable" type="Boolean" default="false" />
+    <aura:attribute name="bordered" type="Boolean" default="true" />
+    <aura:attribute name="striped" type="Boolean" default="true" />
+    <aura:attribute name="sortable" type="Boolean" default="false" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler name="dataTableSortEvent" event="c:DataTableEvent" action="{!c.handleSortEvent}" />
+
+    <lightning:card >
+        <aura:set attribute="title">
+            {!v.label}
+        </aura:set>
+        <aura:set attribute="actions">
+            <div class="slds-grid">
+                <aura:if isTrue="{!v.searchable}">
+                    <div class="slds-col--padded">
+                        <ui:inputText class="slds-input" placeholder="Search..." value="{!v.keyword}" keyup="{!c.search}" updateOn="keyup" />
+                    </div>
+                </aura:if>
+                
+                <aura:if isTrue="{!v.creatable}">
+                    <div class="slds-col--padded">
+                        <lightning:button label="New" onclick="{!c.createRecord}" />
+                    </div>
+                </aura:if>
+            </div>
+        </aura:set>
+        
+        <div class="slds-scrollable slds-is-relative">
+            <lightning:spinner aura:id="Spinner" class="slds-hide" variant="brand" size="small" />
+            <aura:if isTrue="{!v.records.length > 0}">
+                <table class="{! 'slds-table slds-table--fixed-layout' + (v.bordered ? ' slds-table--bordered' : '') + (v.striped ? ' slds-table--striped' : '') }">
+                    <thead>
+                        <tr class="{!'slds-text-title--caps' + if(v.sortable, ' slds-is-sortable', '')}">
+                            <aura:iteration items="{!v.fieldsList}" var="field">
+                                <c:DataColumn field="{!field}" sortable="{!v.sortable}" />
+                            </aura:iteration>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.records}" var="record">
+                            <tr>
+                                <aura:iteration items="{!v.fieldsList}" var="field">
+                                    <c:DataCell field="{!field}" record="{!record}" />
+                                </aura:iteration>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+                <aura:set attribute="else">
+                    <div class="slds-box slds-theme--shade slds-theme--alert-texture">
+                        <p>No records found to display.</p>
+                    </div>
+                </aura:set>
+            </aura:if>
+        </div>
+        
+        <aura:set attribute="footer">
+            <aura:if isTrue="{!v.pages.length > 1}">
+                <button class="slds-button slds-button--neutral" onclick="{!c.first}" disabled="{!v.pageNumber == 0}">First</button>
+                <button class="slds-button slds-button--neutral" onclick="{!c.previous}" disabled="{!v.pageNumber == 0}">
+                    <lightning:icon iconName="utility:chevronleft" size="x-small" />
+                </button>
+                <span class="slds-badge slds-m-horizontal--small">{!v.pageNumber + 1} of {!v.pages.length}</span>
+                <button class="slds-button slds-button--neutral" onclick="{!c.next}" disabled="{!(v.pages.length - 1) == v.pageNumber}">
+                	<lightning:icon iconName="utility:chevronright" size="x-small" />
+                </button>
+                <button class="slds-button slds-button--neutral" onclick="{!c.last}" disabled="{!(v.pages.length - 1) == v.pageNumber}">Last</button>
+            </aura:if>
+        </aura:set>
+    </lightning:card>    
+    
+</aura:component>

@@ -1,0 +1,32 @@
+<!--
+	Author		: Sachin Chavan
+	Date		: March 2017
+	Description	: Lightning Component for Image Slider.
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <ltng:require scripts="{!join(',', $Resource.ImageSlider + '/jquery.js',
+                           $Resource.ImageSlider + '/slick.js')}"
+                  styles="{!join(',', $Resource.ImageSlider + '/slick.css',
+                          $Resource.ImageSlider + '/slick-theme.css')}"
+                  afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    
+    <aura:attribute name="items" type="List" default="['/resource/SliderImages/assassins-creed.jpg','/resource/SliderImages/avengers.jpg','/resource/SliderImages/iron-man.jpg','/resource/SliderImages/james-bond.jpg','/resource/SliderImages/prince-of-persia.jpg']" />
+    
+    <div aura:id="ImageSlider" class="slds-m-horizontal--large slds-hide">
+        <aura:if isTrue="{!v.items.length > 0}">
+            <aura:iteration items="{!v.items}" var="item">
+                <figure class="slds-image slds-image--card">
+                    <a href="javascript:void(0);" class="slds-image__crop slds-image__crop--16-by-9">
+                        <img src="{!item}" alt="Description of the image" />
+                    </a>
+                </figure>
+            </aura:iteration>
+            
+            <aura:set attribute="else">
+                <div class="slds-box slds-theme--shade slds-theme--alert-texture">
+                    <p>No image preview available</p>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

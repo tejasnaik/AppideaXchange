@@ -1,0 +1,114 @@
+<aura:component controller="IdeaXChangeController" access="global">
+    <aura:attribute name="idea" type="Object" default="{}" />
+    <aura:attribute name="isVisible" type="Boolean" default="false" />
+    <aura:attribute name="errorMessage" type="String" default="" />
+    <aura:attribute name='cloudList' type='list' default=''/>
+    <aura:attribute name='verticalList' type='list' default=''/>
+    <aura:attribute name='categoryList' type='list' default=''/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:registerEvent name="ideaCreationEvent" type="c:IdeaComponentEvent" />
+    
+    <div class="slds-scrollable">
+        <aura:if isTrue="{!v.isVisible}">
+            
+            <div role="dialog" tabindex="-1" aria-labelledby="PostIdeaModalHeader" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <h2 id="PostIdeaModalHeader" class="slds-text-heading--small">Post an Idea</h2>
+                    </div>
+                    
+                    <div class="slds-modal__content slds-p-around--medium slds-is-relative">
+                        <lightning:spinner aura:id="Spinner" class="slds-hide" variant="brand" size="large"/>
+                        <aura:if isTrue="{!v.errorMessage}">
+                            <ui:message title="Error:" severity="error" closable="true">
+                                {!v.errorMessage}
+                            </ui:message> 
+                        </aura:if>
+                        
+                        <div class="slds-form--stacked">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label" for="TitleInput">
+                                    <abbr class="slds-required" title="required">*</abbr>Title
+                                </label>
+                                <div class="slds-form-element__control">
+                                    <ui:inputText class="slds-input" value="{!v.idea.CogniAppEx__Title__c}" placeholder="Title" />
+                                </div>
+                            </div>
+                        </div>
+                        <c:Poclookup object='User' label='POC Name' aura:id='ideaPOCId'/>
+                        <lightning:select required='true' label="Type"  value="{!v.idea.CogniAppEx__Category__c}" ><option value="null" label='--None--' >--None--</option>
+                            <aura:iteration items='{!v.categoryList}' var="t">
+                                <option value="{!t}" label='{!t}' >{!t}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                        
+                        
+                        
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-2">
+                                <div class="slds-form--stacked">
+                                    <lightning:select  label="Vertical"  value="{!v.idea.CogniAppEx__Vertical__c}" >
+                                        <option  label='--None--' >--None--</option>
+                                        <aura:iteration items='{!v.verticalList}' var="t">
+                                            <option value="{!t}" label='{!t}' >{!t}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <div class="slds-form--stacked">
+                                    <lightning:select  label="Cloud"  value="{!v.idea.CogniAppEx__Cloud__c}" >
+                                        <option  label='--None--' >--None--</option>
+                                        <aura:iteration items='{!v.cloudList}' var="t">
+                                            <option value="{!t}" label='{!t}' >{!t}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!--
+        <lightning:select name="CategoryDropdown" label="Type" required="true" value="{!v.idea.CogniAppEx__Category__c}">                            
+                            <option value="">Please Select</option> -->
+                        <!--SY 0402 Update Types
+                            <option value="Solution">Solution</option>
+                            <option value="Lightning Web Component">Lightning Web Component</option> 
+                            <option value="Aura Component">Aura Component</option>
+                            <option value="Framework">Framework</option>
+                            <option value="Tools &amp; Accelerators">Tools &amp; Accelerators</option>
+                            <option value="DevOps">DevOps</option> -->
+                        <!--SY 0402 Update Types -->
+                        <!-- </lightning:select> -->
+                        
+                        
+                        
+                        <div class="slds-form-element slds-form-element_readonly">
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">Solution - Industry / Horizontal - Medvantage, Patient Prime</div>
+                                <div class="slds-form-element__static">Framework - Hybrid Agile Framework, Consulting Framework</div>
+                                <div class="slds-form-element__static">Tools &amp; Accelerators - Data Loader, Migration Tool</div>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="DescriptionTextArea">
+                                <abbr class="slds-required" title="required">*</abbr>Description
+                            </label>
+                            <div class="slds-form-element__control">
+                                <lightning:inputRichText value="{!v.idea.CogniAppEx__Description__c}" placeholder="Is this a new Idea?&#10;Is this exists in current system?" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <lightning:button label="Close" onclick="{!c.onClose}" />
+                        <aura:if isTrue="{!not(v.isIdeaSubmitted)}">
+                            <lightning:button label="Submit" variant="brand" onclick="{!c.onSubmit}" />
+                        </aura:if>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open"></div>
+        </aura:if>
+    </div>
+</aura:component>

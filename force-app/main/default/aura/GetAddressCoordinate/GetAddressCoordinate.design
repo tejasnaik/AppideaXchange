@@ -1,0 +1,11 @@
+<design:component >
+	<design:attribute name="AddressLine1" Label="Address Line 1" Description="Provide address line 1. eg.8401 MEMORIAL LN" />
+    <design:attribute name="AddressLine2" Label="Adress Line 2" Description="Provide address line 1. APT 7323" />
+    <design:attribute name="State" 		  Label="State" Description="Provide state. Eg. PLANO" />
+    <design:attribute name="CountryCode"  Label="Country code" Description="Provide country code. Eg. USA" />
+    <design:attribute name="City" 		  Label="City" Description="Provide City." />
+    <design:attribute name="PostalCode"   label="PostalCode" Description="Provide postal code eg. 75024" />
+    <design:attribute name="ShowMapOnload" label="Show Map Onload" Description="Is Map populate onload." />
+	<design:attribute name="HideAddressPannel" label="Hide Address Pannel" Description="Hide AddressPannel." />
+
+</design:component>

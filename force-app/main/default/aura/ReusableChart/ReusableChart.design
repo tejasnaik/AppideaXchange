@@ -1,0 +1,8 @@
+<design:component >
+    <!-- design:attribute name="typeChart" label="Type of Chart" description="Insert type of chart you want to see" default="" / -->
+    <design:attribute name="showLegend" label="Show Legend?" description="Specify whether you want to see legends " default="true" />
+    <design:attribute name="reportName" label="Name" description="Insert the api name of the report in this textbox" default="" />
+<design:attribute name="typeChart" datasource="funnel,pie,doughnut,bar,radar,line" default="doughnut" />
+<design:attribute name="legendPosition" label="Select Legend Positon" datasource="left,right,top,bottom" description="Specify where you want to see legends(left/right/top/bottom) " default="left" />
+  <design:attribute name="selectReport" label="Select Summary Report" datasource="apex://ReportSelectorClass" />
+</design:component>

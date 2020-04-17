@@ -1,0 +1,36 @@
+<aura:component implements="force:appHostable">
+    <aura:attribute name="sObjMap" type="String[]" />
+    <aura:attribute name="mapOptions" type="Object" default='{"zoom": 2}' />
+    <aura:attribute name="mapOptionsCenter" type="Object" />
+    <aura:attribute name="mapData" type="Object[]" />
+    <aura:attribute name="counter" type="string" default="Loading..."/>
+    <aura:handler name="recordsLoaded" event="c:HeatMapEvent" action="{!c.handleComponentEvent}"/>
+    
+    <!-- PAGE HEADER -->
+    <div class="slds-page-header slds-m-bottom_xx-small" style="background:#0099e6" role="banner">
+        <div class="slds-grid">
+            <div class="slds-col">
+                <p class="slds-text-heading--label" style="color:white">Heat Map Component</p>
+                <h1 class="slds-text-heading--medium" style="color:white">Heat Map Component</h1>
+            </div>
+        </div>
+    </div>
+    <!-- / PAGE HEADER -->
+    <lightning:layout horizontalAlign="space">
+        <lightning:layoutItem flexibility="auto" padding="around-small">
+            <div class="slds-box slds-m-top_xx-small slds-m-left_xx-small">
+                <c:HeatMapFilterComponent />
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <lightning:layout horizontalAlign="space">
+        <lightning:layoutItem flexibility="auto" padding="around-small">
+            <div class="slds-box slds-m-top_xx-small slds-m-left_xx-small">
+                <ui:inputText label="# of Records " value="{!v.counter}" disabled="true" />
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <aura:if isTrue="{!v.sObjMap.length > 0}">
+        <c:HeatMapSubComponent mapOptions="{!v.mapOptions}" mapOptionsCenter="{!v.mapOptionsCenter}" mapData="{!v.mapData}" />
+    </aura:if>
+</aura:component>

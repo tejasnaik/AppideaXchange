@@ -1,0 +1,87 @@
+<aura:component >
+    
+    <ltng:require styles="{!join(',', $Resource.CTS_RatingComponent + '/RatingResource/css/bootstrap3.css', 
+                          $Resource.CTS_RatingComponent + '/RatingResource/css/star-rating.css')}"
+                  scripts="{!join(',',$Resource.CTS_RatingComponent + '/RatingResource/js/jquery.min.js', 
+                           $Resource.CTS_RatingComponent + '/RatingResource/js/star-rating.js')}"
+                  afterScriptsLoaded="{!c.scriptsLoaded}" />
+    
+    <aura:attribute name="executer" type="integer" default="0"/>
+    <aura:handler action="{!c.doInit}" name="init" value="{!this}"/>
+    <aura:attribute name="GivenId" type="String" default="input-21f1"/>
+    <aura:attribute name="GivenContainerClass" type="String"/>
+    
+    <aura:attribute name="CurrentRating" type="Integer" default="0"/>
+    <aura:attribute name="AfterRating" type="Decimal" default="0"/>
+    <aura:attribute name="minRating" type="Integer" default="0"/>
+    <aura:attribute name="maxRating" type="Integer" default="5"/>
+    <aura:attribute name="stepRating" type="Decimal" default="0.5"/>
+    <aura:attribute name="starsTotal" type="Integer" default="5"/>
+    <aura:attribute name="showClear" type="Boolean" default="false"/>
+    <aura:attribute name="showCaption" type="Boolean" default="false"/>
+    <aura:attribute name="isDisplayOnly" type="Boolean" default="true"/>
+    <aura:attribute name="CaptionText" type="String" default="Stars"/>
+    <aura:attribute name="Title" type="String" default="Stars"/>
+    <aura:attribute name="starSize" type="String" default="sm"/>
+    <aura:attribute name="popoverPosition" type="String" default="bottom-left"/>
+    <aura:attribute name="popoverPositionEnable" type="boolean" default="false"/>
+    <aura:attribute name="HeaderTitle" type="String" default=""/>
+    <aura:attribute name="totalRatedBy" type="Integer" default="0"/>
+    
+    
+	<aura:attribute name="RatingUserField" 		type="String" default=""/>    
+    <aura:attribute name="RatingNumberField"  	type="String" default=""/>  
+    <aura:attribute name="records"  			type="list" default=""/>  
+    <aura:attribute name="DataToAllUserRating"	type="List" default=""/>  
+    
+    
+    <aura:method name="getRatedValueMethod" action="{!c.getRatedValue}"   
+                 description="Sample method with parameters"/>
+
+    
+    <div class="popoverContainer st-popover_container" >
+        <span class="ashCustomClass"  aria-describedby="test" aura:id="test" >
+            
+            <input id="{!v.GivenId}" aura:id="StarInputfieldId"
+                   data-size="{!v.starSize}"
+                   data-display-Only="{!v.isDisplayOnly}"
+                   value="{!v.CurrentRating}" 
+                   type="text" 
+                   data-container-Class="{!v.GivenContainerClass}"
+                   class="rating" 
+                   data-min="{!v.minRating}" 
+                   data-max="{!v.maxRating}" 
+                   data-step="{!v.stepRating}" 
+                   data-stars="{!v.starsTotal}" 
+                   data-show-caption="{!v.showCaption}"
+                   data-show-clear="{!v.showClear}"
+                   data-default-caption="{rating} Stars" 
+                   title="{!v.Title}"/>
+        </span>
+        
+        <aura:if isTrue="{!and(v.isDisplayOnly,v.totalRatedBy>0)}">
+	        <span class="slds-badge">Average rating is {!v.CurrentRating} by {!v.totalRatedBy} user(s).</span>
+          <button onclick="{!c.hoverdiv}" aura:id="buttonId" class="slds-button" aria-haspopup="true" title="Rating Description">
+             <lightning:icon iconName="utility:down" size="xx-small" alternativeText="Rating Description"/>
+  		</button>
+        </aura:if>
+        <aura:if isTrue="{!v.popoverPositionEnable}">
+            <div  class="{!'slds-hide slds-popover slds-nubbin--left-bottom'+' customCSS_1'+v.popoverPosition}" id="popoverPanelId"  aura:id="popoverPanelId" role="dialog" >
+                <button class="slds-button slds-button--icon-small slds-float--right slds-popover__close slds-button--icon" title="Close dialog" onclick="{!c.hideDiv}">
+                    <lightning:icon iconName="utility:close" size="x-small" alternativeText="Close" />
+                </button>
+                <header class="slds-popover__header">
+                    <h4 id="dialog-heading-id-51" class="slds-text-heading--small">{!v.HeaderTitle}</h4>
+                </header>
+                <div class="slds-popover__body" >
+                    <div aura:id="detailStars">
+                        <c:Cts_UserOverAllRating DataToAllUserRating="{!v.DataToAllUserRating}"/>
+                    </div>
+                </div>
+            </div>
+        </aura:if> 
+    </div>
+    
+    
+    
+</aura:component>

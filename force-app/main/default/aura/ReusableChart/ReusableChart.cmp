@@ -1,0 +1,89 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" controller="ReusableChartApex" access="global">
+   
+    
+    <!-- definition of attributes   -->
+    <aura:attribute name="orgname" type="String" default="navneet org"/>
+    <aura:attribute name="reportId" type="String" />
+    <aura:attribute name="noData" type="Boolean" default="false" />
+    <aura:attribute name="typeChart" type="String" default="funnel"/>
+    <aura:attribute name="options" type="List" />
+    <aura:attribute name="chartOptions" type="List" default="[]"/>
+    <aura:attribute name="selectReport" type="String"  default="" required="true"/>
+    <aura:attribute name="baseURL" type="String" />
+    <aura:attribute name="showLegend" type="boolean" default="true" />
+    <aura:attribute name="legendPosition" type="String" default="right" />
+    <aura:attribute name="setAxes" type="String"  default="yAxes"/>
+    <aura:attribute name="reportName" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.loadOptions}" />
+    <aura:attribute name="Spinner" type="boolean" default="true" />
+    <aura:attribute name="ready" type="Boolean" default="false"/>
+   
+    
+    <!-- required Scripts -->
+    <ltng:require scripts="/resource/d3Maker" />
+    <ltng:require scripts="/resource/d3Main" />
+    <ltng:require scripts="/resource/chart27"  afterScriptsLoaded="{!c.hideSpinner}"/>
+    
+   
+    <!-- show spinner till all scripts load -->
+    <aura:if isTrue="{!v.Spinner}">
+    <div aura:id="spinnerId" class="slds-spinner_container isActivityLoading">
+       <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+         <span class="slds-assistive-text">Loading</span>
+         <div class="slds-spinner__dot-a"></div>
+         <div class="slds-spinner__dot-b"></div>
+       </div>
+    </div>
+ </aura:if>
+    
+    
+    <!-- This is Funnel container created by D3 library  -->
+    <div id="funnelParent" class=" slds-box" style="background-color:#ffffff">
+        <div style="background-color:#ffffff;"><p class="slds-text-heading_small header-title-container slds-has-flexi-truncate"><b>{!v.reportName}</b></p></div>
+        <div class="slds-align_absolute-center" style="padding-top:2%;">
+            <div  id="funnelContainer"></div>
+        </div>
+        <div><a href="{!v.baseURL+'/'+v.reportId}" target="_blank"> View Report</a></div>
+    </div>
+    
+    
+   
+    
+    <!--This is container for all other charts created with chart.js -->
+    <div class="slds-box slds-box--xx-small" id="otherCharts"  style="background-color:#ffffff">
+        <div style="background-color:#ffffff;"><p class="slds-text-heading_small header-title-container slds-has-flexi-truncate"><b>{!v.reportName}</b></p></div>
+        <div class="slds-clearfix slds-col slds-size--1-of-1 slds-small-size--2-of-2 slds-medium-size--4-of-4">          
+            <div>
+                <div class="slds-float--left slds-m-left--small"><p  style="font-size: 1rem"></p></div>
+            </div>
+        </div>
+        
+        <aura:if isTrue="{!v.noData == false}" >
+            <div class="slds-col slds-size--1-of-1 slds-small-size--2-of-2 slds-medium-size--4-of-4 slds-m-top--small">
+                <div id="resultChart">
+                    <canvas aura:id="chart" id="canvas"/>
+                </div>
+            </div>
+            
+            <div class="slds-clearfix slds-col slds-size--1-of-1 slds-small-size--2-of-2 slds-medium-size--4-of-4">          
+                <div>
+                    <a href="{!v.baseURL+'/'+v.reportId}" target="_blank">
+                        <div class="slds-float--left slds-m-left--small" style="font-size: .75rem"><p>View Report</p></div>
+                    </a>
+                </div>
+            </div>
+            <aura:set attribute="else" >
+                <div class="slds-col slds-size--1-of-1 slds-small-size--2-of-2 slds-medium-size--4-of-4 slds-m-top--small">
+                    <div id="noData" class="slds-align_absolute-center slds-p-bottom_small" style="height: 11rem;"> 
+                        No data available to display the chart
+                    </div>
+                </div>
+                
+            </aura:set>
+        </aura:if>
+    </div>
+   
+    
+    
+    
+</aura:component>

@@ -1,0 +1,59 @@
+<aura:component controller="IdeaXChangeController" >
+    <aura:attribute name="id" type="String" description="Unique identifier for lookup field." />
+    <aura:attribute name="label" type="String" default="" description="A string value that will be displayed above the lookup" />
+    <aura:attribute name="object" type="String" required="true" description="A string value that determines which records to search. Use the object's API name" />
+    <aura:attribute name="keyword" type="String" default="" />
+    <aura:attribute name="value" type="Object" />
+    <aura:attribute name="placeholder" type="String" />
+    <aura:attribute name="data" type="List" default="[]" />
+    <aura:attribute name='isOpen' type='boolean' default='true' />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <div aura:id="LookupControl" class="slds-form-element slds-lookup" data-select="single" onblur="{!c.onLookupControlBlur}" >
+        <label class="slds-form-element__label " for="{!v.id}">{!v.label}</label>
+        
+        <aura:if isTrue="{! !v.value }">
+            <div class="slds-form-element__control">
+                <div class="slds-input-has-icon slds-input-has-icon--right" >
+                    <lightning:icon class="slds-input__icon" iconName="utility:search" size="x-small" />
+                    <ui:inputText aura:id='searchdata' class="slds-lookup__search-input slds-input" value="{!v.keyword}" placeholder="{!v.placeholder}" focus="{!c.onLookupControlFocus}" blur="{!c.onLookupControlBlur}" keyup="{!c.onLookupControlKeyup}" updateOn="keyup" />
+                </div>
+            </div>
+        </aura:if>
+        
+        <aura:if isTrue="{! v.value }">
+            <div class="slds-form-element__control">
+                <div class="slds-pill_container">
+                    <span class="slds-pill slds-size--1-of-1">
+                        <span class="slds-icon_container slds-icon-standard-account slds-pill__icon_container">
+                            <lightning:icon iconName="standard:account" size="x-small" />
+                        </span>
+                        <span class="slds-pill__label" title="Salesforce.com, Inc.">{!v.value}</span>
+                        <button class="slds-button slds-button--icon slds-pill__remove" title="Remove" onclick="{!c.onLookupCloseClick}">
+                            <lightning:icon class="slds-button__icon" iconName="utility:close" size="x-small" />
+                        </button>
+                        
+                    </span>
+                </div>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.isOpen}">
+        <div class="slds-lookup__menu"  id="{!v.id}"  aura:id='lookupmenu' >
+            <div class="slds-lookup__item--label slds-text-body--small">Recent Records</div>
+            <ul class="slds-lookup__list" role="listbox">
+                <aura:iteration items="{!v.data}" var="item">
+                    <li role="presentation" data-value="{!item.Name}" data-label='{!item.Id}' onclick="{!c.onLookupItemClick}">
+                        <span class="slds-lookup__item-action slds-media" id="lookup-option-474" role="option">
+                            <lightning:icon class="slds-icon slds-icon-standard-account slds-icon--small slds-media__figure" iconName="standard:account" size="x-small" />
+                            <div class="slds-media__body">
+                                <div class="slds-lookup__result-text">{!item.Name}</div>
+                            </div>
+                        </span>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+       </aura:if>
+    </div>
+</aura:component>

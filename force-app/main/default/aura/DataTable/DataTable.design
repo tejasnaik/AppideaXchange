@@ -1,0 +1,12 @@
+<design:component label="Data Table">
+    <design:attribute name="label" label="Label" default="Data Table" description="Displays label at top of this component" />
+	<design:attribute name="object" label="Name of SObject" description="Name of SObject for which records to be displayed" />
+    <design:attribute name="fields" label="Fields" description="Enter comma seperated SObject Field API names" />
+    <design:attribute name="pageSize" label="Page Size" default="5" description="Enter No. of records to be displayed per page" />
+    <design:attribute name="limit" label="Limit" default="2000" description="Enter No. of records to be fetched" />
+    <design:attribute name="bordered" label="Show Border" description="Display Border for Data Table" />
+    <design:attribute name="striped" label="Show Stripes" description="Display striped rows for Data Table" />
+    <design:attribute name="sortable" label="Enable Sorting" description="Enable Sorting for Data Table" />
+    <design:attribute name="searchable" label="Enable Searching" description="Enable Searching for Data Table" />
+    <design:attribute name="creatable" label="Allow to add new record" description="Allow to create new record for Data Table" />
+</design:component>

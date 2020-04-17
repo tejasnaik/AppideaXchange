@@ -1,0 +1,130 @@
+<aura:component controller="GetAddressCoordinateController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="SimpleAddress" type="object" default=""  />
+    <aura:attribute name="isCorrdinationWay" type="boolean" default="false" />
+    <aura:attribute name="isShowingMap" type="boolean" default="false" />
+    <aura:attribute name="StandardAddress" type="object" default=""  />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    <aura:attribute name="AddressLine1" type="String" default="8401 MEMORIAL LN" />
+    <aura:attribute name="AddressLine2" type="String" default="APT 7323" />
+    <aura:attribute name="State" type="String" default="PLANO" />
+    <aura:attribute name="CountryCode" type="String" default="USA" />
+    <aura:attribute name="City" type="String" default="TX" />
+    <aura:attribute name="PostalCode" type="String" default="75024" />
+    <aura:attribute name="latitude" type="Decimal" default="51.505" />
+    <aura:attribute name="longitude" type="Decimal" default="-0.09" />
+    
+    <aura:attribute name="ShowMapOnload" type="boolean" default="false" />
+    <aura:attribute name="HideAddressPannel" type="boolean" default="true" />
+    
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <lightning:spinner aura:id="spinner" class="slds-hide" variant="brand" size="large"/>
+    
+    <article class="slds-card">
+        <div class="slds-grid slds-wrap slds-grid--pull-padded">
+            
+            <div class="slds-p-horizontal--small slds-size--1-of-1 slds-p-around--small slds-m-left--small">
+                <div class="slds-no-flex">
+                    <div class="slds-form-element">
+                        <label class="slds-checkbox--toggle slds-grid">
+                            <span class="slds-form-element__label slds-m-bottom--none">Show Address Pannel</span>
+                            <input type="checkbox" checked="{!!v.HideAddressPannel}" name="checkbox" aria-describedby="toggle-desc" onclick="{!c.showAddressPanel}" />
+                            <span id="toggle-desc1" class="slds-checkbox--faux_container" aria-live="assertive">
+                                <span class="slds-checkbox--faux"></span>
+                                <!-- <span class="slds-checkbox-2-on">Coordination</span>
+                                    <span class="slds-checkbox-2-off">Address</span>-->
+                            </span>
+                        </label>
+                    </div>
+                </div>  
+                
+                <div class="slds-no-flex">
+                    <div class="slds-form-element">
+                        <label class="slds-checkbox--toggle slds-grid">
+                            <span class="slds-form-element__label slds-m-bottom--none">Go with</span>
+                            <input type="checkbox" name="checkbox" aria-describedby="toggle-desc" onclick="{!c.goWithController}" />
+                            <span id="toggle-descaa" class="slds-checkbox--faux_container" aria-live="assertive">
+                                <span class="slds-checkbox--faux"></span>
+                                <span class="slds-checkbox--on">Coordination</span>
+                                <span class="slds-checkbox--off">Address</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <aura:if isTrue="{!!v.HideAddressPannel}">
+                <div class="{!v.isShowingMap?'slds-p-horizontal--small slds-size--1-of-1':'slds-p-horizontal--small slds-size--1-of-1'}">
+                    <article class="slds-card">
+                        <div class="slds-card__header slds-grid slds-hide">
+                            <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h2>
+                                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate">
+                                            <span class="slds-text-heading--small">Get Map</span>
+                                        </a>
+                                    </h2>
+                                </div>
+                            </header>
+                            <div class="slds-no-flex">
+                                <div class="slds-form-element">
+                                    <label class="slds-checkbox--toggle slds-grid">
+                                        <span class="slds-form-element__label slds-m-bottom--none">Go with</span>
+                                        <input type="checkbox" name="checkbox" aria-describedby="toggle-desc" onclick="{!c.goWithController}" />
+                                        <span id="toggle-desc" class="slds-checkbox--faux_container" aria-live="assertive">
+                                            <span class="slds-checkbox--faux"></span>
+                                            <span class="slds-checkbox--on">Coordination</span>
+                                            <span class="slds-checkbox--off">Address</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-card__body">
+                            <aura:if isTrue="{!!v.isCorrdinationWay}">
+                                <div class="slds-form--stacked slds-p-around--medium">
+                                    <lightning:input name="Address Line 1" value="{!v.SimpleAddress.AddressLine1}" label="Address Line 1" maxlength="50" />
+                                    <lightning:input name="Address Line 2" value="{!v.SimpleAddress.AddressLine2}" label="Address Line 2" maxlength="50" />
+                                    <lightning:input name="City" value="{!v.SimpleAddress.City}" type="String" label="City" />
+                                    <lightning:input name="State" value="{!v.SimpleAddress.State}" label="State" maxlength="50" />
+                                    <lightning:input name="Country" value="{!v.SimpleAddress.CountryCode}" label="Country" maxlength="50" />
+                                    <lightning:input name="Postal Code/ Zip Code" value="{!v.SimpleAddress.PostalCode}" label="Postal Code" maxlength="50" />
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-form--stacked slds-p-around--medium">
+                                        <lightning:input name="latitude" value="{!v.SimpleAddress.latitude}" label="latitude" maxlength="50" />
+                                        <lightning:input name="longitude" value="{!v.SimpleAddress.longitude}" label="longitude" maxlength="50" />
+                                    </div>
+                                </aura:set>
+                            </aura:if> 
+                        </div>
+                        <div class="slds-card__footer">
+                            <button style="background: #73a1e5; color: white;" class="slds-button slds-size--1-of-1  slds-m-top--small slds-p-vertical--x-small" onclick="{!c.showMap}">
+                                <ui:outputText value="Show Map"  />
+                            </button>             
+                        </div>
+                    </article>
+                </div>
+                
+            </aura:if>
+            <div class="{!v.isShowingMap?(v.HideAddressPannel?'slds-p-horizontal--small slds-size--1-of-1':'slds-p-horizontal--small slds-size--1-of-1'):'slds-p-horizontal--small slds-size--1-of-1 slds-hide'}">
+                <article class="slds-card">
+                    <div class="slds-card__body">
+                        <div aura:id="placeid" id="placeid"/>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </article>
+</aura:component>
+<!--
+Developed By : Ashlekh Gera 
+-->

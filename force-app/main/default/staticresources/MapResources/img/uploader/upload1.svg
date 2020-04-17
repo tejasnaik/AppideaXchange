@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24.455px"
+	 height="30.617px" viewBox="0 0 24.455 30.617" enable-background="new 0 0 24.455 30.617" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  height="30.617" width="24.455" x="285" y="405.383" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#8099B0" d="M1.84,2.539h14.242c2.309,2.323,5.664,5.689,8.246,8.244v17.994
+		c0,1.013-0.828,1.84-1.84,1.84H1.84c-1.012,0-1.84-0.827-1.84-1.84V4.379C0,3.367,0.828,2.539,1.84,2.539L1.84,2.539z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#C2CFDB" d="M24.455,11.645l-6.584,0.035c-1.012,0.005-1.848-0.828-1.84-1.84
+		l0.051-7.301l8.357,8.154L24.455,11.645L24.455,11.645z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#738799" d="M5.811,15.431c0.9,0.008,1.75-0.335,2.394-0.968
+		c0.644-0.632,1.002-1.476,1.011-2.376l0.086-9.5c0.006-0.684-0.255-1.331-0.735-1.82S7.445,0.006,6.761,0
+		C6.076-0.006,5.43,0.255,4.941,0.736c-0.489,0.48-0.762,1.122-0.768,1.806h0.81c0.006-0.465,0.192-0.901,0.526-1.228
+		C5.843,0.984,6.286,0.806,6.753,0.81S7.66,1.001,7.989,1.336C8.317,1.67,8.496,2.113,8.492,2.581l-0.086,9.5
+		c-0.004,0.45-0.124,0.881-0.344,1.26c-0.115,0.198-0.257,0.381-0.425,0.546c-0.49,0.481-1.136,0.742-1.819,0.736
+		c-1.414-0.013-2.554-1.174-2.541-2.587l0.078-8.609l-0.81-0.007l-0.078,8.609C2.451,13.887,3.95,15.415,5.811,15.431L5.811,15.431z
+		"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#BFCCD9" d="M5.67,15.431c0.9,0.008,1.75-0.335,2.394-0.968
+		c0.644-0.632,1.003-1.476,1.011-2.376l0.086-9.5c0.006-0.684-0.255-1.331-0.735-1.82S7.304,0.006,6.62,0
+		C5.936-0.006,5.29,0.255,4.8,0.736c-0.489,0.48-0.762,1.122-0.768,1.806h0.81c0.006-0.465,0.192-0.901,0.526-1.228
+		C5.703,0.984,6.145,0.806,6.613,0.81s0.906,0.191,1.235,0.526C8.177,1.67,8.356,2.113,8.352,2.581l-0.086,9.5
+		c-0.004,0.45-0.124,0.881-0.344,1.26c-0.115,0.198-0.257,0.381-0.425,0.546c-0.49,0.481-1.136,0.742-1.819,0.736
+		c-1.414-0.013-2.554-1.174-2.541-2.587l0.078-8.609l-0.81-0.007l-0.078,8.609C2.31,13.887,3.81,15.415,5.67,15.431L5.67,15.431z"/>
+</g>
+</svg>

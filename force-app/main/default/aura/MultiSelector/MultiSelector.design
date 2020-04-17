@@ -1,0 +1,9 @@
+<design:component >
+	<design:attribute name="ObjectName" label="Object API" description="Provide object Api Name if record is not mentioned or component is not configure in recrod detail Page."/>
+    <design:attribute name="FieldName"  label="Field API" description="Provide Field API Name for which picklist render."/>
+    <design:attribute name="isEditMode" label="In edit mode" description="By default view of Picklist."/>
+    <design:attribute name="FieldLabel" label="Label" description="Label for field."/>
+    <design:attribute name="goWithMyOptions" label="Want to use your own Options" description="Check this checkbox and provide options in next text field for options"/>
+    <design:attribute name="MyOptions" label="My Options" description="Provide your own options in mutliselect picklist and option should be seperate by ';'.  "/>
+    
+</design:component>

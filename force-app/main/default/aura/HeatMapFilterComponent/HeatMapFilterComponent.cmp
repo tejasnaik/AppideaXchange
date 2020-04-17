@@ -1,0 +1,59 @@
+<aura:component controller="HeatMapClass" access="global">
+    <aura:attribute name="ObjectList" type="String[]"></aura:attribute>
+    <aura:attribute name="selectedObject" type="String"/>
+    <aura:attribute name="FieldCountryList" type="String[]"></aura:attribute>
+   <!-- <aura:attribute name="FieldStateList" type="String[]"></aura:attribute>-->
+    <aura:handler name="init" value="{!this}" action="{!c.selectObject}"/>
+    <aura:registerEvent name="recordsLoaded" type="c:HeatMapEvent"/>
+    
+    <div class="slds-grid">
+        <div class="slds-col">
+            <lightning:layout horizontalAlign="space">
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    <div class="slds-box slds-m-top_xx-small slds-m-left_xx-small">
+                        <ui:inputSelect aura:id="objectPickListField" label="Object List " change="{!c.onSelectChange}">
+                            <aura:iteration items="{!v.ObjectList}" var="objectlistitem">
+                                <ui:inputSelectOption text="{!objectlistitem}" label="{!objectlist}"/>
+                            </aura:iteration>
+                        </ui:inputSelect>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+        <div class="slds-col">
+            <lightning:layout horizontalAlign="space">
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    <div class="slds-box slds-m-top_xx-small slds-m-left_xx-small">
+                        <ui:inputSelect aura:id="FieldCountryList" label="Country List ">
+                            <aura:iteration items="{!v.FieldCountryList}" var="FieldCountryList">
+                                <ui:inputSelectOption text="{!FieldCountryList}" label="{!FieldCountryList}"/>
+                            </aura:iteration>
+                        </ui:inputSelect>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+     <!--   <div class="slds-col">
+            <lightning:layout horizontalAlign="space">
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    <div class="slds-box slds-m-top_xx-small slds-m-left_xx-small">
+                        <ui:inputSelect aura:id="FieldStateList" label="State List ">
+                            <aura:iteration items="{!v.FieldStateList}" var="FieldStateList">
+                                <ui:inputSelectOption text="{!FieldStateList}" label="{!FieldStateList}"/>
+                            </aura:iteration>
+                        </ui:inputSelect>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>-->
+        <div class="slds-col">
+            <lightning:layout horizontalAlign="space">
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    <div class="slds-box slds-m-top_xx-small slds-m-left_xx-small">
+                        <lightning:button name="change" value="{!v.selectedObject}" variant="brand" label="Show Map" onclick="{!c.navigateToShowMap}"/>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </div>
+</aura:component>

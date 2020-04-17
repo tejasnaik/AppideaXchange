@@ -1,0 +1,25 @@
+<!--
+	Author		: Sachin Chavan
+	Date		: March 2017
+	Description	: Lightning Component for Star Ratings.
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<ltng:require scripts="{!join(',', $Resource.Ratings + '/jquery.js',
+                           $Resource.Ratings + '/jquery.barrating.min.js')}"
+                  styles="{!join(',', $Resource.Ratings + '/font-awesome/css/font-awesome.min.css',
+                          $Resource.Ratings + '/themes/fontawesome-stars.css',
+                          $Resource.Ratings + '/themes/fontawesome-stars-o.css')}"
+                  afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    
+    <aura:attribute name="initialRating" type="String" default="0" />
+    <aura:attribute name="readOnly" type="Boolean" default="false" />
+    <aura:attribute name="reverse" type="Boolean" default="false" />
+    <aura:attribute name="items" type="List" default="[1,2,3,4,5]" />
+    <aura:attribute name="theme" type="String" default="fontawesome-stars" />
+    
+    <select aura:id="Rating" class="slds-hide">
+        <aura:iteration items="{!v.items}" var="item">
+        	<option value="{!item}">{!item}</option>
+        </aura:iteration>
+    </select>
+</aura:component>

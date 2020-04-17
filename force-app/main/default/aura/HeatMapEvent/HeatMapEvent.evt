@@ -1,0 +1,6 @@
+<aura:event type="COMPONENT">
+    <aura:attribute name="sObjectEvent" Type="String[]"/>
+    <aura:attribute name="selObjectEvent" type="String"/>
+    <aura:attribute name="selCountryEvent" type="String"/>
+  <!--  <aura:attribute name="selStateEvent" type="String"/>-->
+</aura:event>

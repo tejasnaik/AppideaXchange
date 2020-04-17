@@ -1,0 +1,4 @@
+<design:component >
+	<design:attribute name="isShortName" label="Is Short Address" description="This attribute tells to the controller to get short address format or full address format eg : USA or United State" />
+    <design:attribute name="FieldAPI" label="Field API"  description="Provide field api name where need to save full address." />
+</design:component>

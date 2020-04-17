@@ -1,0 +1,54 @@
+<aura:component controller="Cts_CommentController">
+    
+    <aura:attribute name="pastComments" type="List" default="[]" />
+    <aura:attribute name="ItemId" type="String"  />
+    <aura:attribute name="totalComments" type="Integer"  />
+    <aura:attribute name="offSet" type="Integer"  default="0"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="spinner" type="boolean" default="false"/>
+    
+    
+    <div class="slds-media slds-hide">
+        <div class="slds-media__figure">
+            <img src="/profilephoto/005/F" class="slds-avatar--large" alt="Placeholder" />
+        </div>
+        <div class="slds-media__body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat minus molestias reprehenderit consequuntur sapiente. Modi veritatis totam accusantium numquam assumenda.</p>
+            <dl class="slds-list--horizontal slds-wrap">
+                <dd class="slds-item--detail slds-truncate">2 days ago</dd>
+            </dl>
+        </div>
+    </div>
+    
+   <div class="slds-scrollable">
+    <lightning:spinner variant="brand" alternativeText="Working..." size="small"  class="{!v.spinner?'slds-show':'slds-hide'}" /> 
+    <aura:iteration items="{!v.pastComments}" var="item">
+        <div class="slds-media slds-m-top--small">
+            <div class="slds-media__figure">
+               <!-- <img src="/profilephoto/005/F" class="slds-avatar-1-large" alt="Placeholder" />-->
+                <img src="{!item.CogniAppEx__User__r.SmallPhotoUrl}" class="slds-avatar--large" alt="Placeholder" />
+            </div>
+            <div class="slds-media__body">
+                <p style="word-break:break-word">{!item.CogniAppEx__Body__c}</p>
+                <dl class="slds-list--horizontal slds-wrap">
+                    <dd class="slds-item--detail slds-truncate">{!item.customDays}  
+                   		 <span class="slds-text-title">
+                        	<a href="javascript:void(0);">{! ' by '+ item.CogniAppEx__User__r.Name}</a>
+                        </span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+       <hr style="margin: .5rem 0 !important;"/>
+    </aura:iteration>
+  
+    <aura:if isTrue="{!v.totalComments > v.pastComments.length }">
+       <div>
+       		<center> 
+                 <lightning:button label="Show more comments" variant="brand" onclick="{! c.showMoreComments }"/>
+           </center>
+       </div>
+    </aura:if>      
+    </div> 
+</aura:component>

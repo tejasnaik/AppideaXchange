@@ -1,0 +1,9 @@
+.THIS {
+}
+
+.THIS .desc{
+    overflow: hidden;
+    display: -webkit-box;
+   -webkit-line-clamp: 2; /* Limit to n lines */
+   -webkit-box-orient: vertical;
+}

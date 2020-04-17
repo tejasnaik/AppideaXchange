@@ -1,0 +1,69 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller="HC_ScheduleListController">
+    <aura:attribute name="listFields" type="String[]" default="['Id','WhoId','Who.Name','What.Name', 'WhatId', 'Subject', 'ActivityDate']" />
+    <aura:attribute name="relatedTo" type="String" default="Case"></aura:attribute>
+    <aura:attribute name="dataFields" type="Map" default="{'Who.Name':'Name','Subject' :'Subject'}"/>
+    <aura:attribute name="Records" type="Object"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="toggleSpinner" type="boolean" default="false"/>
+    <aura:attribute name="conditionValue" type="Integer" default="0"/>
+    <aura:attribute name="isDataLoad" type="boolean" default="false"/>
+    <aura:attribute name="lstHeader" type="List" default="[]"/>
+    <aura:attribute name="lstHeaderKey" type="List" default="[]"/> 
+    <aura:attribute name="mapBtnByValue" type="Map" default="{'Today':0,'Tomorrow':1}"></aura:attribute>
+    <aura:attribute name="lstBtnByValue" type="List" default="[]"></aura:attribute>
+    <div class="slds slds-box slds-m-around--medium slds-is-relative">        
+        <div class="slds-page-header">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                  <div class="slds-media slds-no-space slds-grow">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="action:new_event" size="small" alternativeText="Schedule"/>
+                    </div>
+                    <div class="slds-media__body">
+                      <p class="slds-text-title--caps slds-line-height--reset"></p>
+                      <h2 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="this should match the Record Title">My Schedule</h2>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="slds-grid">
+                 <aura:iteration items="{!v.lstBtnByValue}" var="recBtn">
+                    <div class="slds-size--1-of-2">
+                          <div class="slds-box--x-small slds-m-around--x-small">
+                              <button type="button" onclick="{!c.getSchedule}" id="{!recBtn}" class="slds-button slds-button--brand slds-size--1-of-1">{!recBtn}</button> 
+                          </div>
+                    </div>
+                </aura:iteration>
+            </div> 
+             <div class="slds-grid">	
+                  <div class="slds-size--2-of-2">
+                      <aura:if isTrue="{!v.isDataLoad}">
+                          <table class="slds-border_left slds-border_right slds-table slds-table--bordered slds-table--cell-buffer">
+                                  <thead>
+                                    <tr class="slds-text-title--caps">
+                                        <aura:iteration items="{!v.lstHeader}" var="header">
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="">{!header}</div>
+                                            </th>
+                                        </aura:iteration>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <aura:iteration items="{!v.Records.lstObject}" var="rec">
+                                        <tr>
+                                          <aura:iteration items="{!v.lstHeaderKey}" var="keyValue">  
+                                              <c:HC_TableCell field="{!keyValue}" records="{!rec}"></c:HC_TableCell>
+                                          </aura:iteration>
+                                        </tr>
+                                    </aura:iteration>
+                                  </tbody>
+                              </table>
+                      </aura:if>
+                  </div>
+            </div>
+        </div>
+        <aura:if isTrue="{!v.toggleSpinner}">
+            <lightning:spinner aura:id="mySpinner" variant="brand"/>
+        </aura:if>
+    </div>
+</aura:component>

@@ -1,0 +1,8 @@
+<design:component >
+	<design:attribute name="limitNo" label="Limit" description="Define the limit of records need to show at a time."/>
+    <design:attribute name="debugOn" label="Debug Switcher" description="Debug need to log in components."/>
+    <design:attribute name="ComponentStatus" label="Component Status" description="what status of components need to fatch."/>
+    <design:attribute name="EnableStarRating" label="Enable Rating" description="Rating component will be activated by this."/>
+   
+    
+</design:component>

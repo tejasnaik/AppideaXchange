@@ -1,0 +1,6 @@
+<design:component >
+    <design:attribute name="mainHeading" label="Main Heading" description=""/>
+	<design:attribute name="treeHeader" label="Sub Heading" description=""/>
+    <design:attribute name="parentObj" label="Parent Object" description=""/>
+	<design:attribute name="childObj" label="Child Object" description=""/>
+</design:component>

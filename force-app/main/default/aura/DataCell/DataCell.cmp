@@ -1,0 +1,18 @@
+<!--
+	Author		: Sachin Chavan
+	Date		: March 2017
+	Description	: Lightning Component for Data Cell.
+-->
+<aura:component >
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="field" type="String" />
+	<aura:attribute name="value" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <th scope="row" data-label="Opportunity Name">
+        <div class="slds-truncate" title="{!v.value}">
+            <a href="javascript:void(0);">{!v.value}</a>
+        </div>
+    </th>
+</aura:component>

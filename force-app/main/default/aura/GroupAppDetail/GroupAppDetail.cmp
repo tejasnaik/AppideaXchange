@@ -1,0 +1,53 @@
+<aura:component controller="GroupAppDetailController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    
+    <aura:attribute type="String" name="recordId"/>
+    <aura:attribute type="String" name="noticeBoard" default="Notice Board" access="global"/>
+    <aura:attribute type="List" name="appDetails"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.setGroupApp}" />
+    
+    <div  class="slds-box slds-box--xx-small">
+        <div class="slds-grid" >
+            <div class="slds-panel slds-grid slds-grid_vertical slds-nowrap">
+                <div class="slds-form slds-form_stacked slds-grow slds-scrollable_y">
+                    <div class="slds-panel__section">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <span class="slds-icon_container slds-icon-standard-contact" title="description">
+                                    <lightning:icon iconName="standard:record" size="medium" alternativeText="Icon"/>
+                                </span>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-text-heading--small slds-truncate">
+                                    <p class="slds-text-heading--small slds-truncate slds-p-top_x-small">{!v.noticeBoard}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <aura:iteration items="{!v.appDetails}" var="ADObj" indexVar="index">
+                        <div class="slds-panel__section slds-border_bottom">
+                            <h3 class="slds-text-heading_small slds-p-bottom_xx-small" style="font-size:14px!important; font-weight:">{!ADObj.groupAppObj.CogniAppEx__Application_Title__c}</h3>
+                            <ul>
+                                <li class="slds-form-element slds-hint-parent">
+                                    <div class="slds-is-expanded" id="{!index+'more'}">
+                                        <span class="desc" style="color:#54698d;">{!ADObj.groupAppObj.CogniAppEx__Description__c}</span>
+                                        <span id="{!index+'m'}" onclick="{!c.toggleMore}" style="color:#0070d2;">More</span>
+                                    </div>
+                                    <div class="slds-is-collapsed" id="{!index+'less'}">
+                                        <span  style="color:#54698d;">
+                                            {!ADObj.groupAppObj.CogniAppEx__Description__c}
+                                            <c:GroupAppFiles AppId="{!ADObj.groupAppObj.Id}" files="{!ADObj.filesList}"/>
+                                        </span>
+                                        <span id="{!index+'l'}" onclick="{!c.toggleLess}" style="color:#0070d2;">Less</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>     
+                    </aura:iteration>
+                    
+                </div>
+            </div>
+        </div>        
+    </div>
+</aura:component>

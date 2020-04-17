@@ -1,0 +1,15 @@
+<design:component >
+    <design:attribute name="defaultTaskRange" label="Task Range" 
+                      description="Enter any one: 'Today','Tomorrow','Overdue','ThisWeek','NextWeek'"/>
+    <design:attribute name="gridSize" label="Grid Size" 
+                      description="Enter Grid size"/>
+    <design:attribute name="fields" label="Display Fields"
+                      description="The first one will be highlight field.
+                                   Note: Id and Name fields are already included."/>
+    <design:attribute name="fieldsLabelMap" label="Field Label Map" 
+                      description="Enter Field Mapping in format: Name:Name,Birthdate:DOB,HealthCloudGA__Gender__c:Gender,HealthCloudGA__MedicalRecordNumber__c:MRN"/>
+    <design:attribute name="objName" label="Object Name" description="Enter Object Name"/>
+    <design:attribute name="imageField" label="Image Field" default="Customer_Pic__c"
+                      description="Enter Image Field on same object"/>
+    <design:attribute name="showRange" label="Select Range" default="true"/>
+</design:component>

@@ -1,0 +1,38 @@
+<aura:component >
+    
+    <aura:attribute type="String" name="sCategories" default=""/>
+    <aura:attribute type="String" name="sType" default=""/>
+    <aura:attribute type="String" name="sortOrder" default=""/>
+    <aura:attribute type="String" name="SearchInput" default=""/>
+   
+    <aura:handler value="{!this}" name="init" action="{!c.doInt}"/>
+    <aura:registerEvent name="detailComponentEvent" type="c:Cts_pvtAppXLandingFilterEvent"/>
+
+   
+    <aura:attribute type="object[]" name="AppsList"/>
+    <aura:attribute type="object[]" name="internalAppsList"/>
+    <div class="slds-grid slds-wrap slds-grid--pull-padded">
+        <aura:iteration items="{!v.internalAppsList}" var="val">  
+          <aura:if isTrue="true">
+            <div style="border-radius:8px;" class="slds-p-horizontal--small slds-size--1-of-4 slds-p-around--small">
+                <figure style="border-radius:8px;border-bottom:1px solid #FF5722" class="slds-image slds-image--card">
+                    <div class="hoverclass" >
+                		<lightning:button value="{!val.res.Id}" variant="neutral" label="More" iconName="action:more" iconPosition="right" onclick="{!c.moreDetail }" >
+                        </lightning:button>
+                	</div>
+                    <a href="javascript:void(0);" class="slds-image__crop slds-image__crop--4-by-3">
+                        <img src="{!'data:image/png;base64,'+val.bl}" alt="Description of the image" />
+                    </a>
+                    <figcaption class="slds-image__title slds-image__title--card">
+                      	<div class="typeClass" style="padding: 2px;  margin-right: 2px;"> 
+                              <lightning:icon iconName="{!val.icontype}" size="xx-small" alternativeText="Close" />
+                        </div>
+                        <span class="slds-image__text slds-truncate" title="Image Title">{!val.res.Name}</span>
+                    </figcaption>
+                </figure>
+            </div> 
+           </aura:if>     
+        </aura:iteration>
+    </div> 
+    
+</aura:component>

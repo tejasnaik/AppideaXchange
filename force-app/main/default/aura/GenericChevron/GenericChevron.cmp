@@ -1,0 +1,72 @@
+<!--
+ * Entity Name Name: DRMI_Chevron Component
+ * Description: Custom Chevron/Path Component.
+ * Developed by: Rajendra Singh Nagar (640829)
+ * Author: Cognizant Technology Solutions
+-->
+<aura:component implements="force:hasRecordId,flexiPage:availableForRecordHome" controller="GenericChevronController">
+    <!-- Define Aura attributes here - Start -->
+    <aura:attribute name="picklistField" type="String"
+                    description="Use this field for chevron."/>
+    <aura:attribute name="title" type="String" 
+                    description="Use this field for title"/>
+    <!-- Internal Attributes -->
+    <aura:attribute access="global" name="cList" type="Object"
+                    description="Various stages of Chevron."/>
+    <!-- Attributes for LDS -->
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <!-- Define Aura attributes here - End -->
+    
+    <!-- Load the record -->
+    <force:recordData aura:id="loadRecord"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.handleUpdatedRecord}"
+                      />
+    <lightning:spinner variant="brand" size="small" aura:id="chevronSpinner" class="slds-hide"/>
+    <!-- Chevron Component -->
+    <article class="slds-card">
+        <div class="{!if(empty(v.title),'slds-hide','slds-p-left--medium slds-p-top--small slds-text-title_caps')}"
+             style="width: 25%;">
+            <lightning:layout >
+                <lightning:layoutItem flexibility="auto" padding="horizontal-small">
+                    {!v.title}
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+        <div class="slds-tabs--path slds-p-around_medium" role="application">
+            <ul class="slds-tabs--path__nav" role="tablist">
+                <aura:iteration items="{!v.cList.stages}" var="stageIs" indexVar="index">
+                    <li class="{!if(stageIs==v.cList.currentStage,'slds-is-current slds-tabs--path__item',
+                               if(v.cList.currentStageIndex &gt; index,'slds-is-complete slds-tabs--path__item',
+                               'slds-is-incomplete slds-tabs--path__item'))}" 
+                        style="margin-left: 0em !important;" role="presentation" aura:id="contentli1" >
+                        <a class="slds-tabs--path__link customlink" id="tabs-path-1" aria-controls="content-path-1" 
+                           aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                            <span class="slds-tabs--path__stage">
+                                {!stageIs}
+                                <span class="slds-assistive-text">{!stageIs}</span>
+                            </span>
+                            <span class="slds-tabs--path__title fontStyle" title="{!stageIs}">{!stageIs}</span>
+                        </a>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+    </article>
+    
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+    </aura:if>
+    
+</aura:component>

@@ -1,0 +1,20 @@
+.THIS {
+    font-family: "Salesforce Sans", Arial, sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+.THIS #mapId {
+    min-height: 300px;
+}
+
+
+.THIS .tes-box {
+    background-color: #62205e;
+    border-radius: 0;
+    text-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 3px solid #441342;
+    font-size: 1rem;
+}

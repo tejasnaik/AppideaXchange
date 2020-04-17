@@ -1,0 +1,93 @@
+<aura:component controller="ProNotesController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+
+    <aura:attribute name="recordId" type="Id" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+  
+    <aura:attribute name="contents" type="List" default="[]" />
+    <aura:attribute name="noteName" type="String" />
+    <aura:attribute name="noteBody" type="String" />
+    <aura:attribute name="listSize" type="Integer" default="0" />
+    
+    <!--To make a table for Note List with Fields Title, Id-->
+    
+    <div>
+        <lightning:button label="New Note" variant="neutral" type="submit" onclick="{!c.newbutton}"/>
+    </div>
+    <!--To check if there are any notes in the list or not-->
+    <aura:if isTrue="{!v.listSize>0}"> 
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer ">
+            <thead>
+                <tr class="slds-text-title_caps ">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Id">Id</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Title">Title</div>     
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Delete">Delete</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--To Display all the Notes in a particular record-->
+                <aura:iteration items="{!v.contents}" var="content"> 
+                    <tr> 
+                        <th scope="row" data-label="Id">   
+                            <div class="slds-truncate" title="{!content.Id}"><a href="{!'/'+content.Id}">{!content.Id}</a></div>     
+                        </th>         
+                        <th scope="row" data-label="Title">
+                            <div class="slds-truncate" title="{!content.Title}">{!content.Title}</div>
+                        </th>  
+                        
+                         <!--To make a Delete Button for Each Note Created-->
+                        <td>
+                            <lightning:button label="Delete"
+                                              value="{!content.Id}"
+                                              iconName="utility:delete"    
+                                              iconPosition="left"
+                                              variant="base"
+                                              type="submit" onclick="{!c.deleteNote}"/>
+                        </td> 
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+        <aura:set attribute="else">
+            <!--if Notes are empty then display this message-->
+            There are no Notes related to this record.
+        </aura:set>
+    </aura:if>
+    
+    <!--To make a Modal for the new Note with Save, Cancel Buttons-->
+    
+    <div class="demo-only" style="height: 640px;">
+        <section role="dialog" tabindex="-1" aura:id="Modalbox" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal ">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick="{!c.cancel}" title="Close">
+                        <lightning:buttonIcon class="slds-button__icon slds-button__icon_large" iconName="utility:close" alternativeText="close" />
+                        <span class="slds-assistive-text" >Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">New Note</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    
+                    <lightning:input name="input" label="Name" value="{!v.noteName}" /> 
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                    
+                    <br/>
+                    <!--To create a Text Area for the Body of the Note-->
+                    <lightning:textarea name="myTextArea" value="{!v.noteBody}" 
+                                        label="Body" maxlength="131072" />                   
+                </div>
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick="{!c.cancel}">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick="{!c.save}">Save</button>
+                </footer>
+            </div>
+        </section>
+        <div aura:id="Modalbackdrop"  class="slds-backdrop "></div>
+    </div>
+</aura:component>

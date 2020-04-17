@@ -1,0 +1,30 @@
+<aura:component controller="GroupAppFilesController" access="global" >
+    <aura:attribute type="String" name="appId"/>
+    <aura:attribute type="List" name="files"/>
+    <aura:attribute type="List" name="iconFiles"/>
+    <aura:attribute type="Boolean" name="show" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.runInit}"/>
+    
+    <aura:if isTrue="{!v.show}">
+        <div class="slds-grid">
+            <ul class="slds-col slds-size--1-of-1">
+                <aura:iteration items="{!v.iconFiles}" var="file" indexVar="ind">
+                    <li class="slds-size--1-of-3 slds-show--inline-block">
+                        <lightning:card variant="base" class="slds-m-around--small">
+                            <aura:set attribute="title">
+                                <lightning:icon iconName="{!file.type}" size="large" alternativeText="File"/>
+                            </aura:set>
+                            <div class="slds-align_absolute-center slds-p-horizontal--small">
+                                <p class="slds-truncate" title="{!file.title}"><a href="{!file.url}">{!file.title}</a></p>
+                            </div>
+                        </lightning:card>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+        <aura:set attribute="else">
+            <div></div>
+        </aura:set>
+    </aura:if>
+</aura:component>

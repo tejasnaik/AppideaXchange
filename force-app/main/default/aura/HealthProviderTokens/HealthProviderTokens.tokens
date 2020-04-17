@@ -1,0 +1,14 @@
+<!--
+ * Entity Name Name: HealthProviderTokens Token File
+ * Description: Health Care Plus Specific token file.
+ * Developed by: Rajendra Singh Nagar (640829)
+ * Author: Cognizant Technology Solutions
+-->
+<aura:tokens extends="force:base">
+	<aura:token name="patient360TabIconColor" value="#00b3c5"/>
+    <aura:token name="communityTemplateColor" value="#081e29"/><!-- #00b3c5 -> Cognizant Blue -->
+    <aura:token name="communityTemplateSearchButton" value="#228690"/>
+    <aura:token name="communityTemplateDropDown" value="#081e29"/>
+    <aura:token name="TaskBackground" value="#00b3c5"/>
+    <aura:token name="communityknowledge" value="{!colorBrand}"/>
+</aura:tokens>

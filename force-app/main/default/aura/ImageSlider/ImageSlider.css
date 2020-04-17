@@ -1,0 +1,17 @@
+.THIS .slider {
+    width: 50%;
+    margin: 100px auto;
+}
+
+.THIS .slick-slide {
+    margin: 0px 20px;
+}
+
+.THIS .slick-slide img {
+    width: 100%;
+}
+
+.THIS .slick-prev:before,
+.THIS .slick-next:before {
+    color: black;
+}

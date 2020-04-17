@@ -1,0 +1,9 @@
+.THIS .TileBackground{
+    background:gray;
+}
+.THIS .selectSize .slds-select_container{
+    font-size: initial;
+}
+.THIS .customWidth{
+    padding-left: 20%;
+}

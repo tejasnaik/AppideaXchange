@@ -1,0 +1,13 @@
+<apex:page >
+    <apex:includeLightning />
+
+  <div id="lightning"/>
+  <script >
+      //inject the lightning component.
+      $Lightning.use("c:GoogleMapDemo", function() {
+          $Lightning.createComponent("c:GoogleMapContainer",{},"lightning", function(cmp) {
+              //console.log('inside the component',cmp);
+          });
+        });
+  </script>
+</apex:page>

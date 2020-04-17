@@ -1,0 +1,3 @@
+<apex:page sidebar="false" showHeader="false" controller="COE_PrintPreviewController">
+    <apex:outputText escape="false" value="{!FinalHTML}"/>
+</apex:page>

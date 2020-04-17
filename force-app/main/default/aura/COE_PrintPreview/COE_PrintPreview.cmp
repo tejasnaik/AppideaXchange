@@ -1,0 +1,4 @@
+<aura:component controller="COE_PrintPreviewController" implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:lightningQuickAction" access="global" >
+    <aura:attribute name="viewURL" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+</aura:component>

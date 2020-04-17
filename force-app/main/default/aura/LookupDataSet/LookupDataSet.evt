@@ -1,0 +1,7 @@
+<aura:event type="APPLICATION">
+    <!-- Add aura:attribute tags to define event shape.
+         One sample attribute here. -->
+    <aura:attribute name="SobjectId" type="String"/>
+    <aura:attribute name="SobjectLabel" type="String"/>
+    <aura:attribute access="public" name="fieldName" type="String" description="Id selected for which field. If we are rendering multiple lookups in same UI" />
+</aura:event>

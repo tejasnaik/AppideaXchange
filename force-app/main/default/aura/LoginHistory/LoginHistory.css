@@ -1,0 +1,15 @@
+.THIS .clearicn{
+    background: #FA8072;
+     border-style: solid;
+    border-color: red;
+}
+
+.THIS .checkicn{
+    background: 	#32CD32;
+     border-style: solid;
+    border-color: green;
+}
+
+.THIS.slds-p-vertical--xx-large{
+    background-color: 	white;
+}

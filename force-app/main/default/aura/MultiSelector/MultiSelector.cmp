@@ -1,0 +1,117 @@
+<!-- Developed By Ashlekh Gera -->
+<aura:component controller="MultiSelectorController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global">
+    
+    <aura:attribute name="ObjectName" 	type="String" default="Account" access="public" description="Provide API name of object, if options of picklist comes from defined field."/>
+    <aura:attribute name="recordId" 	type="Id" default="" access="public" description="Provide record Id if want to save the value on record." /> 
+    <aura:attribute name="FieldName" 	type="String" default="My_Sports__c" access="public" description="Provide field API Name where picklist value has been defined."/>
+    <aura:attribute name="FieldLabel"  type="String" default="My Picklist" access="public" description="Provide label which need to show on UI."/>
+    <aura:attribute name="UseStandardSave"  type="boolean" default="false" access="public"/>
+    
+   
+    <aura:attribute name="MyOptions" type="String" default="Option1;Option2;Option3;Option4" access="public" description="Provide your own options in mutliselect picklist and option should be seperate by ';'.  "/>
+    <aura:attribute name="goWithMyOptions"  type="boolean" default="false" access="public" description="Check this checkbox if want to user your own options." />
+    <!--<aura:attribute name="intenalBoolean"  type="boolean" default="true" access="private"/>-->
+    
+    <!-- internal fields--> 
+    <aura:attribute name="OptionsValueList" type="list" access="private"/> 
+    <aura:attribute name="isEditMode" type="boolean" default="true" access="private"/>
+    <aura:attribute name="SelectedValueList" type="list" access="private" />
+    <aura:attribute name="OptionsValueSelected" type="String" default="" access="private"/>
+    <aura:attribute name="SelectedValueSelected" type="String" default="" access="private"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="MultiSelectedValueEvent" type="c:MultiSelectorValues"/>
+	
+    <!-- Call this method from parent component. This component fire an event and send the selected value in a parameter of event. -->
+    <aura:method name="getValues" action="{!c.getValues}" access="public" description="Call this method to get selected value."/>
+
+    
+   <!-- <aura:handler event="force:refreshView" action="{!c.refresh}" />
+	<aura:dependency resource="markup://force:editRecord" type="EVENT" />
+	-->
+    
+    <div class="slds-card">
+        <div class="slds-card__body slds-form-element slds-p-around--small">
+            <label class="slds-form-element__label" for="text-input-01">{!v.FieldLabel}</label>
+            <div class="slds-form-element__control">
+                <div class="slds-picklist--draggable slds-grid">
+                    <div class="slds-picklist" role="application">
+                        <ul aria-describedby="option-drag-label"  ondragenter="{!c.dragEnter}" ondrop="{!c.dragDrop2}" ondragover="{!c.dragOver}"
+                            aria-labelledby="label-45" aria-multiselectable="true" class="min_height slds-picklist__options slds-picklist__options--multi " role="listbox" tabindex="0">
+                            <aura:if isTrue="{!or(v.OptionsValueList==null, v.OptionsValueList.length==0)}">
+                                <li aria-selected="false"   class="slds-picklist__item slds-is-draggable" draggable="false" role="option" tabindex="0">
+                                    <span class="slds-truncate">--None--</span>
+                                </li>
+                                <aura:set attribute="else">
+                                    <span> 
+                                        <aura:iteration items="{!v.OptionsValueList}" var="l">
+                                            <li aria-selected="{!v.OptionsValueSelected==l}" id="{!l}" data-value="{!l}" onclick="{!c.LHSSelect}" class="slds-picklist__item slds-is-draggable" draggable="true"  ondragstart="{!c.dragStart}" role="option" tabindex="0">
+                                                <span class="slds-truncate">{!l}</span>
+                                            </li>
+                                        </aura:iteration>
+                                    </span>  
+                                </aura:set>
+                            </aura:if>
+                        </ul>
+                    </div>
+                    <div class="slds-grid slds-grid--vertical">
+                        
+                        <aura:if isTrue="{!v.isEditMode}">
+                            <button  class="custom_pos_1 slds-button slds-button--icon-container" disabled="{!v.OptionsValueSelected==''}" title="Up" onclick="{!c.MoveTOSelect}">
+                                <lightning:icon iconName="utility:right" variant="error"/>
+                            </button>
+                            <button  class="custom_pos_2 slds-button slds-button--icon-container"  disabled="{!v.SelectedValueSelected==''}" onclick="{!c.reMoveTOSelect}" title="Down">
+                                <lightning:icon iconName="utility:left" variant="error"/>
+                                <span class="slds-assistive-text">Move Selection to First Category</span>
+                            </button>
+                        </aura:if>  
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-picklist" role="application">
+                            <ul aria-describedby="option-drag-label" id="abc" ondragenter="{!c.dragEnter}" ondrop="{!c.dragDrop}" ondragover="{!c.dragOver}"
+                                aria-labelledby="label-46" aria-multiselectable="true" class="min_height slds-picklist__options slds-picklist__options--multi" role="listbox" tabindex="0">
+                                <aura:if isTrue="{!or(v.SelectedValueList==null, v.SelectedValueList.length==0)}">
+                                    <li aria-selected="false"   class="slds-picklist__item slds-is-draggable" draggable="false" role="option" tabindex="0">
+                                        <span class="slds-truncate">--None--</span>
+                                    </li>
+                                    <aura:set attribute="else">
+                                        <span> 
+                                            <aura:iteration items="{!v.SelectedValueList}" var="l">
+                                                <li aria-selected="{!v.SelectedValueSelected==l}" data-value="{!l}" id="{!l}" onclick="{!c.RHSSelect}" class="slds-picklist__item slds-is-draggable" draggable="true"  ondragstart="{!c.dragStart}"  role="option" tabindex="0">
+                                                    <span class="slds-truncate">{!l}</span>
+                                                </li>
+                                            </aura:iteration>
+                                        </span>
+                                    </aura:set>
+                                </aura:if>
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="slds-grid slds-grid--vertical">
+                        <button  class="custom_pos_1 slds-button slds-button--icon-container" title="Up" onclick="{!c.upValue}">
+                            <lightning:icon iconName="utility:up" variant="error"/>
+                            <span class="slds-assistive-text">Move Selection Up</span>
+                        </button>
+                        <button class="custom_pos_2 slds-button slds-button--icon-container" title="Down" onclick="{!c.downValue}">
+                            <lightning:icon iconName="utility:down" variant="error"/>
+                            <span class="slds-assistive-text">Move Selection Down</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+             <aura:if isTrue="{!and(v.UseStandardSave,!v.goWithMyOptions)}">
+    	        <div style="text-align: left; " class="slds-p-around--large">
+                <center>
+                 <!--<lightning:button variant="brand" label="{!!v.isEditMode?'Edit':'Cancel'}" onclick="{!c.edit}" />   -->
+                    	<lightning:button variant="brand" label="Save" onclick="{!c.save}" />
+                </center>    
+	          </div>
+         </aura:if>    
+        </div>
+        <div class="slds-card__footer">
+        </div>
+    </div>
+    
+    
+</aura:component>

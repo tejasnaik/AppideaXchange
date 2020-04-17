@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" action="{!c.onInit}" value="{!this}"/>
+    <aura:attribute access="global" name="List" type="Object"/>
+    <c:Hc_Chevron cList="{!v.List}"/>
+</aura:component>

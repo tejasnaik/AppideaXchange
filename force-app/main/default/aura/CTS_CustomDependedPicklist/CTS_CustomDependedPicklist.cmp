@@ -1,0 +1,92 @@
+<!-- Created By - Ashlekh Gera (COE Team)
+	 Desc - It will show you the depended picklist functionality.
+-->
+
+<aura:component controller="CTS_CustomDependedPicklistController">
+    
+    <!-- Provide the Name of the Object - Standard or Custom Object -->
+    <aura:attribute type="String" name="ObjectName" required="true"/>
+    <!-- Provide the API Name of the Controller Field. -->
+    <aura:attribute type="String" name="ControlledField" required="true"/>
+    
+    <!-- Provide the API Name of the Dependend Field Name   -->
+    <aura:attribute type="String" name="DependedField" required="true"/>
+    
+    <!-- Provide the From Type CSS - Possible options are - vertical, horizontal and stacked. -->
+    <aura:attribute type="String" name="FormTypeCSS" default="stacked"/>
+    
+    <!-- Configure the width of the field -->
+    <aura:attribute type="String" name="width" default="15rem" />
+    
+    <!-- Provide the Label of the Controlled field, which will be populated on UI. -->
+    <aura:attribute type="String" name="LabelForControllingField" default="Controlling Field"/>
+    
+    <!-- Provide the Label of the Depended field, which will be populated on UI. -->
+    <aura:attribute type="String" name="LabelForDependendField" default="Dependend Field"/>
+    
+    <aura:attribute type="String" name="SelectedControllingValue"/>
+    <aura:attribute type="List" name="controlFieldOptions" default="[]" access="private"/>
+    
+    <aura:attribute type="String" name="SelectedDependendValue"/>
+    <aura:attribute type="List" name="dependentFieldOptions" default="[]" access="private"/>
+    
+    <aura:attribute type="Boolean" name="isDependentFieldMultiPicklist" default="false" />
+    <aura:attribute type="object" name="allInfoMap" access="private"/>
+   
+    
+    
+    <aura:handler value="{!this}" name="init" action="{!c.doConstructor}"/>
+    <aura:handler name="change" value="{!v.SelectedControllingValue}" action="{!c.controledFieldValueChanger}"/>
+    
+ 
+    
+    <aura:if isTrue="{!and(v.allInfoMap != null , v.allInfoMap.isSuccess)}">
+        
+        <div class="{!'slds-form slds-form_'+v.FormTypeCSS}" > 
+            <aura:if isTrue="{!and(v.controlFieldOptions!=null ,v.controlFieldOptions.length>0)}">
+                <div class="slds-form-element" style="padding:5px">
+                    <label class="slds-form-element__label" for="input-id-01">{!v.LabelForControllingField}</label>
+                    <div class="slds-form-element__control">
+                        <c:AKCustomPicklistField PicklistOptionType="PARENTLIST"
+                                                 isMultiPicklist="false"
+                                                 selectedOption="{!v.SelectedControllingValue}"
+                                                 ParentOptionsList="{!v.controlFieldOptions}"
+                                                 width="{!v.width}"
+                                                 aura:id="ControllingFieldId"/>
+                    </div>
+                </div>
+            </aura:if>
+            
+            <aura:if isTrue="{!and(v.dependentFieldOptions!=null ,v.dependentFieldOptions.length>0)}">
+                <div class="slds-form-element"  style="padding:5px">
+                    <label class="slds-form-element__label" for="input-id-01">{!v.LabelForDependendField}</label>
+                    <div class="slds-form-element__control">
+                        <c:AKCustomPicklistField PicklistOptionType="PARENTLIST"
+                                                 isMultiPicklist="{!v.isDependentFieldMultiPicklist}"
+                                                 selectedOption="{!v.SelectedDependendValue}"
+                                                 ParentOptionsList="{!v.dependentFieldOptions}"
+                                                 width="{!v.width}"
+                                                 aura:id="DependentFieldId"/>
+                    </div>
+                </div>
+            </aura:if>
+        </div>
+        <aura:set attribute="else">
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+                <span class="slds-assistive-text">info</span>
+                <span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+                     <lightning:icon iconName="utility:user" size="small" alternativeText="test"/>
+                </span>
+                <h2>
+                   {!v.allInfoMap.msg}
+                </h2>
+            </div>
+        </aura:set>
+    </aura:if>    
+    
+    
+    
+    <!--<input type="button" value="click 11me" onclick="{!c.doInit1}"></input>-->
+    
+    
+</aura:component>

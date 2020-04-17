@@ -1,0 +1,10 @@
+.THIS .customClass{
+	  /* position: static  !important;*/
+}
+.THIS .slds-picklist__label .slds-icon {
+    right:.5rem !important;
+}
+
+.THIS .Date {
+    /*width:140px;*/
+}

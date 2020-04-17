@@ -1,0 +1,36 @@
+<aura:component >
+    
+    <ltng:require styles="{!$Resource.CTS_RatingComponent + '/RatingResource/css/bootstrap3.css'}"/>
+   <!-- <aura:attribute type="String" name="UserWithStar5" default="56"/>
+    <aura:attribute type="String" name="UserWithStar4" default="26"/>
+    <aura:attribute type="String" name="UserWithStar3" default="66"/>
+    <aura:attribute type="String" name="UserWithStar2" default="6"/>
+    <aura:attribute type="String" name="UserWithStar1" default="9"/>-->
+    <aura:attribute type="String" name="userRating" default="9"/>
+    <aura:attribute type="list" name="DataToAllUserRating" />
+    
+    <ul class="customSpace">
+        <aura:if isTrue="{!v.DataToAllUserRating !=null}">
+            <aura:iteration items="{!v.DataToAllUserRating}" var="item">
+                <li class="slds-item">
+                    <div class="slds-grid slds-wrap slds-grid--pull-padded">
+                        <div class="slds-p-horizontal--small slds-size--1-of-2">
+                            <c:Cts_UserRating CurrentRating="{!item.StarName}"  isDisplayOnly="true" />
+                            <span>{!item.StarName+' Stars by '+ item.NumberOfPerson }</span>
+                        </div>   
+                        <div class="slds-p-horizontal--small slds-size--1-of-2"> 
+                            <div class="ashCustomClass">
+                                <div class="progress" style="margin-top:9px">
+                                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{!item.percentage}" 
+                                         aria-valuemin="0" aria-valuemax="100" style="{!'width: '+item.percentage +'%;'}">
+                                        {!item.percentage}% 
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>     
+                </li>
+            </aura:iteration>
+        </aura:if> 
+    </ul>
+</aura:component>

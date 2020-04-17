@@ -1,0 +1,5 @@
+<design:component label="Ratings Component">
+	<design:attribute name="initialRating" default="0" description="Enter initial ratings" />
+    <design:attribute name="readOnly" default="false" description="If set to true, the ratings will be read-only." />
+    <design:attribute name="reverse" default="false" description="If set to true, the ratings will be reversed." />
+</design:component>

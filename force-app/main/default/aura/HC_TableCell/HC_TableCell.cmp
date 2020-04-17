@@ -1,0 +1,12 @@
+<aura:component >
+	<aura:attribute name="field" type="String" default=""/>
+    <aura:attribute name="records" type="Object"/>
+    <aura:attribute name="isHeader" type="Boolean" default="true"/>
+    <aura:attribute name="value" type="String" default=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.initilization}" />
+    <aura:if isTrue="{!v.isHeader}">
+        <th data-label="Subject">
+        	<div class="slds-truncate" title="{!v.value}" style="max-width: 180px;">{!v.value}</div>
+        </th>
+    </aura:if>
+</aura:component>

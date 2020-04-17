@@ -1,0 +1,98 @@
+<aura:component controller="AKCustomPicklistFieldController" description="AKCustomPicklistField" >
+    <!-- Possible Values  STANDARDFIELD,PARENTLIST-->
+    <aura:attribute name="PicklistOptionType" type="String" default="STANDARDFIELD" access="public"/>
+    
+    <!-- 1 If option should comes from standard Field eg-ObjectName="Opportunity" FieldName = StageName -->
+    <aura:attribute name="ObjectName" type="String" default="Opportunity" access="public"/>
+    <aura:attribute name="FieldName" type="String"  default="StageName" access="public"/>
+    
+    <!-- 2 If Option should comes from parent Component Format eg: [{'value':'FirstOption','Label':'FirstOptionLabel'},{'value':'SecondOption','Label':'SecondOptionLabel'},{'value':'ThirdOption','Label':'ThirdOptionLabel'}	]-->
+    <aura:attribute name="ParentOptionsList" type="List" access="public"/>
+    
+    
+    <!-- if using single picklist then use this property to assign value-->
+    <aura:attribute name="selectedOption" type="String"  access="public"/>
+    
+    <!-- if using multi picklist then use this property to assign value
+    <aura:attribute name="selectedOptions" type="list"  access="public"/>-->
+    
+    <!-- set false if field need to be show as disable, user can't change the value-->
+    <aura:attribute name="isEditable" type="Boolean" default="true" access="public"/> 
+    
+    <!-- Set the width of field -->
+    <aura:attribute name="width" type="String" default="15rem" />
+    
+    <!-- Set the number of drop down values need to show-->
+    <aura:attribute name="dropdownLength" type="Integer" default="5" />
+    
+    <!-- Set true if you option need to hide on hover -->
+    <aura:attribute name="dropdownOver" type="Boolean" default="false" />
+    
+    <!-- Set true for multi-picklist behaviour, in standard field case controller will set the value -->
+    <aura:attribute name="isMultiPicklist" type="boolean" default="false" access="public"/>
+    
+    <!-- Currently not using this property -->
+    <aura:attribute name="FieldLabel" type="String"  access="public"/>
+   
+    <!-- for internal use only -->
+    <aura:attribute name="OrignalOptions" type="List" access="private"/>
+    <aura:attribute name="infoText" type="String" default="Select an option..." access="private" />
+    <aura:attribute name="isError" type="boolean" default="false" access="private"/>
+    <aura:attribute name="errMsg" type="String"  access="private"/>
+    
+    <aura:handler value="{!this}" name="init" action="{!c.doConstructor}"/>
+    
+    <aura:if isTrue="{!!v.isError}">
+    <div aura:id="main-div"  class=" slds-picklist slds-dropdown-trigger slds-dropdown-trigger--click " style="width:15rem;">
+       <aura:if isTrue="{!!v.isEditable}">
+            <aura:if isTrue="{!v.isMultiPicklist}">
+                <!--<textarea disabled="true" value="{!v.infoText}"/>-->
+                <!--sumit-->
+                <button class="slds-button slds-button--neutral slds-picklist__label" id="select-01" style="width:15rem;padding:-1px 10px 0px 12px;">
+                      <span >{!v.infoText}<span><lightning:icon iconName="utility:down" size="small" class="slds-icon" /></span></span>
+                </button>
+                <!--sumit-->
+                <aura:set attribute="else">
+                    <button  disabled="false" class="slds-button slds-button--neutral slds-picklist__label" style="{!'width:' + v.width }"
+                            aria-haspopup="true" >
+                        <span class="slds-truncate" title="{!v.infoText}">{!v.infoText}</span>
+                        <lightning:icon iconName="utility:down" size="small" class="slds-icon" />
+                    </button>
+                </aura:set>
+            </aura:if>
+            
+            
+            <aura:set attribute="else">
+                <button  class="slds-button slds-button--neutral slds-picklist__label" style="{!'width:' + v.width }"
+                        aria-haspopup="true" onclick="{!c.handleClick}" onmouseleave="{!c.handleMouseOutButton}">
+                    <span class="slds-truncate" title="{!v.infoText}">{!v.infoText}</span>
+                    <lightning:icon iconName="utility:down" size="small" class="slds-icon" />
+                </button>
+            </aura:set>     
+        </aura:if>
+    
+    
+    <div aura:id="main-div2"  class="slds-dropdown slds-dropdown--left " onmouseenter="{!c.handleMouseEnter}" onmouseleave="{!c.handleMouseLeave}" >
+        <ul class="{!'slds-dropdown__list slds-dropdown--length-' + v.dropdownLength}" role="menu">
+            <aura:iteration items="{!v.OrignalOptions}" var="option">
+                <li class="{!'slds-dropdown__item ' + (option.isSelected ? 'slds-is-selected' : '')}"
+                    onclick="{!c.handleSelection}"
+                    role="presentation"  data-value="{!option.value}" data-selected="{!option.isSelected}">
+                    <a href="javascript:void(0);" role="menuitemcheckbox" aria-checked="true" tabindex="0" >
+                        <span class="slds-truncate">
+                            <lightning:icon iconName="utility:check" size="x-small" class="slds-icon slds-icon--selected slds-icon--x-small slds-icon-text-default slds-m-right--x-small" />{!option.label}
+                        </span>
+                    </a>
+                </li>
+            </aura:iteration>
+        </ul>
+    </div>
+    </div>
+         <aura:set attribute="else">
+             {!v.errMsg}
+        </aura:set>
+    </aura:if>
+</aura:component>
+<!-- 
+	Created By Ashlekh Gera 
+							 -->

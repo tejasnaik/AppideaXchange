@@ -1,0 +1,79 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,lightning:actionOverride,force:hasSObjectName,force:lightningQuickAction" 
+                access="global" 
+                controller="CTSSignatureBoxController">
+    
+    <aura:attribute name="isCaptured" type="boolean" default="false"  />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="SignatureFileName" type="String" />
+    <aura:attribute name="dataWrapper" type="String" />
+    <aura:attribute name="EnableSignScreen" type="boolean" default="false"  />
+    
+    <aura:attribute name="errorMessage" type="String" default="Please provide parent record Id to save signature."  />
+    
+    <aura:attribute name="Message" type="String" default="Sign Here."/>
+    <aura:attribute name="CaptureImg" type="String" />
+    
+    <aura:attribute name="paint" type="Boolean" default="false" />
+    <aura:attribute name="clickX" type="Integer[]" default="[]" />
+    <aura:attribute name="clickY" type="Integer[]" default="[]" />
+    <aura:attribute name="clickDrag" type="Integer[]" default="[]"/>
+    
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }" />
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <lightning:spinner aura:id="spinner" class="slds-hide" variant="brand" size="large"/>
+    
+    
+    <article class="slds-cards slds-p-around--small">
+        <div class="slds-card__body">
+            <div class="slds-col slds-size--1-of-1 slds-grid">
+                <button class="slds-m-left--x-small slds-button slds-size--1-of-1 slds-p-vertical--xx-small sign-button" onclick="{!c.enableSign }" >
+                    I want to Sign.
+                </button>
+            </div>
+        </div>
+    </article>
+    
+    <article class="{!v.EnableSignScreen?'slds-card':'slds-card slds-hide'}" aura:id="test">
+        <div class="slds-grid slds-wrap slds-grid--pull-padded"> 
+            <div class="slds-p-horizontal--small slds-size--1-of-1">
+                <div style="display: block;" role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open"> 
+                    <div class="map-modal slds-modal__container ">
+                        <div class="slds-modal__header">
+                            <h2 id="header43" class="slds-text-heading--medium slds-p-around--medium">{!v.Message}</h2>
+                            <button type="button" onclick="{! c.close }" class="slds-button slds-modal__close slds-button--icon-inverse">
+                                <lightning:icon iconName="utility:close" size="x-small" alternativeText="Indicates approval" class="slds-input__icon marginBottom"/>
+                            </button>
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium address-modal-body">
+                            
+                            <canvas class="{!v.isCaptured?'slds-hide':'slds-show'}" ontouchstart="{! c.touchstart }" ontouchmove="{! c.touchmove }" ontouchend="{! c.touchend }" ontouchcancel="{! c.touchcancel }"
+                                    onmousedown="{! c.mousedown }" onmousemove="{! c.mousemove }" onmouseup="{! c.mouseup }" onmouseleave="{! c.mouseleave }"
+                                    id="signatureCanvasId" width="450" height="220"></canvas>
+                            
+                            <div aura:id="CaptureId" id="CaptureId" class="{!!v.isCaptured?'slds-hide':'slds-show'}">
+                                <img src="{!v.CaptureImg}"/>
+                            </div>
+                            
+                            <div class="slds-size--1-of-1 slds-grid slds-wrap slds-p-bottom--small">
+                                <div class="slds-col slds-size--1-of-2 slds-grid">
+                                    <button class="slds-button slds-size--1-of-1 slds-p-vertical--xx-small clear-button" onclick="{! c.clear }" >
+                                        {!v.isCaptured?'Edit':'Clear'}
+                                    </button>
+                                </div>
+                                <div class="slds-col slds-size--1-of-2 slds-grid">
+                                    <button class="slds-m-left--x-small slds-button slds-size--1-of-1 slds-p-vertical--xx-small sign-button" onclick="{! c.sign }" >
+                                        {!!v.isCaptured?'Capture My Sign':'Now Save'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="{!v.EnableSignScreen?'slds-backdrop slds-backdrop--open':'slds-backdrop slds-backdrop--open slds-hide'}"></div>
+    
+    
+</aura:component>

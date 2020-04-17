@@ -1,0 +1,68 @@
+<!--
+ * Entity Name Name: GenericProfileCard Component
+ * Description: Component to display Contact information in Card format.
+ * Developed by: Rajendra Singh Nagar (640829)
+ * Author: Cognizant Technology Solutions
+-->
+<aura:component implements="forceCommunity:availableForAllPageTypes,force:hasRecordId,flexiPage:availableForAllPageTypes" 
+				controller="GenericPatientProfileController">
+    <!-- Define Aura attributes here - Start -->
+    <aura:attribute name="title" type="String" 
+					default="Contact Profile"/>
+    <aura:attribute name="queryFields" type="String" 
+					default="Id,Name,Birthdate,Email,Phone,MailingCity,MailingCountry,Profile_Card_Image__c"/>
+    <aura:attribute name="headerFields" type="String" 
+					default="Name"/>
+    <aura:attribute name="detailFields" type="String" 
+					default="Birthdate,Email,Phone,MailingCity,MailingCountry"/>
+    <aura:attribute name="headerFieldMapping" type="String" 
+					default='{"Name":"Name"}'/>
+    <aura:attribute name="detailFieldMapping" type="String" 
+					default='{"Birthdate":"Date","Email":"Email","Phone":"Phone","MailingCity": "City","MailingCountry": "Country"}'/>
+    <aura:attribute name="imageURL" type="String"/>
+    <aura:attribute name="headerInfos" type="list" default="[]"/>
+    <aura:attribute name="detailInfos" type="list" default="[]"/>
+    <!-- Define Aura attributes here - End -->
+    
+    <!-- Aura Handler - Start -->
+    <ltng:require scripts="{!$Resource.GenericContactProfileCard_moment}"
+                  afterScriptsLoaded="{!c.doinit}"/>
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doinit}"/>-->
+    <!-- Aura Handler - End -->
+    
+    <div class="slds" style="">
+        <div class="TileClass slds-p-around--x-small">
+            <ul class="slds-has-dividers_around-space">
+                <li class="slds-item">
+                    <lightning:spinner aura:id="spinner" variant="brand"/>
+                    <div class="slds-truncate slds-p-left_small slds-text-heading--medium" title="Patient Profile">
+                        {!v.title}
+                    </div>
+                    <lightning:layout horizontalAlign="left" verticalAlign="center" >
+                        <lightning:layoutItem flexibility="shrink" padding="around-small">
+                            <img src="{!v.imageURL}"
+                                 style="border-radius: 10px;width: 100px;"/>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem flexibility="shrink">
+                            <article class="slds-tile">
+                                <div class="slds-tile__detail slds-text-body_small">
+                                    <aura:iteration items="{!v.headerInfos}" var="headerInfo" indexVar="count">
+                                    	<p class="{!if(count==0,'slds-text-heading_small','')}" title="{!headerInfo.value}">{!headerInfo.value}</p>	
+                                    </aura:iteration>
+                                </div>
+                            </article>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                    <aura:iteration items="{!v.detailInfos}" var="pi" indexVar="count">
+                        <div class="{!if(count==v.detailInfos.length-1,'slds-form-element slds-p-around--x-small slds-p-left_small','slds-border_bottom slds-form-element slds-p-around--x-small slds-p-left_small')}">
+                            <label class="slds-form-element__label" for="text-input-id-1">{!pi.label}</label>
+                            <div class="slds-form-element__control">
+                                <ui:outputText value="{!pi.value}"/>
+                            </div>
+                        </div>
+                    </aura:iteration>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aura:component>
